@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">单子</string>
+    <string name="action_settings">Settings</string>
+    <string name="push_orders_text">下单</string>
+    <string name="get_orders_text">接单</string>
+    <string name="read_orders_text">查单</string>
+    <string name="setting_text">设置</string>
+    <string name="title_activity_push_orders">下单</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_get_orders">接单</string>
+    <string name="title_activity_read_orders">查单</string>
+    <string name="title_activity_setting">设置</string>
+    <string name="title_activity_main_activityasda">MainActivityasda</string>
+
+</resources>
