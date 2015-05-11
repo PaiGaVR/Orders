@@ -24,7 +24,7 @@ public class SlidingMenu extends HorizontalScrollView
 	 */
 	private int mMenuRightPadding;
 	/**
-	 * 菜单的宽�?
+	 * 菜单的宽量
 	 */
 	private int mMenuWidth;
 	private int mHalfMenuWidth;
@@ -35,8 +35,6 @@ public class SlidingMenu extends HorizontalScrollView
 
 	private ViewGroup mMenu;
 	private ViewGroup mContent;
-	
-	private int touchThreshold = 20;
 
 	public SlidingMenu(Context context, AttributeSet attrs)
 	{
@@ -62,7 +60,7 @@ public class SlidingMenu extends HorizontalScrollView
 				mMenuRightPadding = a.getDimensionPixelSize(attr,
 						(int) TypedValue.applyDimension(
 								TypedValue.COMPLEX_UNIT_DIP, 50f,
-								getResources().getDisplayMetrics()));// 默认�?10DP
+								getResources().getDisplayMetrics()));// 默认�?10DP
 				break;
 			}
 		}
@@ -78,7 +76,7 @@ public class SlidingMenu extends HorizontalScrollView
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
 		/**
-		 * 显示的设置一个宽�?
+		 * 显示的设置一个宽量
 		 */
 		if (!once)
 		{
@@ -93,7 +91,6 @@ public class SlidingMenu extends HorizontalScrollView
 
 		}
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
 	}
 
 	@Override
@@ -102,7 +99,6 @@ public class SlidingMenu extends HorizontalScrollView
 		super.onLayout(changed, l, t, r, b);
 		if (changed)
 		{
-			// 将菜单隐�?
 			this.scrollTo(mMenuWidth, 0);
 			once = true;
 		}
@@ -114,7 +110,6 @@ public class SlidingMenu extends HorizontalScrollView
 		int action = ev.getAction();
 		switch (action)
 		{
-		// Up时，进行判断，如果显示区域大于菜单宽度一半则完全显示，否则隐�?
 		case MotionEvent.ACTION_UP:
 			int scrollX = getScrollX();
 			if (scrollX > mHalfMenuWidth)
@@ -155,7 +150,7 @@ public class SlidingMenu extends HorizontalScrollView
 	}
 
 	/**
-	 * 切换菜单状�??
+	 * 切换菜单状态
 	 */
 	public void toggle()
 	{
@@ -187,5 +182,4 @@ public class SlidingMenu extends HorizontalScrollView
 		ViewHelper.setScaleY(mContent, rightScale);
 
 	}
-
 }

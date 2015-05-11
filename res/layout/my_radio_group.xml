@@ -37,12 +37,12 @@
 	            />
 	          
 	          
-	           <RadioButton 
+	           <!-- <RadioButton 
 	          android:id="@+id/tab_icon_setting"          
 	          android:textColor="@color/tab_text"    
 	          android:drawableTop="@drawable/tab_set"    
 	          android:text="@string/setting_text"
 	          style="@style/tab_button_bg"
-	            />
+	            /> -->
     
 </com.example.orders.widgets.MyRadioGroup>
