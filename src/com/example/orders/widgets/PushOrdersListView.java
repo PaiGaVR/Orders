@@ -1,7 +1,6 @@
 package com.example.orders.widgets;
 
 import com.example.orders.R;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,8 +11,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ListView;
 
-public class SwipeListView extends ListView {
-    private Boolean mIsHorizontal;
+public class PushOrdersListView extends ListView {
+	private Boolean mIsHorizontal;
 
     private View mPreItemView;
 
@@ -25,28 +24,27 @@ public class SwipeListView extends ListView {
 
     private int mRightViewWidth;
 
-    // private boolean mIsInAnimation = false;
     private final int mDuration = 100;
 
     private final int mDurationStep = 10;
 
     private boolean mIsShown;
 
-    public SwipeListView(Context context) {
+    public PushOrdersListView(Context context) {
         this(context,null);
     }
 
-    public SwipeListView(Context context, AttributeSet attrs) {
+    public PushOrdersListView(Context context, AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public SwipeListView(Context context, AttributeSet attrs, int defStyle) {
+    public PushOrdersListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         
         TypedArray mTypedArray = context.obtainStyledAttributes(attrs,  
                 R.styleable.swipelistviewstyle);  
         
-      //获取自定义属性和默认�?  
+      //获取自定义属性和默认值  
       mRightViewWidth = (int) mTypedArray.getDimension(R.styleable.swipelistviewstyle_right_width, 200);   
       
       mTypedArray.recycle();  
@@ -63,7 +61,6 @@ public class SwipeListView extends ListView {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 mIsHorizontal = null;
-                System.out.println("onInterceptTouchEvent----->ACTION_DOWN");
                 mFirstX = lastX;
                 mFirstY = lastY;
                 int motionPosition = pointToPosition((int)mFirstX, (int)mFirstY);
@@ -86,15 +83,13 @@ public class SwipeListView extends ListView {
 
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
-                System.out.println("onInterceptTouchEvent----->ACTION_UP");
                 if (mIsShown && (mPreItemView != mCurrentItemView || isHitCurItemLeft(lastX))) {
-                    System.out.println("1---> hiddenRight");
                     /**
-                     * 情况�?�?
+                     * 情况一：
                      * <p>
-                     * �?个Item的右边布�?已经显示�?
+                     * 一个Item的右边布局已经显示，
                      * <p>
-                     * 这时候点击任意一个item, 那么那个右边布局显示的item隐藏其右边布�?
+                     * 这时候点击任意一个item, 那么那个右边布局显示的item隐藏其右边布局
                      */
                     hiddenRight(mPreItemView);
                 }
@@ -118,10 +113,8 @@ public class SwipeListView extends ListView {
 
         if (Math.abs(dx) > 30 && Math.abs(dx) > 2 * Math.abs(dy)) {
             mIsHorizontal = true;
-            System.out.println("mIsHorizontal---->" + mIsHorizontal);
         } else if (Math.abs(dy) > 30 && Math.abs(dy) > 2 * Math.abs(dx)) {
             mIsHorizontal = false;
-            System.out.println("mIsHorizontal---->" + mIsHorizontal);
         } else {
             canJudge = false;
         }
@@ -141,29 +134,27 @@ public class SwipeListView extends ListView {
 
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                System.out.println("---->ACTION_DOWN");
                 break;
 
             case MotionEvent.ACTION_MOVE:
                 float dx = lastX - mFirstX;
                 float dy = lastY - mFirstY;
 
-                // confirm is scroll direction
                 if (mIsHorizontal == null) {
                     if (!judgeScrollDirection(dx, dy)) {
+                    	//System.out.println("===>ACTION_MOVE:" + mIsHorizontal);
                         break;
                     }
                 }
 
                 if (mIsHorizontal) {
                     if (mIsShown && mPreItemView != mCurrentItemView) {
-                        System.out.println("2---> hiddenRight");
                         /**
                          * 情况二：
                          * <p>
-                         * �?个Item的右边布�?已经显示�?
+                         * 一个Item的右边布局已经显示，
                          * <p>
-                         * 这时候左右滑动另外一个item,那个右边布局显示的item隐藏其右边布�?
+                         * 这时候左右滑动另外一个item,那个右边布局显示的item隐藏其右边布局
                          * <p>
                          * 向左滑动只触发该情况，向右滑动还会触发情况五
                          */
@@ -172,7 +163,6 @@ public class SwipeListView extends ListView {
 
                     if (mIsShown && mPreItemView == mCurrentItemView) {
                         dx = dx - mRightViewWidth;
-                        System.out.println("======dx " + dx);
                     }
 
                     // can't move beyond boundary
@@ -183,13 +173,12 @@ public class SwipeListView extends ListView {
                     return true;
                 } else {
                     if (mIsShown) {
-                        System.out.println("3---> hiddenRight");
                         /**
                          * 情况三：
                          * <p>
-                         * �?个Item的右边布�?已经显示�?
+                         * 一个Item的右边布局已经显示，
                          * <p>
-                         * 这时候上下滚动ListView,那么那个右边布局显示的item隐藏其右边布�?
+                         * 这时候上下滚动ListView,那么那个右边布局显示的item隐藏其右边布局
                          */
                         hiddenRight(mPreItemView);
                     }
@@ -199,16 +188,14 @@ public class SwipeListView extends ListView {
 
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
-                System.out.println("============ACTION_UP");
                 clearPressedState();
                 if (mIsShown) {
-                    System.out.println("4---> hiddenRight");
                     /**
                      * 情况四：
                      * <p>
-                     * �?个Item的右边布�?已经显示�?
+                     * 一个Item的右边布局已经显示，
                      * <p>
-                     * 这时候左右滑动当前一个item,那个右边布局显示的item隐藏其右边布�?
+                     * 这时候左右滑动当前一个item,那个右边布局显示的item隐藏其右边布局
                      */
                     hiddenRight(mPreItemView);
                 }
@@ -217,11 +204,10 @@ public class SwipeListView extends ListView {
                     if (mFirstX - lastX > mRightViewWidth / 2) {
                         showRight(mCurrentItemView);
                     } else {
-                        System.out.println("5---> hiddenRight");
                         /**
                          * 情况五：
                          * <p>
-                         * 向右滑动�?个item,且滑动的距离超过了右边View的宽度的�?半，隐藏之�??
+                         * 向右滑动一个item,且滑动的距离超过了右边View的宽度的一半，隐藏之。
                          */
                         hiddenRight(mCurrentItemView);
                     }
@@ -236,16 +222,12 @@ public class SwipeListView extends ListView {
     }
 
     private void clearPressedState() {
-        // TODO current item is still has background, issue
         mCurrentItemView.setPressed(false);
         setPressed(false);
         refreshDrawableState();
-        // invalidate();
     }
 
     private void showRight(View view) {
-        System.out.println("=========showRight");
-
         Message msg = new MoveHandler().obtainMessage();
         msg.obj = view;
         msg.arg1 = view.getScrollX();
@@ -256,7 +238,6 @@ public class SwipeListView extends ListView {
     }
 
     private void hiddenRight(View view) {
-        System.out.println("=========hiddenRight");
         if (mCurrentItemView == null) {
             return;
         }
