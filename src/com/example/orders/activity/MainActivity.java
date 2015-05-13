@@ -28,6 +28,7 @@ public class MainActivity extends ActivityGroup {
 		tab_host.addTab(tab_host.newTabSpec("tag1").setIndicator("0").setContent(new Intent(this, PushOrdersActivity.class)));
         tab_host.addTab(tab_host.newTabSpec("tag2").setIndicator("1").setContent(new Intent(this, GetOrdersActivity.class)));
         tab_host.addTab(tab_host.newTabSpec("tag3").setIndicator("2").setContent(new Intent(this, ReadOrdersActivity.class)));
+        tab_host.addTab(tab_host.newTabSpec("tag4").setIndicator("3").setContent(new Intent(this, SettingActivity.class)));
         
         main_radio_group = (RadioGroup) findViewById(R.id.my_radio_bar);
         
@@ -52,6 +53,11 @@ public class CheckListener implements OnCheckedChangeListener{
 					tab_host.setCurrentTab(2);
 					break;
 				}
+				case R.id.tab_icon_setting : {
+					tab_host.setCurrentTab(3);
+					break;
+				}
+				
 			}
 		}
     }
