@@ -12,5 +12,7 @@
     <string name="title_activity_get_orders">接单</string>
     <string name="title_activity_read_orders">查单</string>
     <string name="title_activity_setting">设置</string>
+    <string name="gl_wait">请稍等</string>
+    <string name="gl_choose_title">请选择图片</string>
 
 </resources>
