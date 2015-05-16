@@ -43,23 +43,13 @@
 
             <TextView
                 android:id="@+id/gerenxinxi"
-                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:padding="8dp"
                 android:text="个人信息"
                 android:textColor="#000"
-                android:textSize="17sp"
-                
-                 />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
+                android:textSize="17sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -77,14 +67,6 @@
                 android:text="背景图片"
                 android:textColor="#000"
                 android:textSize="17sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -102,14 +84,6 @@
                 android:text="黑名单"
                 android:textColor="#000"
                 android:textSize="17sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -126,14 +100,6 @@
                 android:text="系统通知"
                 android:textColor="#000"
                 android:textSize="17sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -151,14 +117,6 @@
                 android:text="帮助与反馈"
                 android:textColor="#000"
                 android:textSize="17sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -176,13 +134,6 @@
                 android:textColor="#000"
                 android:textSize="17sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
         </RelativeLayout>
 
         <RelativeLayout

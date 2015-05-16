@@ -41,10 +41,10 @@ public class InformationActivity extends Activity {
 	private static final int FLAG_CHOOSE_PHONE = 6;
 	private static final int FLAG_MODIFY_FINISH = 7;
 	public static final File FILE_SDCARD = Environment
-            .getExternalStorageDirectory();
-	public static final File FILE_LOCAL = new File(FILE_SDCARD,IMAGE_PATH);
+			.getExternalStorageDirectory();
+	public static final File FILE_LOCAL = new File(FILE_SDCARD, IMAGE_PATH);
 	public static final File FILE_PIC_SCREENSHOT = new File(FILE_LOCAL,
-            "images/screenshots");
+			"images/screenshots");
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +52,15 @@ public class InformationActivity extends Activity {
 		setContentView(R.layout.setting_information);
 		mCon = InformationActivity.this;
 		head = (ImageView) findViewById(R.id.main_tab_setting_information_head);
-		//跳出选择界面
+		// 跳出选择界面
 		layout = (RelativeLayout) findViewById(R.id.main_tab_setting_information_rl);
 		layout.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//调用选择那种方式的dialog
-				ModifyAvatarDialog modifyAvatarDialog = new ModifyAvatarDialog(mCon){
-					//选择本地相册
+				// 调用选择那种方式的dialog
+				ModifyAvatarDialog modifyAvatarDialog = new ModifyAvatarDialog(
+						mCon) {
+					// 选择本地相册
 					@Override
 					public void doGoToImg() {
 						this.dismiss();
@@ -68,8 +69,8 @@ public class InformationActivity extends Activity {
 						intent.setType("image/*");
 						startActivityForResult(intent, FLAG_CHOOSE_IMG);
 					}
-					
-					//选择相机拍照
+
+					// 选择相机拍照
 					@Override
 					public void doGoToPhone() {
 						this.dismiss();
@@ -77,20 +78,24 @@ public class InformationActivity extends Activity {
 						if (status.equals(Environment.MEDIA_MOUNTED)) {
 							try {
 								localTempImageFileName = "";
-								localTempImageFileName = String.valueOf((new Date())
-										.getTime()) + ".png";
+								localTempImageFileName = String
+										.valueOf((new Date()).getTime())
+										+ ".png";
 								File filePath = FILE_PIC_SCREENSHOT;
 								if (!filePath.exists()) {
 									filePath.mkdirs();
 								}
 								Intent intent = new Intent(
 										android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-								File f = new File(filePath, localTempImageFileName);
+								File f = new File(filePath,
+										localTempImageFileName);
 								// localTempImgDir和localTempImageFileName是自己定义的名字
 								Uri u = Uri.fromFile(f);
-								intent.putExtra(MediaStore.Images.Media.ORIENTATION, 0);
+								intent.putExtra(
+										MediaStore.Images.Media.ORIENTATION, 0);
 								intent.putExtra(MediaStore.EXTRA_OUTPUT, u);
-								startActivityForResult(intent, FLAG_CHOOSE_PHONE);
+								startActivityForResult(intent,
+										FLAG_CHOOSE_PHONE);
 							} catch (ActivityNotFoundException e) {
 								//
 							}
@@ -111,13 +116,9 @@ public class InformationActivity extends Activity {
 				modifyAvatarDialog.show();
 			}
 		});
-		
-		
-		
-		
+
 	}
-	
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == FLAG_CHOOSE_IMG && resultCode == RESULT_OK) {
@@ -135,29 +136,29 @@ public class InformationActivity extends Activity {
 					String path = cursor.getString(cursor
 							.getColumnIndex(MediaStore.Images.Media.DATA));
 					cursor.close();
-					Log.i(TAG,"path=" + path);
+					Log.i(TAG, "path=" + path);
 					Intent intent = new Intent(this, CropImageActivity.class);
 					intent.putExtra("path", path);
 					startActivityForResult(intent, FLAG_MODIFY_FINISH);
 				} else {
-					Log.i(TAG,"path=" + uri.getPath());
+					Log.i(TAG, "path=" + uri.getPath());
 					Intent intent = new Intent(this, CropImageActivity.class);
 					intent.putExtra("path", uri.getPath());
 					startActivityForResult(intent, FLAG_MODIFY_FINISH);
 				}
 			}
 		} else if (requestCode == FLAG_CHOOSE_PHONE && resultCode == RESULT_OK) {
-			File f = new File(FILE_PIC_SCREENSHOT,localTempImageFileName);
+			File f = new File(FILE_PIC_SCREENSHOT, localTempImageFileName);
 			Intent intent = new Intent(this, CropImageActivity.class);
 			intent.putExtra("path", f.getAbsolutePath());
 			startActivityForResult(intent, FLAG_MODIFY_FINISH);
-		}else if (requestCode == FLAG_MODIFY_FINISH && resultCode == RESULT_OK) {
+		} else if (requestCode == FLAG_MODIFY_FINISH && resultCode == RESULT_OK) {
 			if (data != null) {
 				final String path = data.getStringExtra("path");
 				Log.i(TAG, "截取到的图片路径是 = " + path);
 				Bitmap b = BitmapFactory.decodeFile(path);
 				head.setImageBitmap(b);
-				 
+
 			}
 		}
 	}
