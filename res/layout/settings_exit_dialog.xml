@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="退出后不会删除任何历史数据，下次\n登录依然可以使用本帐号"
+                android:text="退出后不会删除任何历史数据"
                 android:textColor="#fff"
                 android:textSize="16sp" />
 

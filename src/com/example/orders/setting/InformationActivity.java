@@ -24,6 +24,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.AlignmentSpan;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,7 +36,7 @@ public class InformationActivity extends Activity {
 	private String TAG = "InformationActivity";
 	private RelativeLayout layout;
 	private ImageView head;
-	public static final String IMAGE_PATH = "My_weixin";
+	public static final String IMAGE_PATH = "";
 	private static String localTempImageFileName = "";
 	private static final int FLAG_CHOOSE_IMG = 5;
 	private static final int FLAG_CHOOSE_PHONE = 6;
@@ -49,6 +50,7 @@ public class InformationActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.setting_information);
 		mCon = InformationActivity.this;
 		head = (ImageView) findViewById(R.id.main_tab_setting_information_head);

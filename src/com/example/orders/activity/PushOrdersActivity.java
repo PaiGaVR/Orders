@@ -6,17 +6,22 @@ import java.util.List;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
 import com.example.orders.entity.PushOrders;
+import com.example.orders.push.PushFormActivity;
 import com.example.orders.widgets.PushOrdersListView;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class PushOrdersActivity extends Activity {
 
 	private List<PushOrders> data = new ArrayList<PushOrders>();
 	private PushOrdersListView mListView;
+	private ImageButton pushImageButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,22 @@ public class PushOrdersActivity extends Activity {
 		
 		initData();
 		initView();
+		
+		pushImageButton = (ImageButton) findViewById(R.id.addOrders);
+		pushImageButton.setOnClickListener(new MyButtonListener());
+		
 	}
+	
+	
+	class MyButtonListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(PushOrdersActivity.this, PushFormActivity.class);
+			PushOrdersActivity.this.startActivity(intent);
+		}
+	}
+	
 
 	private void initData() {
 		
