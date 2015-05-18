@@ -46,6 +46,10 @@
             android:name="com.example.orders.setting.InformationActivity"
             android:label="@string/title_activity_setting" >
         </activity>
+        <activity
+            android:name="com.example.orders.setting.CropImageActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
     </application>
 
 </manifest>

@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
-            android:hint="@string/push_theme"/>
+            android:hint="@string/push_theme" />
     </LinearLayout>
 
     <LinearLayout
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
-            android:hint="@string/push_money"/>
+            android:hint="@string/push_money" />
     </LinearLayout>
 
     <LinearLayout
@@ -121,20 +121,13 @@
             android:text="@string/push_time"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/pick_bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="buttonClick"
-            android:text="@string/push_time_choose" />
+         <Button android:id="@+id/but_showDate" android:layout_width="100dip"  
+  
+           android:layout_height="wrap_content" android:text="选择" />  
 
-        <EditText
-            android:id="@+id/time_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="@string/hello"/>
+        <EditText android:id="@+id/showDate" android:layout_width="200dip"  
+  
+           android:layout_height="wrap_content" />  
     </LinearLayout>
 
     <TextView
