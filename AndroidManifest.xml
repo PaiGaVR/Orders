@@ -54,6 +54,11 @@
             android:name="com.example.orders.setting.CropImageActivity"
             android:label="@string/title_activity_setting" >
         </activity>
+         <activity
+             android:name="com.example.orders.setting.ExitFromSettingsActivity"
+             android:label="@string/title_activity_setting" >
+
+        </activity>
     </application>
 
 </manifest>

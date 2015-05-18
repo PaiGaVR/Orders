@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class ExitFromSettings extends Activity {
+public class ExitFromSettingsActivity extends Activity {
 	
 	private LinearLayout layout;
 	@Override

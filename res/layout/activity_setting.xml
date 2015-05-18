@@ -43,7 +43,6 @@
             android:gravity="center_vertical" >
 
             <TextView
-               
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -154,6 +153,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/dialog_exit"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
@@ -161,6 +161,7 @@
             android:layout_marginRight="12dp"
             android:layout_marginTop="14dp"
             android:background="@drawable/btn_style_red"
+            android:clickable="true"
             android:gravity="center"
             android:padding="4dp"
             android:text="退出登录"

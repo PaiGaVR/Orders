@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class ModifyAvatarDialog extends Dialog implements OnClickListener {
 
 	private LayoutInflater factory;
-	
+
 	private Button mImg;
 
 	private Button mPhone;
@@ -34,11 +34,12 @@ public class ModifyAvatarDialog extends Dialog implements OnClickListener {
 		super(context, theme);
 		factory = LayoutInflater.from(context);
 	}
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.setContentView(factory.inflate(R.layout.setting_choose_dialog, null));
+		this.setContentView(factory.inflate(R.layout.setting_choose_dialog,
+				null));
 		mImg = (Button) this.findViewById(R.id.gl_choose_img);
 		mPhone = (Button) this.findViewById(R.id.gl_choose_phone);
 		mCancel = (Button) this.findViewById(R.id.gl_choose_cancel);
@@ -61,9 +62,10 @@ public class ModifyAvatarDialog extends Dialog implements OnClickListener {
 			break;
 		}
 	}
-	
-	public void doGoToImg(){
+
+	public void doGoToImg() {
 	}
-	public void doGoToPhone(){
+
+	public void doGoToPhone() {
 	}
 }

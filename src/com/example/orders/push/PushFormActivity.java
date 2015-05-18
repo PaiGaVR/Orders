@@ -64,7 +64,7 @@ public class PushFormActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (null != data && resultCode == Activity.RESULT_OK) {
-			text.setText(data.getStringExtra("province") + ","
+			text.setText(data.getStringExtra("province") + "-"
 					+ data.getStringExtra("city"));
 		}
 	}
@@ -82,8 +82,8 @@ public class PushFormActivity extends Activity {
 	 */
 
 	private void updateDisplay() {
-		showDate.setText(new StringBuilder().append(mYear).append(
-		(mMonth + 1) < 10 ? "0" + (mMonth + 1) : (mMonth + 1)).append(
+		showDate.setText(new StringBuilder().append(mYear + "-").append(
+		(mMonth + 1) < 10 ? "0" + (mMonth + 1) + "-" : (mMonth + 1) + "-").append(
 		(mDay < 10) ? "0" + mDay : mDay));
 	}
 

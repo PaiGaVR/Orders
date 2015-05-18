@@ -1,10 +1,13 @@
 package com.example.orders.activity;
 
 import com.example.orders.R;
+import com.example.orders.setting.ExitFromSettingsActivity;
 import com.example.orders.setting.InformationActivity;
 import android.os.Bundle;
+import android.provider.Settings.System;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.app.Activity;
