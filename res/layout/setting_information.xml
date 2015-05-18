@@ -43,7 +43,7 @@
                 android:text="@string/setting_gerenxinxi_touxiang"
                 android:textColor="#000"
                 android:textSize="17sp" />
-
+         
             <ImageView
                 android:id="@+id/main_tab_setting_information_head"
                 android:layout_width="wrap_content"
