@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ public class ExitFromSettingsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.settings_exit_dialog);
 		//dialog=new MyDialog(this);
 		layout=(LinearLayout)findViewById(R.id.exit_layout2);

@@ -87,6 +87,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+             android:id="@+id/xitongtongzhi"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/preference_last_item"
@@ -120,6 +121,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/guanyu"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/preference_last_item"

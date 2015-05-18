@@ -54,10 +54,17 @@
             android:name="com.example.orders.setting.CropImageActivity"
             android:label="@string/title_activity_setting" >
         </activity>
-         <activity
-             android:name="com.example.orders.setting.ExitFromSettingsActivity"
-             android:label="@string/title_activity_setting" >
-
+        <activity
+            android:name="com.example.orders.setting.ExitFromSettingsActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name="com.example.orders.setting.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name="com.example.orders.setting.NotificationActivity"
+            android:label="@string/title_activity_notification" >
         </activity>
     </application>
 

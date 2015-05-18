@@ -33,12 +33,17 @@
     <string name="setting_notification">系统通知</string>
     <string name="setting_helpAndfeedback">帮助和反馈</string>
     <string name="setting_about">关于</string>
+    <string name="setting_about_message">vesion : 0.00001v </string>
     <string name="setting_clearRecord">清空记录</string>
     <string name="setting_exit">退出</string>
     <string name="local_album_cache">本地相册</string>
     <string name="camera_capture_task">相机拍照</string>
     <string name="abrogate">取消</string>
- 	<string name="save">保存</string>
- 	<string name="exit">退出</string>
- 	<string name="exit_message">退出后不会删除任何历史数据</string>
+    <string name="save">保存</string>
+    <string name="exit">退出</string>
+    <string name="exit_message">退出后不会删除任何历史数据</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="maker">制作人  : 1234567890</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+ 	<string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
 </resources>

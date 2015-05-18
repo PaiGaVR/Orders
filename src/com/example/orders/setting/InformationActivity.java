@@ -5,8 +5,6 @@ import java.io.File;
 import com.example.orders.R;
 import com.example.orders.push.GetAddressInfoActivity;
 import com.example.orders.push.GetAddressUtil;
-import com.example.orders.push.PushFormActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,8 +18,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.Window;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -77,32 +73,14 @@ public class InformationActivity extends Activity {
 			builder.setIcon(R.drawable.tab_settings_normal);
 			builder.setTitle("请选择性别");
 			final String[] sex = { "男", "女", "未知性别" };
-			builder.setSingleChoiceItems(sex, 1,
+			builder.setSingleChoiceItems(sex, 2,
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							Toast.makeText(InformationActivity.this,
-									"性别为：" + sex[which], Toast.LENGTH_SHORT)
-									.show();
 							sextext.setText(sex[which]);
 						}
 					});
-			builder.setPositiveButton("确定",
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-
-						}
-					});
-			builder.setNegativeButton("取消",
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-
-						}
-					});
 			builder.show();
-
 		}
 	};
 
