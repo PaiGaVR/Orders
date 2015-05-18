@@ -22,4 +22,23 @@
     <string name="push_time_choose">选择</string>
     <string name="push_place">目标地点</string>
     <string name="hello">预计时间</string>
+    <string name="setting_gerenxinxi">个人信息</string>
+    <string name="setting_gerenxinxi_touxiang">头像</string>
+    <string name="setting_gerenxinxi_nicheng">昵称</string>
+    <string name="setting_gerenxinxi_sexy">性别</string>
+    <string name="setting_gerenxinxi_place">地区</string>
+    <string name="setting_gerenxinxi_signature">个性签名</string>
+    <string name="setting_backgroundImag">背景图片</string>
+    <string name="setting_blacklist">黑名单</string>
+    <string name="setting_notification">系统通知</string>
+    <string name="setting_helpAndfeedback">帮助和反馈</string>
+    <string name="setting_about">关于</string>
+    <string name="setting_clearRecord">清空记录</string>
+    <string name="setting_exit">退出</string>
+    <string name="local_album_cache">本地相册</string>
+    <string name="camera_capture_task">相机拍照</string>
+    <string name="abrogate">取消</string>
+ 	<string name="save">保存</string>
+ 	<string name="exit">退出</string>
+ 	<string name="exit_message">退出后不会删除任何历史数据</string>
 </resources>

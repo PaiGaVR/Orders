@@ -118,7 +118,6 @@ public class InformationActivity extends Activity {
 				modifyAvatarDialog.show();
 			}
 		});
-
 	}
 
 	@Override
@@ -139,19 +138,27 @@ public class InformationActivity extends Activity {
 							.getColumnIndex(MediaStore.Images.Media.DATA));
 					cursor.close();
 					Log.i(TAG, "path=" + path);
-					Intent intent = new Intent(this, CropImageActivity.class);
+					Intent intent = new Intent();
+					intent.setClass(InformationActivity.this,
+							CropImageActivity.class);
+					InformationActivity.this.startActivity(intent);
 					intent.putExtra("path", path);
 					startActivityForResult(intent, FLAG_MODIFY_FINISH);
 				} else {
 					Log.i(TAG, "path=" + uri.getPath());
-					Intent intent = new Intent(this, CropImageActivity.class);
+					Intent intent = new Intent();
+					intent.setClass(InformationActivity.this,
+							CropImageActivity.class);
+					InformationActivity.this.startActivity(intent);
 					intent.putExtra("path", uri.getPath());
 					startActivityForResult(intent, FLAG_MODIFY_FINISH);
 				}
 			}
 		} else if (requestCode == FLAG_CHOOSE_PHONE && resultCode == RESULT_OK) {
 			File f = new File(FILE_PIC_SCREENSHOT, localTempImageFileName);
-			Intent intent = new Intent(this, CropImageActivity.class);
+			Intent intent = new Intent();
+			intent.setClass(InformationActivity.this, CropImageActivity.class);
+			InformationActivity.this.startActivity(intent);
 			intent.putExtra("path", f.getAbsolutePath());
 			startActivityForResult(intent, FLAG_MODIFY_FINISH);
 		} else if (requestCode == FLAG_MODIFY_FINISH && resultCode == RESULT_OK) {

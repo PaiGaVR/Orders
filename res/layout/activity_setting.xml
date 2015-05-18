@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:padding="8dp"
-                android:text="个人信息"
+                android:text="@string/setting_gerenxinxi"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="背景图片"
+                android:text="@string/setting_backgroundImag"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="黑名单"
+                android:text="@string/setting_blacklist"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="系统通知"
+                android:text="@string/setting_notification"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="帮助与反馈"
+                android:text="@string/setting_helpAndfeedback"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="关于软件"
+                android:text="@string/setting_about"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -147,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="清空聊天记录"
+                android:text="@string/setting_clearRecord"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -164,7 +164,7 @@
             android:clickable="true"
             android:gravity="center"
             android:padding="4dp"
-            android:text="退出登录"
+            android:text="@string/setting_exit"
             android:textColor="#fff"
             android:textSize="18sp" />
     </LinearLayout>
