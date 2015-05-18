@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:ems="10"
-            android:hint="@string/push_money" 
+            android:hint="@string/push_money"
             android:inputType="number" />
     </LinearLayout>
 
@@ -109,7 +109,7 @@
             android:text="获取" />
 
         <EditText
-        	android:id="@+id/addressinfo"
+            android:id="@+id/addressinfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -139,7 +139,7 @@
             android:id="@+id/showDate"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
-             android:layout_margin="10dp"
+            android:layout_margin="10dp"
             android:ems="10"
             android:hint="@string/push_time" />
     </LinearLayout>

@@ -35,7 +35,7 @@ public class PushFormActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_push_form);
 
-		//时间选择
+		// 时间选择
 		showDate = (EditText) findViewById(R.id.showDate);
 		pickDate = (Button) findViewById(R.id.but_showDate);
 		pickDate.setOnClickListener(new DateButtonOnClickListener());
@@ -45,7 +45,7 @@ public class PushFormActivity extends Activity {
 		mDay = c.get(Calendar.DAY_OF_MONTH);
 		setDateTime();
 
-		//地点选择
+		// 地点选择
 		text = (TextView) findViewById(R.id.addressinfo);
 		Button placeButton = (Button) findViewById(R.id.placebutton);
 		final GetAddressUtil location = new GetAddressUtil(this);
@@ -59,7 +59,7 @@ public class PushFormActivity extends Activity {
 		});
 	}
 
-	//地点显示
+	// 地点显示
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -82,9 +82,11 @@ public class PushFormActivity extends Activity {
 	 */
 
 	private void updateDisplay() {
-		showDate.setText(new StringBuilder().append(mYear + "-").append(
-		(mMonth + 1) < 10 ? "0" + (mMonth + 1) + "-" : (mMonth + 1) + "-").append(
-		(mDay < 10) ? "0" + mDay : mDay));
+		showDate.setText(new StringBuilder()
+				.append(mYear + "-")
+				.append((mMonth + 1) < 10 ? "0" + (mMonth + 1) + "-"
+						: (mMonth + 1) + "-")
+				.append((mDay < 10) ? "0" + mDay : mDay));
 	}
 
 	/**

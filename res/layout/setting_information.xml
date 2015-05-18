@@ -18,12 +18,22 @@
             android:text="@string/setting_gerenxinxi"
             android:textColor="#ffffff"
             android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/btn_style_alert_dialog_special"
+            android:text="@string/save" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dip"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/rl_layout"
         android:orientation="vertical" >
 
         <RelativeLayout
@@ -43,23 +53,14 @@
                 android:text="@string/setting_gerenxinxi_touxiang"
                 android:textColor="#000"
                 android:textSize="17sp" />
-         
-            <ImageView
-                android:id="@+id/main_tab_setting_information_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/tab_weixin" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
+                android:id="@+id/main_tab_setting_information_head"
+                android:layout_width="42dip"
+                android:layout_height="42dip"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/mini_avatar" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -79,17 +80,19 @@
                 android:textColor="#000"
                 android:textSize="17sp" />
 
-            <ImageView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:clickable="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:padding="8dp"
+                android:text="化股份非法"
+                android:textColor="#000"
+                android:textSize="17sp" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/setting_sex_information"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/preference_item"
@@ -104,16 +107,20 @@
                 android:textColor="#000"
                 android:textSize="17sp" />
 
-            <ImageView
+            <TextView
+                android:id="@+id/setting_sexinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:padding="8dp"
+                android:text="男"
+                android:textColor="#000"
+                android:textSize="17sp" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/setting_place_information"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/preference_item"
@@ -128,13 +135,16 @@
                 android:textColor="#000"
                 android:textSize="17sp" />
 
-            <ImageView
+            <TextView
+                android:id="@+id/setting_addressinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:padding="8dp"
+                android:text="太原"
+                android:textColor="#000"
+                android:textSize="17sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -145,6 +155,7 @@
             android:gravity="center_vertical" >
 
             <TextView
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
@@ -152,13 +163,16 @@
                 android:textColor="#000"
                 android:textSize="17sp" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/editText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:scaleType="matrix"
-                android:src="@drawable/mm_submenu" />
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/textView1"
+                android:ems="10"
+                android:text="太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥" >
+            </EditText>
         </RelativeLayout>
     </LinearLayout>
 

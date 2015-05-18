@@ -3,6 +3,10 @@ package com.example.orders.setting;
 import java.io.File;
 
 import com.example.orders.R;
+import com.example.orders.push.GetAddressInfoActivity;
+import com.example.orders.push.GetAddressUtil;
+import com.example.orders.push.PushFormActivity;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,11 +20,16 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class InformationActivity extends Activity {
+
+	private String type = "";
 	/* 组件 */
 	private RelativeLayout switchAvatar;
 	private ImageView faceImage;
@@ -33,23 +42,86 @@ public class InformationActivity extends Activity {
 	private static final int IMAGE_REQUEST_CODE = 0;
 	private static final int CAMERA_REQUEST_CODE = 1;
 	private static final int RESULT_REQUEST_CODE = 2;
+	private TextView placetext = null;
+	private TextView sextext = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.setting_information);
+
+		// 头像选择
 		switchAvatar = (RelativeLayout) findViewById(R.id.main_tab_setting_information_rl);
 		faceImage = (ImageView) findViewById(R.id.main_tab_setting_information_head);
-		// 设置事件监听
-		switchAvatar.setOnClickListener(listener);
+		switchAvatar.setOnClickListener(TXlistener);
+
+		// 地点选择
+		placetext = (TextView) findViewById(R.id.setting_addressinfo);
+		RelativeLayout placeRelativeLayout = (RelativeLayout) findViewById(R.id.setting_place_information);
+		final GetAddressUtil location = new GetAddressUtil(this);
+		placeRelativeLayout.setOnClickListener(DQlistener);
+
+		// 性别选择
+		sextext = (TextView) findViewById(R.id.setting_sexinfo);
+		RelativeLayout sexRelativeLayout = (RelativeLayout) findViewById(R.id.setting_sex_information);
+		sexRelativeLayout.setOnClickListener(XBlistener);
 	}
 
-	private View.OnClickListener listener = new View.OnClickListener() {
+	private View.OnClickListener XBlistener = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(
+					InformationActivity.this);
+			builder.setIcon(R.drawable.tab_settings_normal);
+			builder.setTitle("请选择性别");
+			final String[] sex = { "男", "女", "未知性别" };
+			builder.setSingleChoiceItems(sex, 1,
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							Toast.makeText(InformationActivity.this,
+									"性别为：" + sex[which], Toast.LENGTH_SHORT)
+									.show();
+							sextext.setText(sex[which]);
+						}
+					});
+			builder.setPositiveButton("确定",
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+
+						}
+					});
+			builder.setNegativeButton("取消",
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+
+						}
+					});
+			builder.show();
+
+		}
+	};
+
+	private View.OnClickListener DQlistener = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			type = "DQ";
+			startActivityForResult(new Intent(InformationActivity.this,
+					GetAddressInfoActivity.class), 10000);
+		}
+	};
+
+	private View.OnClickListener TXlistener = new View.OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
 			showDialog();
+			type = "TX";
 		}
 	};
 
@@ -105,33 +177,42 @@ public class InformationActivity extends Activity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// 结果码不等于取消时候
-		if (resultCode != RESULT_CANCELED) {
 
-			switch (requestCode) {
-			case IMAGE_REQUEST_CODE:
-				startPhotoZoom(data.getData());
-				break;
-			case CAMERA_REQUEST_CODE:
-				if (Tools.hasSdcard()) {
-					File tempFile = new File(
-							Environment.getExternalStorageDirectory()
-									+ IMAGE_FILE_NAME);
-					startPhotoZoom(Uri.fromFile(tempFile));
-				} else {
-					Toast.makeText(InformationActivity.this, "未找到存储卡，无法存储照片！",
-							Toast.LENGTH_LONG).show();
-				}
+		if (type.equals("DQ")) {
+			if (null != data && resultCode == Activity.RESULT_OK) {
+				placetext.setText(data.getStringExtra("city"));
+			}
+		}
+		if (type.equals("TX")) {
+			// 结果码不等于取消时候
+			if (resultCode != RESULT_CANCELED) {
 
-				break;
-			case RESULT_REQUEST_CODE:
-				if (data != null) {
-					getImageToView(data);
+				switch (requestCode) {
+				case IMAGE_REQUEST_CODE:
+					startPhotoZoom(data.getData());
+					break;
+				case CAMERA_REQUEST_CODE:
+					if (Tools.hasSdcard()) {
+						File tempFile = new File(
+								Environment.getExternalStorageDirectory()
+										+ IMAGE_FILE_NAME);
+						startPhotoZoom(Uri.fromFile(tempFile));
+					} else {
+						Toast.makeText(InformationActivity.this,
+								"未找到存储卡，无法存储照片！", Toast.LENGTH_LONG).show();
+					}
+
+					break;
+				case RESULT_REQUEST_CODE:
+					if (data != null) {
+						getImageToView(data);
+					}
+					break;
 				}
-				break;
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
+
 	}
 
 	/**
@@ -146,12 +227,15 @@ public class InformationActivity extends Activity {
 		// 设置裁剪
 		intent.putExtra("crop", "true");
 		// aspectX aspectY 是宽高的比例
-		intent.putExtra("aspectX", 0.5);
-		intent.putExtra("aspectY", 0.5);
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
 		// outputX outputY 是裁剪图片宽高
-		intent.putExtra("outputX", 320);
-		intent.putExtra("outputY", 320);
+		intent.putExtra("outputX", 1024);
+		intent.putExtra("outputY", 1024);
 		intent.putExtra("return-data", true);
+		// 系统的裁剪图片默认对图片进行人脸识别，当识别到有人脸时，会按aspectX和aspectY为1来处理，
+		// 如果想设置成自定义的裁剪比例，需要设置noFaceDetection为true。
+		intent.putExtra("noFaceDetection", true);
 		startActivityForResult(intent, 2);
 	}
 
