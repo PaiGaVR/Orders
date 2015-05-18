@@ -20,6 +20,6 @@
     <string name="push_content">内容</string>
     <string name="push_time">预计时间</string>
     <string name="push_time_choose">选择</string>
-    <string name="push_place">地点</string>
+    <string name="push_place">目标地点</string>
     <string name="hello">预计时间</string>
 </resources>

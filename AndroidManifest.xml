@@ -43,6 +43,10 @@
             android:label="@string/title_activity_push_orders" >
         </activity>
         <activity
+            android:name="com.example.orders.push.GetAddressInfoActivity"
+            android:label="@string/title_activity_push_orders" >
+        </activity>
+        <activity
             android:name="com.example.orders.setting.InformationActivity"
             android:label="@string/title_activity_setting" >
         </activity>

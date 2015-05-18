@@ -9,27 +9,25 @@ import android.os.Message;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class PushFormActivity extends Activity {
 
 	private EditText showDate = null;
-
 	private Button pickDate = null;
-
 	private static final int DATE_DIALOG_ID = 1;
-
 	private static final int SHOW_DATAPICK = 0;
-
 	private int mYear;
-
 	private int mMonth;
-
 	private int mDay;
+	private TextView text = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,54 +35,59 @@ public class PushFormActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_push_form);
 
+		//时间选择
 		showDate = (EditText) findViewById(R.id.showDate);
-
 		pickDate = (Button) findViewById(R.id.but_showDate);
-
 		pickDate.setOnClickListener(new DateButtonOnClickListener());
-
 		final Calendar c = Calendar.getInstance();
-
 		mYear = c.get(Calendar.YEAR);
-
 		mMonth = c.get(Calendar.MONTH);
-
 		mDay = c.get(Calendar.DAY_OF_MONTH);
-
 		setDateTime();
+
+		//地点选择
+		text = (TextView) findViewById(R.id.addressinfo);
+		Button placeButton = (Button) findViewById(R.id.placebutton);
+		final GetAddressUtil location = new GetAddressUtil(this);
+
+		placeButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivityForResult(new Intent(PushFormActivity.this,
+						GetAddressInfoActivity.class), 10000);
+			}
+		});
+	}
+
+	//地点显示
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (null != data && resultCode == Activity.RESULT_OK) {
+			text.setText(data.getStringExtra("province") + ","
+					+ data.getStringExtra("city"));
+		}
 	}
 
 	private void setDateTime() {
-
 		final Calendar c = Calendar.getInstance();
-
 		mYear = c.get(Calendar.YEAR);
-
 		mMonth = c.get(Calendar.MONTH);
-
 		mDay = c.get(Calendar.DAY_OF_MONTH);
-
 		updateDisplay();
-
 	}
 
 	/**
-	 * 
 	 * 更新日期
 	 */
 
 	private void updateDisplay() {
-
 		showDate.setText(new StringBuilder().append(mYear).append(
-
 		(mMonth + 1) < 10 ? "0" + (mMonth + 1) : (mMonth + 1)).append(
-
 		(mDay < 10) ? "0" + mDay : mDay));
-
 	}
 
 	/**
-	 * 
 	 * 日期控件的事件
 	 */
 
@@ -99,14 +102,7 @@ public class PushFormActivity extends Activity {
 	};
 
 	/**
-	 * 
 	 * 选择日期Button的事件处理
-	 * 
-	 * 
-	 * 
-	 * @author Raul
-	 * 
-	 * 
 	 */
 	class DateButtonOnClickListener implements
 			android.view.View.OnClickListener {
@@ -140,7 +136,6 @@ public class PushFormActivity extends Activity {
 	}
 
 	/**
-	 * 
 	 * 处理日期控件的Handler
 	 */
 
