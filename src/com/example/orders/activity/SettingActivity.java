@@ -20,6 +20,7 @@ public class SettingActivity extends Activity {
 	private Button dialog_exit;
 	private RelativeLayout guanyu;
 	private RelativeLayout xitongtongzhi;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,15 +29,15 @@ public class SettingActivity extends Activity {
 
 		gerenxinxi = (RelativeLayout) findViewById(R.id.gerenxinxi);
 		gerenxinxi.setOnClickListener(new MyButtonListener());
-		
+
 		dialog_exit = (Button) findViewById(R.id.dialog_exit);
 		dialog_exit.setOnClickListener(new MyExitButtonListener());
-		
-		guanyu = (RelativeLayout) findViewById(R.id.guanyu);
-		guanyu.setOnClickListener(new MyGuanYuListener());
-		
+
 		xitongtongzhi = (RelativeLayout) findViewById(R.id.xitongtongzhi);
 		xitongtongzhi.setOnClickListener(new MyXiTongTongZhiListener());
+
+		guanyu = (RelativeLayout) findViewById(R.id.guanyu);
+		guanyu.setOnClickListener(new MyGuanYuListener());
 	}
 
 	class MyButtonListener implements OnClickListener {
@@ -47,15 +48,17 @@ public class SettingActivity extends Activity {
 			SettingActivity.this.startActivity(intent);
 		}
 	}
-	
+
 	class MyExitButtonListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent();
-			intent.setClass(SettingActivity.this, ExitFromSettingsActivity.class);
+			intent.setClass(SettingActivity.this,
+					ExitFromSettingsActivity.class);
 			SettingActivity.this.startActivity(intent);
 		}
 	}
+
 	class MyXiTongTongZhiListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
@@ -64,7 +67,7 @@ public class SettingActivity extends Activity {
 			SettingActivity.this.startActivity(intent);
 		}
 	}
-	
+
 	class MyGuanYuListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub

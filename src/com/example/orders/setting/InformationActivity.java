@@ -40,6 +40,8 @@ public class InformationActivity extends Activity {
 	private static final int RESULT_REQUEST_CODE = 2;
 	private TextView placetext = null;
 	private TextView sextext = null;
+	private TextView gexingqianming = null;
+	private TextView nicheng = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,17 @@ public class InformationActivity extends Activity {
 		sextext = (TextView) findViewById(R.id.setting_sexinfo);
 		RelativeLayout sexRelativeLayout = (RelativeLayout) findViewById(R.id.setting_sex_information);
 		sexRelativeLayout.setOnClickListener(XBlistener);
+
+		// 个性签名
+		gexingqianming = (TextView) findViewById(R.id.setting_gexingqianming);
+		RelativeLayout qianmingRelativeLayout = (RelativeLayout) findViewById(R.id.setting_gexingqianming_information);
+		gexingqianming.setOnClickListener(QMlistener);
+		qianmingRelativeLayout.setOnClickListener(QMlistener);
+
+		nicheng = (TextView) findViewById(R.id.setting_name);
+		RelativeLayout nichengRelativeLayout = (RelativeLayout) findViewById(R.id.setting_name_information);
+		nicheng.setOnClickListener(NClistener);
+		nichengRelativeLayout.setOnClickListener(NClistener);
 	}
 
 	private View.OnClickListener XBlistener = new View.OnClickListener() {
@@ -100,6 +113,27 @@ public class InformationActivity extends Activity {
 		public void onClick(View v) {
 			showDialog();
 			type = "TX";
+		}
+	};
+
+	private View.OnClickListener QMlistener = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent();
+			intent.setClass(InformationActivity.this,
+					PersonalizedSignatureActivity.class);
+			InformationActivity.this.startActivity(intent);
+		}
+	};
+
+	private View.OnClickListener NClistener = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent();
+			intent.setClass(InformationActivity.this, NameActivity.class);
+			InformationActivity.this.startActivity(intent);
 		}
 	};
 

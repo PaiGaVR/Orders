@@ -56,7 +56,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/main_tab_setting_information"
+            android:id="@+id/setting_name_information"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -73,12 +73,15 @@
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/setting_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
+                android:editable="false"
+                android:maxLength="10"
                 android:padding="8dp"
-                android:text="化股份非法"
+                android:text="@string/setting_name"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -140,6 +143,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/setting_gexingqianming_information"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/preference_last_item"
@@ -156,15 +160,17 @@
                 android:textSize="17sp" />
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/setting_gexingqianming"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView1"
                 android:layout_toRightOf="@+id/textView1"
-                android:ems="10"
-                android:text="太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥" >
-            </EditText>
+                android:editable="false"
+                android:maxLength="88"
+                android:maxLines="8"
+                android:minLines="8"
+                android:text="@string/setting_personalized_signature" />
         </RelativeLayout>
     </LinearLayout>
 

@@ -60,11 +60,19 @@
         </activity>
         <activity
             android:name="com.example.orders.setting.AboutActivity"
-            android:label="@string/title_activity_about" >
+            android:label="@string/title_activity_setting" >
         </activity>
         <activity
             android:name="com.example.orders.setting.NotificationActivity"
             android:label="@string/title_activity_notification" >
+        </activity>
+        <activity
+            android:name="com.example.orders.setting.PersonalizedSignatureActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name="com.example.orders.setting.NameActivity"
+            android:label="@string/title_activity_setting" >
         </activity>
     </application>
 

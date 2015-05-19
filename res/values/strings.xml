@@ -42,8 +42,12 @@
     <string name="save">保存</string>
     <string name="exit">退出</string>
     <string name="exit_message">退出后不会删除任何历史数据</string>
-    <string name="title_activity_about">AboutActivity</string>
     <string name="maker">制作人  : 1234567890</string>
     <string name="title_activity_notification">NotificationActivity</string>
- 	<string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
+    <string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
+    <string name="title_place">地点</string>
+    <string name="setting_personalized_signature">太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥</string>
+    <string name="title_personalized_signature_setting">个性签名</string>
+    <string name="setting_name">化股份非法</string>
+
 </resources>
