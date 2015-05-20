@@ -5,8 +5,6 @@
     android:background="@color/grey"
     android:orientation="vertical" >
 
-    
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,48 +27,60 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white" />
     </RelativeLayout>
-    
-    <RelativeLayout
-            android:id="@+id/main_tab_setting_information"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/preference_first_item"
-            android:clickable="true"
-            android:gravity="center_vertical" >
-        </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/setting_gexingqianming_information"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/preference_first_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:padding="8dp"
+            android:text="@string/title_personalized_signature_setting"
+            android:textColor="#000"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/preference_item"
+        android:clickable="true"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLength="112"
+            android:maxLines="8"
+            android:minLines="8"
+            android:scrollbars="vertical" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/preference_last_item"
         android:clickable="true"
         android:gravity="center_vertical" >
 
-        <TextView
-            android:id="@+id/TextView01"
+        <Button
+            android:id="@+id/setting_help_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="@string/setting_gerenxinxi_signature"
-            android:textColor="#000"
-            android:textSize="17sp" />
-
-        <EditText
-            android:id="@+id/EditText01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/TextView01"
-            android:layout_toRightOf="@+id/TextView01"
-            android:maxLength="88"
-            android:maxLines="8"
-            android:minLines="8"
-            android:text="@string/setting_personalized_signature" >
-
-            <requestFocus />
-        </EditText>
+            android:layout_centerHorizontal="true"
+            android:text="@string/setting_submit" />
     </RelativeLayout>
 
 </LinearLayout>

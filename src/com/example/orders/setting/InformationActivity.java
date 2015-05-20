@@ -40,8 +40,6 @@ public class InformationActivity extends Activity {
 	private static final int RESULT_REQUEST_CODE = 2;
 	private TextView placetext = null;
 	private TextView sextext = null;
-	private TextView gexingqianming = null;
-	private TextView nicheng = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +64,11 @@ public class InformationActivity extends Activity {
 		sexRelativeLayout.setOnClickListener(XBlistener);
 
 		// 个性签名
-		gexingqianming = (TextView) findViewById(R.id.setting_gexingqianming);
 		RelativeLayout qianmingRelativeLayout = (RelativeLayout) findViewById(R.id.setting_gexingqianming_information);
-		gexingqianming.setOnClickListener(QMlistener);
 		qianmingRelativeLayout.setOnClickListener(QMlistener);
 
-		nicheng = (TextView) findViewById(R.id.setting_name);
+		//昵称
 		RelativeLayout nichengRelativeLayout = (RelativeLayout) findViewById(R.id.setting_name_information);
-		nicheng.setOnClickListener(NClistener);
 		nichengRelativeLayout.setOnClickListener(NClistener);
 	}
 

@@ -2,7 +2,9 @@ package com.example.orders.activity;
 
 import com.example.orders.R;
 import com.example.orders.setting.AboutActivity;
+import com.example.orders.setting.BlacklistActivity;
 import com.example.orders.setting.ExitFromSettingsActivity;
+import com.example.orders.setting.HelpActivity;
 import com.example.orders.setting.InformationActivity;
 import com.example.orders.setting.NotificationActivity;
 
@@ -20,6 +22,8 @@ public class SettingActivity extends Activity {
 	private Button dialog_exit;
 	private RelativeLayout guanyu;
 	private RelativeLayout xitongtongzhi;
+	private RelativeLayout heimingdan;
+	private RelativeLayout bangzhuyufankui;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,12 @@ public class SettingActivity extends Activity {
 		dialog_exit = (Button) findViewById(R.id.dialog_exit);
 		dialog_exit.setOnClickListener(new MyExitButtonListener());
 
+		heimingdan= (RelativeLayout) findViewById(R.id.heimingdan);
+		heimingdan.setOnClickListener(new HeiMingDanListener());
+		
+		bangzhuyufankui = (RelativeLayout) findViewById(R.id.bangzhuyufankui);
+		bangzhuyufankui.setOnClickListener(new BangZhuYuFanKuiListener());
+		
 		xitongtongzhi = (RelativeLayout) findViewById(R.id.xitongtongzhi);
 		xitongtongzhi.setOnClickListener(new MyXiTongTongZhiListener());
 
@@ -48,6 +58,28 @@ public class SettingActivity extends Activity {
 			SettingActivity.this.startActivity(intent);
 		}
 	}
+	
+	class BangZhuYuFanKuiListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(SettingActivity.this,
+					HelpActivity.class);
+			SettingActivity.this.startActivity(intent);
+		}
+	}
+	
+	
+	class HeiMingDanListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(SettingActivity.this,
+					BlacklistActivity.class);
+			SettingActivity.this.startActivity(intent);
+		}
+	}
+	
 
 	class MyExitButtonListener implements OnClickListener {
 		public void onClick(View v) {
