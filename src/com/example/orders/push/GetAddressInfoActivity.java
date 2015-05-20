@@ -69,7 +69,6 @@ public class GetAddressInfoActivity extends Activity {
 					setResult(Activity.RESULT_OK, intent);
 					finish();
 				}
-				
 			}
 		});
 	}

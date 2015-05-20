@@ -67,7 +67,7 @@ public class InformationActivity extends Activity {
 		RelativeLayout qianmingRelativeLayout = (RelativeLayout) findViewById(R.id.setting_gexingqianming_information);
 		qianmingRelativeLayout.setOnClickListener(QMlistener);
 
-		//昵称
+		// 昵称
 		RelativeLayout nichengRelativeLayout = (RelativeLayout) findViewById(R.id.setting_name_information);
 		nichengRelativeLayout.setOnClickListener(NClistener);
 	}

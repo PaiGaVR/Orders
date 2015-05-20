@@ -4,7 +4,6 @@ import com.example.orders.R;
 import android.os.Bundle;
 import android.app.ActivityGroup;
 import android.content.Intent;
-import android.view.View;
 import android.view.Window;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
@@ -62,7 +61,6 @@ public class MainActivity extends ActivityGroup {
 				tab_host.setCurrentTab(3);
 				break;
 			}
-
 			}
 		}
 	}

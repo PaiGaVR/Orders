@@ -15,15 +15,12 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class GetOrdersActivity extends Activity {
 
 	private List<PushOrders> data = new ArrayList<PushOrders>();
 	private PushOrdersListView mListView;
-	private ImageButton pushImageButton;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

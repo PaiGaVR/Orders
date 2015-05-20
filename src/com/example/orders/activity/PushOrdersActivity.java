@@ -3,7 +3,6 @@ package com.example.orders.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.order.chat.GetterChatActivity;
 import com.example.order.chat.PusherChatActivity;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
