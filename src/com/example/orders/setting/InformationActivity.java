@@ -119,6 +119,7 @@ public class InformationActivity extends Activity {
 			intent.setClass(InformationActivity.this,
 					PersonalizedSignatureActivity.class);
 			InformationActivity.this.startActivity(intent);
+			InformationActivity.this.finish();
 		}
 	};
 
@@ -129,6 +130,7 @@ public class InformationActivity extends Activity {
 			Intent intent = new Intent();
 			intent.setClass(InformationActivity.this, NameActivity.class);
 			InformationActivity.this.startActivity(intent);
+			InformationActivity.this.finish();
 		}
 	};
 

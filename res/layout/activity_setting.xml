@@ -151,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="@string/setting_clearRecord"
+                android:text="@string/setting_perfect_information"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>

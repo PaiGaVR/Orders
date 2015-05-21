@@ -64,6 +64,7 @@ public class PushFormActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (null != data && resultCode == Activity.RESULT_OK) {
+			
 			text.setText(data.getStringExtra("province") + "-"
 					+ data.getStringExtra("city"));
 		}

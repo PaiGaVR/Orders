@@ -1,6 +1,7 @@
 package com.example.orders.setting;
 
 import com.example.orders.R;
+import com.example.orders.activity.MainActivity;
 import com.example.orders.activity.SettingActivity;
 
 import android.app.Activity;
@@ -44,7 +45,7 @@ public class ExitFromSettingsActivity extends Activity {
       }  
 	public void exitbutton0(View v) {  
     	this.finish();
-    	SettingActivity.instance.finish();//关闭Main 这个Activity
+    	MainActivity.instance.finish();
       }  
 	
 }

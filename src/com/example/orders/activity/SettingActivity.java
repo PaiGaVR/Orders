@@ -31,21 +31,27 @@ public class SettingActivity extends Activity {
 		instance = this;
 		setContentView(R.layout.activity_setting);
 
+		//个人信息
 		gerenxinxi = (RelativeLayout) findViewById(R.id.gerenxinxi);
 		gerenxinxi.setOnClickListener(new MyButtonListener());
 
+		//退出
 		dialog_exit = (Button) findViewById(R.id.dialog_exit);
 		dialog_exit.setOnClickListener(new MyExitButtonListener());
 
+		//黑名单
 		heimingdan= (RelativeLayout) findViewById(R.id.heimingdan);
 		heimingdan.setOnClickListener(new HeiMingDanListener());
 		
+		//帮助反馈
 		bangzhuyufankui = (RelativeLayout) findViewById(R.id.bangzhuyufankui);
 		bangzhuyufankui.setOnClickListener(new BangZhuYuFanKuiListener());
 		
+		//通知
 		xitongtongzhi = (RelativeLayout) findViewById(R.id.xitongtongzhi);
 		xitongtongzhi.setOnClickListener(new MyXiTongTongZhiListener());
 
+		//关于
 		guanyu = (RelativeLayout) findViewById(R.id.guanyu);
 		guanyu.setOnClickListener(new MyGuanYuListener());
 	}
@@ -66,6 +72,7 @@ public class SettingActivity extends Activity {
 			intent.setClass(SettingActivity.this,
 					HelpActivity.class);
 			SettingActivity.this.startActivity(intent);
+			SettingActivity.this.finish();
 		}
 	}
 	

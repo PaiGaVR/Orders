@@ -48,7 +48,7 @@ public class PushOrdersActivity extends Activity {
 
 	private void initData() {
 
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 100; i++) {
 			PushOrders orders = null;
 			if (i % 3 == 0) {
 				orders = new PushOrders("腾讯新闻", "人民日报刊文：习近平对评价毛泽东�?6个重要观�?",

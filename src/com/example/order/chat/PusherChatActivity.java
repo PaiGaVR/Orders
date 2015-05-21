@@ -7,9 +7,9 @@ import java.util.List;
 import com.example.order.chat.util.ChatMsgEntity;
 import com.example.order.chat.util.ChatMsgViewAdapter;
 import com.example.orders.R;
-
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -23,6 +23,7 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 	private ChatMsgViewAdapter mAdapter;
 	private ListView mListView;
 	private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();
+	private Button addButton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,21 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.chatting_activity_pusher);
 		initView();
 		initData();
+		
+		addButton = (Button) findViewById(R.id.addButton);
+		addButton.setOnClickListener(new AddListener());
 	}
 
+	public class AddListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(PusherChatActivity.this, AddMoneyActivity.class);
+			PusherChatActivity.this.startActivity(intent);
+			PusherChatActivity.this.finish();
+		}
+	}
+	
 	private void initView() {
 		mListView = (ListView) findViewById(R.id.listview);
 		mBtnSend = (Button) findViewById(R.id.btn_send);
