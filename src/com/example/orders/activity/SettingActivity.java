@@ -7,6 +7,7 @@ import com.example.orders.setting.ExitFromSettingsActivity;
 import com.example.orders.setting.HelpActivity;
 import com.example.orders.setting.InformationActivity;
 import com.example.orders.setting.NotificationActivity;
+import com.example.orders.setting.PrefectInformationActivity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ public class SettingActivity extends Activity {
 	private RelativeLayout xitongtongzhi;
 	private RelativeLayout heimingdan;
 	private RelativeLayout bangzhuyufankui;
+	private RelativeLayout wanshanxinxi;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,29 +33,33 @@ public class SettingActivity extends Activity {
 		instance = this;
 		setContentView(R.layout.activity_setting);
 
-		//个人信息
+		// 个人信息
 		gerenxinxi = (RelativeLayout) findViewById(R.id.gerenxinxi);
 		gerenxinxi.setOnClickListener(new MyButtonListener());
 
-		//退出
+		// 退出
 		dialog_exit = (Button) findViewById(R.id.dialog_exit);
 		dialog_exit.setOnClickListener(new MyExitButtonListener());
 
-		//黑名单
-		heimingdan= (RelativeLayout) findViewById(R.id.heimingdan);
+		// 黑名单
+		heimingdan = (RelativeLayout) findViewById(R.id.heimingdan);
 		heimingdan.setOnClickListener(new HeiMingDanListener());
-		
-		//帮助反馈
+
+		// 帮助反馈
 		bangzhuyufankui = (RelativeLayout) findViewById(R.id.bangzhuyufankui);
 		bangzhuyufankui.setOnClickListener(new BangZhuYuFanKuiListener());
-		
-		//通知
+
+		// 通知
 		xitongtongzhi = (RelativeLayout) findViewById(R.id.xitongtongzhi);
 		xitongtongzhi.setOnClickListener(new MyXiTongTongZhiListener());
 
-		//关于
+		// 关于
 		guanyu = (RelativeLayout) findViewById(R.id.guanyu);
 		guanyu.setOnClickListener(new MyGuanYuListener());
+
+		// 完善信息
+		wanshanxinxi = (RelativeLayout) findViewById(R.id.wanshanxinxi);
+		wanshanxinxi.setOnClickListener(new MyWanShanXinXiListener());
 	}
 
 	class MyButtonListener implements OnClickListener {
@@ -64,29 +70,24 @@ public class SettingActivity extends Activity {
 			SettingActivity.this.startActivity(intent);
 		}
 	}
-	
+
 	class BangZhuYuFanKuiListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent();
-			intent.setClass(SettingActivity.this,
-					HelpActivity.class);
+			intent.setClass(SettingActivity.this, HelpActivity.class);
 			SettingActivity.this.startActivity(intent);
-			SettingActivity.this.finish();
 		}
 	}
-	
-	
+
 	class HeiMingDanListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent();
-			intent.setClass(SettingActivity.this,
-					BlacklistActivity.class);
+			intent.setClass(SettingActivity.this, BlacklistActivity.class);
 			SettingActivity.this.startActivity(intent);
 		}
 	}
-	
 
 	class MyExitButtonListener implements OnClickListener {
 		public void onClick(View v) {
@@ -112,6 +113,16 @@ public class SettingActivity extends Activity {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent();
 			intent.setClass(SettingActivity.this, AboutActivity.class);
+			SettingActivity.this.startActivity(intent);
+		}
+	}
+
+	class MyWanShanXinXiListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(SettingActivity.this,
+					PrefectInformationActivity.class);
 			SettingActivity.this.startActivity(intent);
 		}
 	}

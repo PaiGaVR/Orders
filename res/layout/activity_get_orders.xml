@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/title_activity_push_orders"
+            android:text="@string/title_activity_get_orders"
             android:textColor="@color/white"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 

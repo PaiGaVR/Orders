@@ -3,11 +3,11 @@ package com.example.orders.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.order.chat.PusherChatActivity;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
 import com.example.orders.entity.PushOrders;
 import com.example.orders.push.PushFormActivity;
+import com.example.orders.push.PusherReadGetterActivity;
 import com.example.orders.widgets.PushOrdersListView;
 import android.os.Bundle;
 import android.app.Activity;
@@ -99,7 +99,7 @@ public class PushOrdersActivity extends Activity {
 
 				Intent intent = new Intent();
 				intent.setClass(PushOrdersActivity.this,
-						PusherChatActivity.class);
+						PusherReadGetterActivity.class);
 				PushOrdersActivity.this.startActivity(intent);
 			}
 		});

@@ -26,14 +26,6 @@
             android:text="@string/chat_title"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageButton1"
-            android:layout_alignParentRight="true"
-            android:text="@string/chat_add" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -43,14 +35,28 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/layout_bg1" >
 
-        <Button
-            android:id="@+id/btn_send"
-            android:layout_width="60dp"
+        <TableRow
+            android:id="@+id/tableRow_send"
+            android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="@string/chat_send" />
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:text="@string/chat_send" />
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/chat_set" />
+        </TableRow>
 
         <EditText
             android:id="@+id/et_sendmessage"
@@ -59,7 +65,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@id/btn_send"
+            android:layout_toLeftOf="@id/tableRow_send"
             android:background="@drawable/edittext1"
             android:singleLine="true"
             android:textSize="18sp" />

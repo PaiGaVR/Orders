@@ -3,7 +3,6 @@ package com.example.orders.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.order.chat.GetterChatActivity;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
 import com.example.orders.entity.PushOrders;
@@ -87,10 +86,6 @@ public class GetOrdersActivity extends Activity {
 				 * Toast.LENGTH_SHORT).show();
 				 */
 
-				Intent intent = new Intent();
-				intent.setClass(GetOrdersActivity.this,
-						GetterChatActivity.class);
-				GetOrdersActivity.this.startActivity(intent);
 			}
 		});
 	}
