@@ -23,7 +23,7 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 	private ChatMsgViewAdapter mAdapter;
 	private ListView mListView;
 	private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();
-	private Button addButton;
+	private Button funtionButton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 		initView();
 		initData();
 		
-		addButton = (Button) findViewById(R.id.addButton);
-		addButton.setOnClickListener(new AddListener());
+		funtionButton = (Button) findViewById(R.id.funtionButton);
+		funtionButton.setOnClickListener(new AddListener());
 	}
 
 	public class AddListener implements OnClickListener {

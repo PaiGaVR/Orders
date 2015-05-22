@@ -3,6 +3,7 @@ package com.example.orders.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.order.chat.PusherChatActivity;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
 import com.example.orders.entity.PushOrders;
@@ -51,18 +52,17 @@ public class PushOrdersActivity extends Activity {
 		for (int i = 0; i < 100; i++) {
 			PushOrders orders = null;
 			if (i % 3 == 0) {
-				orders = new PushOrders("腾讯新闻", "人民日报刊文：习近平对评价毛泽东�?6个重要观�?",
-						"早上8:44");
+				orders = new PushOrders("阿里巴巴", "撒旦法萨芬撒地方撒旦阿萨德飞洒 阿道夫撒",
+						"1212-1245-4154");
 				orders.setIcon_id(R.drawable.img_1);
 			} else if (i % 3 == 1) {
-				orders = new PushOrders("订阅", "CSDN�?2013年国内最具技术影响力公司",
-						"早上8:49");
+				orders = new PushOrders("腾讯", "杀菌和分布上大班撒撒娇的可能附近可挖浪费",
+						"2016-54-121");
 				orders.setIcon_id(R.drawable.img_2);
 			} else {
-				orders = new PushOrders("微博阅读", "美女演各款妹子跟男朋友打电话", "昨天晚上");
+				orders = new PushOrders("微信", "额挖坟额外噶输入噶weqw姑", "2015-10-10");
 				orders.setIcon_id(R.drawable.img_3);
 			}
-
 			data.add(orders);
 		}
 	}
@@ -79,7 +79,6 @@ public class PushOrdersActivity extends Activity {
 
 			@Override
 			public void onRightItemClick(View v, int position) {
-
 				Toast.makeText(PushOrdersActivity.this,
 						"删除第  " + (position + 1) + " 对话记录", Toast.LENGTH_SHORT)
 						.show();
@@ -92,10 +91,6 @@ public class PushOrdersActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				/*
-				 * Toast.makeText(PushOrdersActivity.this, "点击 " + position,
-				 * Toast.LENGTH_SHORT).show();
-				 */
 
 				Intent intent = new Intent();
 				intent.setClass(PushOrdersActivity.this,
@@ -104,4 +99,5 @@ public class PushOrdersActivity extends Activity {
 			}
 		});
 	}
+
 }

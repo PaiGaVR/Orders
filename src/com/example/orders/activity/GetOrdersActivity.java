@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
 import com.example.orders.entity.PushOrders;
+import com.example.orders.push.PusherReadGetterActivity;
 import com.example.orders.widgets.PushOrdersListView;
 
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class GetOrdersActivity extends Activity {
 
 	private List<PushOrders> data = new ArrayList<PushOrders>();
 	private PushOrdersListView mListView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,15 +42,15 @@ public class GetOrdersActivity extends Activity {
 		for (int i = 0; i < 100; i++) {
 			PushOrders orders = null;
 			if (i % 3 == 0) {
-				orders = new PushOrders("腾讯新闻", "abcdefghijklmnopqrstuvwsyz",
-						"早上8:44");
+				orders = new PushOrders("阿里巴巴", "sgsdhdftjhdjdyjtydkf",
+						"1212-1245-4154");
 				orders.setIcon_id(R.drawable.img_1);
 			} else if (i % 3 == 1) {
-				orders = new PushOrders("订阅", "1234567890",
-						"早上8:49");
+				orders = new PushOrders("腾讯", "shgreshrtdjkyufliulu",
+						"2016-54-121");
 				orders.setIcon_id(R.drawable.img_2);
 			} else {
-				orders = new PushOrders("微博阅读", "啊哦额嘿嗯呐呀duangduangduang", "昨天晚上");
+				orders = new PushOrders("微信", "serhkiuliouytshtrdu", "2015-10-10");
 				orders.setIcon_id(R.drawable.img_3);
 			}
 
@@ -81,10 +83,6 @@ public class GetOrdersActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				/*
-				 * Toast.makeText(PushOrdersActivity.this, "点击 " + position,
-				 * Toast.LENGTH_SHORT).show();
-				 */
 
 			}
 		});
