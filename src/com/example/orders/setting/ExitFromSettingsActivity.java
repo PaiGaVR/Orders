@@ -2,8 +2,6 @@ package com.example.orders.setting;
 
 import com.example.orders.R;
 import com.example.orders.activity.MainActivity;
-import com.example.orders.activity.SettingActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;

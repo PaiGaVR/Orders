@@ -6,7 +6,10 @@ import java.util.List;
 import com.example.order.chat.PusherChatActivity;
 import com.example.orders.R;
 import com.example.orders.adapter.SwipeAdapter;
+import com.example.orders.avatar.AvatarActivity;
 import com.example.orders.entity.PushOrders;
+import com.example.orders.setting.InformationActivity;
+import com.example.orders.setting.PersonalizedSignatureActivity;
 import com.example.orders.widgets.PushOrdersListView;
 
 import android.os.Bundle;
@@ -16,21 +19,40 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class PusherReadGetterActivity extends Activity {
 
 	private List<PushOrders> data = new ArrayList<PushOrders>();
 	private PushOrdersListView mListView;
+	private ImageButton imageButton1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_pusher_read_getter);
+		
+		imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
+		
+		imageButton1.setOnClickListener(TXXXlistener);
 		initData();
 		initView();
 	}
+	
+
+	private View.OnClickListener TXXXlistener = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent();
+			intent.setClass(PusherReadGetterActivity.this,
+					AvatarActivity.class);
+			PusherReadGetterActivity.this.startActivity(intent);
+		}
+	};
+	
 
 	private void initData() {
 

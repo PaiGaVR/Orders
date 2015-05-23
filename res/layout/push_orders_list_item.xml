@@ -47,6 +47,14 @@
             android:layout_alignParentRight="true"
             android:layout_alignTop="@id/tv_title"
             android:textColor="@color/grey" />
+        
+        <TextView
+            android:id="@+id/tv_glory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/tv_title"
+            android:textColor="@color/grey" />
     </RelativeLayout>
 
     <RelativeLayout

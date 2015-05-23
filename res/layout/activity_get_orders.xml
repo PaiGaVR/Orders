@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:push="http://schemas.android.com/apk/res/com.example.orders"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    android:orientation="vertical"
-    xmlns:push="http://schemas.android.com/apk/res/com.example.orders"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@drawable/mmfooter_bg">
+        android:background="@drawable/mmfooter_bg"
+        android:padding="10dp" >
 
         <ImageButton
             android:id="@+id/imageButton1"
             android:layout_width="43dp"
             android:layout_height="43dp"
             android:background="@drawable/img_1" />
-        
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
@@ -27,20 +26,8 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/title_activity_get_orders"
-            android:textColor="@color/white"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
     </RelativeLayout>
-    
-    <com.example.orders.widgets.PushOrdersListView
-        android:id="@+id/get_orders_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff4f7f9"
-        android:cacheColorHint="#00000000"
-        android:divider="#dddbdb"
-        android:dividerHeight="1dp"
-        push:right_width="120dp"
-        />
 
 </LinearLayout>
