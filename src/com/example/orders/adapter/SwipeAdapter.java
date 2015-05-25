@@ -83,7 +83,6 @@ public class SwipeAdapter extends BaseAdapter {
         holder.tv_title.setText(msg.getTitle());
         holder.tv_msg.setText(msg.getMsg());
         holder.tv_time.setText(msg.getTime());
-        
         holder.iv_icon.setImageResource(msg.getIcon_id());
         
         holder.item_right.setOnClickListener(new OnClickListener() {

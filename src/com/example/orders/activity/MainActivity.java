@@ -4,7 +4,12 @@ import com.example.orders.R;
 import android.os.Bundle;
 import android.app.ActivityGroup;
 import android.content.Intent;
+import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -14,6 +19,7 @@ public class MainActivity extends ActivityGroup {
 	public static MainActivity instance = null;
 	private TabHost tab_host;
 	private RadioGroup main_radio_group;
+	private Button setButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +37,23 @@ public class MainActivity extends ActivityGroup {
 				.setContent(new Intent(this, GetOrdersActivity.class)));
 		tab_host.addTab(tab_host.newTabSpec("tag3").setIndicator("2")
 				.setContent(new Intent(this, ReadOrdersActivity.class)));
-		tab_host.addTab(tab_host.newTabSpec("tag4").setIndicator("3")
-				.setContent(new Intent(this, SettingActivity.class)));
 
 		main_radio_group = (RadioGroup) findViewById(R.id.my_radio_bar);
 
 		CheckListener checkListener = new CheckListener();
 		main_radio_group.setOnCheckedChangeListener(checkListener);
+
+		setButton = (Button) findViewById(R.id.set_button);
+		setButton.setOnClickListener(new SetListener());
+	}
+
+	class SetListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(MainActivity.this, SettingActivity.class);
+			MainActivity.this.startActivity(intent);
+		}
 	}
 
 	public class CheckListener implements OnCheckedChangeListener {
@@ -55,10 +71,6 @@ public class MainActivity extends ActivityGroup {
 			}
 			case R.id.tab_icon_read_orders: {
 				tab_host.setCurrentTab(2);
-				break;
-			}
-			case R.id.tab_icon_setting: {
-				tab_host.setCurrentTab(3);
 				break;
 			}
 			}

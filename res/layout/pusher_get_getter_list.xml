@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_point_bg"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/pusher_get_getter_item_left"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+
+        <ImageView
+            android:id="@+id/pusher_get_getter_iv_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/wechat_icon" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/pusher_get_getter_iv_icon"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_pushNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/pusher_get_getter_tv_PushNum_num"
+            android:layout_alignBottom="@+id/pusher_get_getter_tv_PushNum_num"
+            android:layout_alignLeft="@+id/pusher_get_getter_getNum"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_gloryNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pusher_get_getter_pushNum"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_tv_gLoryNum_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pusher_get_getter_tv_PushNum_num"
+            android:layout_below="@+id/pusher_get_getter_iv_icon"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="荣誉值:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_tv_PushNum_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pusher_get_getter_tv_getNum_num"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="下单数:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_tv_getNum_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/pusher_get_getter_name"
+            android:layout_alignBottom="@+id/pusher_get_getter_name"
+            android:layout_marginLeft="29dp"
+            android:layout_toRightOf="@+id/pusher_get_getter_name"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="订单数:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/pusher_get_getter_getNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/pusher_get_getter_tv_getNum_num"
+            android:layout_alignBottom="@+id/pusher_get_getter_tv_getNum_num"
+            android:layout_marginLeft="33dp"
+            android:layout_toRightOf="@+id/pusher_get_getter_tv_PushNum_num"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+
+    </RelativeLayout>
+
+</LinearLayout>

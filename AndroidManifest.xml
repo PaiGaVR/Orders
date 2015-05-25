@@ -126,6 +126,14 @@
             android:name="com.example.orders.avatar.AvatarActivity"
             android:label="@string/title_activity_avatar" >
         </activity>
+        <activity
+            android:name="com.example.orders.get.GetterReadOrderActivity"
+            android:label="@string/get_orders_text" >
+        </activity>
+        <activity
+            android:name="com.example.orders.activity.OrderProcessActivity"
+            android:label="@string/activity_order_process" >
+        </activity>
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import java.util.List;
 import com.example.order.chat.util.ChatMsgEntity;
 import com.example.order.chat.util.ChatMsgViewAdapter;
 import com.example.orders.R;
+import com.example.orders.avatar.AvatarActivity;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +17,7 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 public class PusherChatActivity extends Activity implements OnClickListener {
@@ -23,7 +26,8 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 	private ChatMsgViewAdapter mAdapter;
 	private ListView mListView;
 	private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();
-	private Button funtionButton;
+	private Button functionButton;
+	private ImageButton imageButton1;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,12 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.chatting_activity_pusher);
 		initView();
 		initData();
-		
-		funtionButton = (Button) findViewById(R.id.funtionButton);
-		funtionButton.setOnClickListener(new AddListener());
+
+		functionButton = (Button) findViewById(R.id.funtionButton);
+		functionButton.setOnClickListener(new AddListener());
+
+		imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
+		imageButton1.setOnClickListener(new AvatarListener());
 	}
 
 	public class AddListener implements OnClickListener {
@@ -46,7 +53,17 @@ public class PusherChatActivity extends Activity implements OnClickListener {
 			PusherChatActivity.this.finish();
 		}
 	}
-	
+
+	public class AvatarListener implements OnClickListener {
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent();
+			intent.setClass(PusherChatActivity.this, AvatarActivity.class);
+			PusherChatActivity.this.startActivity(intent);
+			PusherChatActivity.this.finish();
+		}
+	}
+
 	private void initView() {
 		mListView = (ListView) findViewById(R.id.listview);
 		mBtnSend = (Button) findViewById(R.id.btn_send);

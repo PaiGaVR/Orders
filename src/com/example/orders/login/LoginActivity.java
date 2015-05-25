@@ -30,7 +30,7 @@ public class LoginActivity extends Activity {
 
 	}
 
-	public void login_mainweixin(View v) {
+	public void login_main(View v) {
 		if ("123".equals(mUser.getText().toString())
 				&& "123".equals(mPassword.getText().toString())) // 判断 帐号和密码
 		{
@@ -56,13 +56,6 @@ public class LoginActivity extends Activity {
 					.create().show();
 		}
 
-		// 登录按钮
-		/*
-		 * Intent intent = new Intent();
-		 * intent.setClass(Login.this,Whatsnew.class); startActivity(intent);
-		 * Toast.makeText(getApplicationContext(), "登录成功",
-		 * Toast.LENGTH_SHORT).show(); this.finish();
-		 */
 	}
 
 	public void login_back(View v) { // 标题栏 返回按钮
@@ -73,8 +66,5 @@ public class LoginActivity extends Activity {
 		Uri uri = Uri.parse("http://3g.qq.com");
 		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 		startActivity(intent);
-		// Intent intent = new Intent();
-		// intent.setClass(Login.this,Whatsnew.class);
-		// startActivity(intent);
 	}
 }

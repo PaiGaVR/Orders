@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.example.order.chat.PusherChatActivity;
 import com.example.orders.R;
+import com.example.orders.activity.PushOrdersActivity;
 import com.example.orders.adapter.SwipeAdapter;
 import com.example.orders.avatar.AvatarActivity;
+import com.example.orders.avatar.AvatarAdapter;
 import com.example.orders.entity.PushOrders;
 import com.example.orders.setting.InformationActivity;
 import com.example.orders.setting.PersonalizedSignatureActivity;
@@ -24,48 +26,30 @@ import android.widget.Toast;
 
 public class PusherReadGetterActivity extends Activity {
 
-	private List<PushOrders> data = new ArrayList<PushOrders>();
-	private PushOrdersListView mListView;
-	private ImageButton imageButton1;
+	private List<PusherGetGetter> data = new ArrayList<PusherGetGetter>();
+	private PusherGetGetterListView mListView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_pusher_read_getter);
-		
-		imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
-		
-		imageButton1.setOnClickListener(TXXXlistener);
 		initData();
 		initView();
 	}
-	
-
-	private View.OnClickListener TXXXlistener = new View.OnClickListener() {
-
-		@Override
-		public void onClick(View v) {
-			Intent intent = new Intent();
-			intent.setClass(PusherReadGetterActivity.this,
-					AvatarActivity.class);
-			PusherReadGetterActivity.this.startActivity(intent);
-		}
-	};
-	
 
 	private void initData() {
 
 		for (int i = 0; i < 100; i++) {
-			PushOrders orders = null;
+			PusherGetGetter orders = null;
 			if (i % 3 == 0) {
-				orders = new PushOrders("张三", "123   123   123", "");
+				orders = new PusherGetGetter("张三", "123", "123", "123");
 				orders.setIcon_id(R.drawable.img_1);
 			} else if (i % 3 == 1) {
-				orders = new PushOrders("李四", "456   456   456", "");
+				orders = new PusherGetGetter("李四", "456", "456", "456");
 				orders.setIcon_id(R.drawable.img_2);
 			} else {
-				orders = new PushOrders("王五", "789   789   789", "");
+				orders = new PusherGetGetter("王五", "789", "789", "789");
 				orders.setIcon_id(R.drawable.img_3);
 			}
 
@@ -77,34 +61,31 @@ public class PusherReadGetterActivity extends Activity {
 	 * 初始化界面
 	 */
 	private void initView() {
-		mListView = (PushOrdersListView) findViewById(R.id.pusher_choose_getter_list);
-		SwipeAdapter mAdapter = new SwipeAdapter(this, data,
-				mListView.getRightViewWidth());
-
-		mAdapter.setOnRightItemClickListener(new SwipeAdapter.onRightItemClickListener() {
+		mListView = (PusherGetGetterListView) findViewById(R.id.pusher_choose_getter_list);
+		PusherGetGetterAdapter mAdapter = new PusherGetGetterAdapter(this,
+				data, mListView.getRightViewWidth());
+		mAdapter.setOnItemClickListener(new PusherGetGetterAdapter.onItemClickListener() {
 
 			@Override
-			public void onRightItemClick(View v, int position) {
-
-				Toast.makeText(PusherReadGetterActivity.this,
-						"删除第  " + (position + 1) + " 对话记录", Toast.LENGTH_SHORT)
-						.show();
-			}
-		});
-
-		mListView.setAdapter(mAdapter);
-
-		mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-
+			public void onItemClick() {
 				Intent intent = new Intent();
 				intent.setClass(PusherReadGetterActivity.this,
 						PusherChatActivity.class);
 				PusherReadGetterActivity.this.startActivity(intent);
 			}
 		});
-	}
 
+		mAdapter.setOnClickListener(new PusherGetGetterAdapter.onAvatarClickListener() {
+
+			@Override
+			public void onAvatarClick() {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(PusherReadGetterActivity.this,
+						AvatarActivity.class);
+				PusherReadGetterActivity.this.startActivity(intent);
+			}
+		});
+		mListView.setAdapter(mAdapter);
+	}
 }

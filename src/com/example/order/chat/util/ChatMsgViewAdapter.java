@@ -71,7 +71,6 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 				convertView = mInflater.inflate(
 						R.layout.chatting_item_msg_text_left, null);
 			} else {
-
 				convertView = mInflater.inflate(
 						R.layout.chatting_item_msg_text_right, null);
 			}

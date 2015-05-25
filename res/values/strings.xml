@@ -26,6 +26,7 @@
     <string name="read_orders_text">查单</string>
     <string name="setting_text">设置</string>
     <string name="push_orders_text">下单</string>
+     <string name="activity_order_process">订单流程</string>
     <!-- 下单 -->
     <string name="push_money">金额</string>
     <string name="push_theme">主题</string>
@@ -47,8 +48,6 @@
     <string name="chat_title">聊天室</string>
     <string name="chat_ok">确认</string>
     <string name="chat_add">追加</string>
-    <string name="read_orders_ongoing">进行中</string>
-    <string name="read_orders_end">已完结</string>
     <!-- 注册 -->
     <string name="register_shenfenzheng_id">身份证号</string>
     <string name="register_password">输入密码</string>
@@ -89,5 +88,10 @@
 
     <!-- 完善驾驶信息 -->
     <string name="prefect_information_drive_name">姓名</string>
+
+    <!-- 查单 -->
+    <string name="read_orders_ing">进行中</string>
+    <string name="read_orders_over">已完结</string>
+   
 
 </resources>

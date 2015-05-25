@@ -70,8 +70,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
             android:background="@drawable/btn_style_green"
-            android:onClick="login_mainweixin"
-            android:text="登录"
+            android:onClick="login_main"
+            android:text="@string/title_activity_login"
             android:textColor="#ffffff"
             android:textSize="18sp" />
     </RelativeLayout>
