@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_point_bg"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/read_orders_item_left"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+
+        <ImageView
+            android:id="@+id/read_orders_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/wechat_icon" />
+
+        <TextView
+            android:id="@+id/read_orders_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/read_orders_icon"
+            android:layout_marginLeft="27dp"
+            android:layout_toRightOf="@+id/read_orders_icon"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="接单时间:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_ordersr_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/read_orders_time"
+            android:layout_alignTop="@+id/read_orders_icon"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="类型:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_orders_time_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/read_orders_time"
+            android:layout_alignBottom="@+id/read_orders_time"
+            android:layout_toRightOf="@+id/read_orders_time"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_orders_type_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/read_ordersr_type"
+            android:layout_alignBottom="@+id/read_ordersr_type"
+            android:layout_toLeftOf="@+id/read_orders_time_info"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_orders_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/read_orders_type_info"
+            android:layout_alignBottom="@+id/read_orders_type_info"
+            android:layout_alignLeft="@+id/read_orders_money"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="接单人:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_orders_name_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/read_orders_name"
+            android:layout_alignBottom="@+id/read_orders_name"
+            android:layout_toRightOf="@+id/read_orders_name"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_orders_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/read_orders_time_info"
+            android:layout_alignBottom="@+id/read_orders_time_info"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/read_orders_time_info"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="接单金额:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/read_orders_money_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/read_orders_money"
+            android:layout_alignBottom="@+id/read_orders_money"
+            android:layout_toRightOf="@+id/read_orders_money"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/grey" />
+    </RelativeLayout>
+
+</LinearLayout>

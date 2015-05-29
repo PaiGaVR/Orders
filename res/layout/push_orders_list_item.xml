@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/item_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+        
+        <ImageView
+            android:id="@+id/num_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/num_icon" />
+
+        <ImageView
+            android:id="@+id/type_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/aim_money"
+            android:src="@drawable/num_icon" />
+
+        <TextView
+            android:id="@+id/aim_time"
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/type_icon"
+            android:layout_toRightOf="@+id/type_icon"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/aim_money"
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/num_icon"
+            android:layout_toLeftOf="@+id/num_icon"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/aim_area"
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/aim_time"
+            android:layout_alignBottom="@+id/aim_time"
+            android:layout_toLeftOf="@+id/aim_money"
+            android:layout_toRightOf="@+id/aim_time"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/type_icon"
+            android:layout_alignLeft="@+id/aim_time"
+            android:layout_alignRight="@+id/aim_money"
+            android:layout_below="@+id/num_icon"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/right_bg" >
+
+        <TextView
+            android:id="@+id/item_right_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/del_icon_normal"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/blur_bg" />
+    </RelativeLayout>
+
+</LinearLayout>

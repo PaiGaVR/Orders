@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mmfooter_bg"
+        android:padding="10dp" >
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:background="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/push_choose_getter"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/get_read_order_pusher_info"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/mmfooter_bg"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@+id/TextView01"
+            android:layout_alignBottom="@+id/TextView01"
+            android:layout_toRightOf="@+id/TextView01"
+            android:text="100"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@+id/TextView02"
+            android:layout_alignBottom="@+id/TextView02"
+            android:layout_toRightOf="@+id/TextView02"
+            android:text="接单:"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@+id/TextView03"
+            android:layout_alignBottom="@+id/TextView03"
+            android:layout_toRightOf="@+id/TextView03"
+            android:text="200"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@+id/TextView04"
+            android:layout_alignBottom="@+id/TextView04"
+            android:layout_toRightOf="@+id/TextView04"
+            android:text="荣誉:"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView06"
+            android:layout_width="35dp"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@+id/TextView05"
+            android:layout_alignBottom="@+id/TextView05"
+            android:layout_toRightOf="@+id/TextView05"
+            android:text="545"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/getter_read_order_pusher_avatar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/avatar_examine_glory"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/getter_read_order_pusher_avatar"
+            android:layout_toRightOf="@+id/getter_read_order_pusher_avatar"
+            android:text="东方不败"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_alignBaseline="@+id/avatar_examine_glory"
+            android:layout_alignBottom="@+id/avatar_examine_glory"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/avatar_examine_glory"
+            android:text="下单:"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/preference_first_item"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/preference_item"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@android:drawable/edit_text"
+                android:enabled="false"
+                android:focusable="false"
+                android:minLines="5"
+                android:scrollbars="vertical"
+                android:text="这是单子" >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/preference_last_item"
+            android:clickable="true"
+            android:gravity="center_vertical" >
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/getter_read_order_queren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/get_orders_text" />
+
+</LinearLayout>

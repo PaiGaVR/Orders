@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_point_bg"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/getter_get_order_item_left"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+
+        <ImageView
+            android:id="@+id/getter_get_order_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/wechat_icon" />
+
+        <TextView
+            android:id="@+id/getter_get_order_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/getter_get_order_icon"
+            android:layout_toRightOf="@+id/getter_get_order_icon"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="姓名:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/getter_get_order_name"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="时间:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_name_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_name"
+            android:layout_alignBottom="@+id/getter_get_order_name"
+            android:layout_toRightOf="@+id/getter_get_order_name"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="王五"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_time_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_time"
+            android:layout_alignBottom="@+id/getter_get_order_time"
+            android:layout_alignLeft="@+id/getter_get_order_name_info"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="后天"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_name_info"
+            android:layout_alignBottom="@+id/getter_get_order_name_info"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="地点:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_place_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_place"
+            android:layout_alignBottom="@+id/getter_get_order_place"
+            android:layout_toRightOf="@+id/getter_get_order_place"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="小店区"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_time_info"
+            android:layout_alignBottom="@+id/getter_get_order_time_info"
+            android:layout_alignLeft="@+id/getter_get_order_place"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="金额:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_money_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_money"
+            android:layout_alignBottom="@+id/getter_get_order_money"
+            android:layout_alignLeft="@+id/getter_get_order_place_info"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="255"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_place_info"
+            android:layout_alignBottom="@+id/getter_get_order_place_info"
+            android:layout_marginLeft="18dp"
+            android:layout_toRightOf="@+id/getter_get_order_place_info"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="类型:"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/getter_get_order_type_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/getter_get_order_type"
+            android:layout_alignBottom="@+id/getter_get_order_type"
+            android:layout_toRightOf="@+id/getter_get_order_type"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="送饭"
+            android:textColor="@color/grey" />
+    </RelativeLayout>
+
+</LinearLayout>

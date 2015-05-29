@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:push="http://schemas.android.com/apk/res/com.example.orders"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f0f0e0" >
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_up"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/mmfooter_bg"
+        android:padding="10dp" >
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/avatar_examine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:layout_toRightOf="@+id/imageButton1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/ImageButton02"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/ImageButton02"
+            android:text="下单数:"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/ImageButton01"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/ImageButton02"
+            android:layout_centerVertical="true"
+            android:background="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_centerVertical="true"
+            android:text="订单数:"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/TextView01"
+            android:layout_alignTop="@+id/ImageButton03"
+            android:text="荣誉值:"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/ImageButton02"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/ImageButton01"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/avatar_examine_name"
+            android:background="@drawable/img_1" />
+
+        <ImageButton
+            android:id="@+id/ImageButton03"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/ImageButton01"
+            android:layout_below="@+id/ImageButton01"
+            android:background="@drawable/img_1" />
+
+        <TextView
+            android:id="@+id/avatar_examine_get"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_above="@+id/TextView01"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/TextView02"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/avatar_examine_push"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/avatar_examine_name"
+            android:layout_alignLeft="@+id/avatar_examine_get"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/avatar_examine_glory"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@+id/avatar_examine_push"
+            android:layout_below="@+id/avatar_examine_push"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/leaved_message"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl_bottom_up"
+        android:background="@drawable/mmfooter_bg"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="留言板"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <com.example.orders.avatar.AvatarMessageListView
+        android:id="@+id/avatar_message_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/leaved_message"
+        android:background="#fff4f7f9"
+        android:cacheColorHint="#00000000"
+        android:divider="#dddbdb"
+        android:dividerHeight="1dp"
+        push:right_width="0dp" >
+    </com.example.orders.avatar.AvatarMessageListView>
+
+</RelativeLayout>

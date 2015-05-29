@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 主题 -->
+    <string name="name">威帮</string>
+    <string name="author">By：派嘉数创</string>
+    <string name="app_name">威帮</string>
+    <string name="maker">制作人  : 1234567890</string>
+    <!-- 标头 -->
+    <string name="title_activity_avatar">头像</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">注册</string>
+    <string name="title_activity_push_orders">下单</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_get_orders">接单</string>
+    <string name="title_activity_read_orders">查单</string>
+    <string name="title_activity_setting">设置</string>
+    <string name="title_activity_login">登陆</string>
+    <string name="title_activity_regist">注册</string>
+    <string name="title_push">下单</string>
+    <string name="title_place">地点</string>
+    <string name="title_personalized_signature_setting">个性签名</string>
+    <string name="title_help_question">提交问题</string>
+    <!-- 菜单名 -->
+    <string name="get_orders_text">接单</string>
+    <string name="read_orders_text">查单</string>
+    <string name="setting_text">设置</string>
+    <string name="push_orders_text">下单</string>
+    <string name="activity_order_process">订单流程</string>
+    <!-- 下单 -->
+    <string name="push_money">金\t\t\t额</string>
+    <string name="push_theme">主\t\t\t题</string>
+    <string name="push_content">内\t\t\t容</string>
+    <string name="push_time">预计时间</string>
+    <string name="push_time_choose">选择</string>
+    <string name="push_place">目标地点</string>
+    <string name="push_choose_getter">订单情况</string>
+    <!-- 按钮名称 -->
+    <string name="local_album_cache">本地相册</string>
+    <string name="camera_capture_task">相机拍照</string>
+    <string name="abrogate">取消</string>
+    <string name="save">保存</string>
+    <string name="exit">退出</string>
+    <string name="exit_message">退出后不会删除任何历史数据</string>
+    <!-- 聊天 -->
+    <string name="chat_set">^</string>
+    <string name="chat_send">发送</string>
+    <string name="chat_title">聊天室</string>
+    <string name="chat_ok">确认</string>
+    <string name="chat_add">追加</string>
+    <!-- 注册 -->
+    <string name="register_shenfenzheng_id">身份证号</string>
+    <string name="register_password">输入密码</string>
+    <string name="register_password_queren">确认密码</string>
+    <string name="register_username">用户名</string>
+    <string name="register_email">邮箱</string>
+    <string name="register_agree">同意条款</string>
+    <string name="register_read_clause">阅读条款</string>
+    <string name="register_clause">声明</string>
+    <string name="register_clause_title">xxoo条款</string>
+    <string name="register_phone_number">电话号码</string>
+    <!-- 设置 -->
+    <string name="setting_gerenxinxi">个人信息</string>
+    <string name="setting_gerenxinxi_touxiang">头像</string>
+    <string name="setting_gerenxinxi_nicheng">昵称</string>
+    <string name="setting_gerenxinxi_sexy">性别</string>
+    <string name="setting_gerenxinxi_place">地区</string>
+    <string name="setting_gerenxinxi_signature">个性签名</string>
+    <string name="setting_backgroundImag">背景图片</string>
+    <string name="setting_blacklist">黑名单</string>
+    <string name="setting_notification">系统通知</string>
+    <string name="setting_helpAndfeedback">帮助和反馈</string>
+    <string name="setting_about">关于</string>
+    <string name="setting_about_message">vesion : 0.00001v </string>
+    <string name="setting_perfect_information">完善信息</string>
+    <string name="setting_exit">退出</string>
+    <string name="setting_name">化股份非法</string>
+    <string name="setting_help">提交问题</string>
+    <string name="setting_submit">提交</string>
+    <string name="setting_prefect_information_drive">完善驾驶信息</string>
+    <string name="setting_prefect_information_house">完善居住信息</string>
+    <string name="setting_prefect_information_qita">完善其他信息</string>
+    <string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
+    <string name="setting_personalized_signature">太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥</string>
+    <!-- 性别 -->
+    <string name="sexy_man">男</string>
+    <string name="sexy_woman">女</string>
+
+    <!-- 完善驾驶信息 -->
+    <string name="prefect_information_drive_name">姓名</string>
+
+    <!-- 查单 -->
+    <string name="read_orders_ing">进行中</string>
+    <string name="read_orders_over">已完结</string>
+    <string name="title_activity_my_person">MyPersonActivity</string>
+
+</resources>
