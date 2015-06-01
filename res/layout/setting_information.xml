@@ -31,8 +31,6 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/relativeLayout1"
         android:orientation="vertical" >
 
         <RelativeLayout
@@ -82,18 +80,16 @@
                 android:textSize="17sp" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="16dp"
                 android:layout_toRightOf="@+id/textView2"
-                android:ems="10"
+                android:background="@android:drawable/edit_text"
                 android:enabled="false"
                 android:gravity="center"
+                android:inputType="none"
                 android:maxLength="10"
-                android:maxLines="1"
-                android:minLines="1"
-                android:text="@string/setting_name" />
+                android:text="@string/setting_name" >
+            </EditText>
         </RelativeLayout>
 
         <RelativeLayout
@@ -119,7 +115,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:padding="8dp"
-                android:text="男"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -147,7 +142,6 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:padding="8dp"
-                android:text="太原"
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
@@ -161,7 +155,7 @@
             android:gravity="center_vertical" >
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/setting_gexingqianming_textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
@@ -172,8 +166,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textView1"
-                android:layout_below="@+id/textView1"
+                android:layout_alignLeft="@+id/setting_gexingqianming_textView1"
+                android:layout_below="@+id/setting_gexingqianming_textView1"
                 android:background="@android:drawable/edit_text"
                 android:ems="10"
                 android:enabled="false"

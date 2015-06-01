@@ -34,20 +34,24 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/time_tv"
+            android:layout_width="64dp"
             android:layout_height="34dp"
             android:layout_gravity="center"
-            android:layout_weight="0.59"
             android:text="@string/push_theme"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/theme_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="@string/push_theme" />
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
+            android:hint="@string/push_theme"
+            android:inputType=""
+            android:maxLength="10"
+            android:maxLines="1"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,20 +60,24 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="64dp"
             android:layout_height="34dp"
             android:layout_gravity="center"
-            android:layout_weight="0.59"
+            android:ems="10"
             android:text="@string/push_content"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/content_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="@string/push_content" />
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
+            android:hint="@string/push_content"
+            android:inputType=""
+            android:maxLines="5"
+            android:minLines="3"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <LinearLayout
@@ -78,21 +86,23 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="64dp"
             android:layout_height="34dp"
             android:layout_gravity="center"
-            android:layout_weight="0.59"
             android:text="@string/push_money"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/push_money_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
             android:hint="@string/push_money"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,19 +117,17 @@
             android:text="@string/push_place"
             android:textSize="20sp" />
 
-        <!-- <Button
-            android:id="@+id/placebutton"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-            android:text="获取" /> -->
-
         <EditText
             android:id="@+id/addressinfo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="@string/push_place" />
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
+            android:focusable="false"
+            android:hint="@string/push_place"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <LinearLayout
@@ -134,19 +142,17 @@
             android:text="@string/push_time"
             android:textSize="20sp" />
 
-        <!-- <Button
-            android:id="@+id/but_showDate"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-            android:text="选择" /> -->
-
         <EditText
             android:id="@+id/showDate"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="@string/push_time" />
+            android:background="@android:drawable/edit_text"
+            android:enabled="true"
+            android:focusable="false"
+            android:hint="@string/push_place"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <TextView

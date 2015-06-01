@@ -8,12 +8,8 @@ public class PrefectInformation {
 	private String name;
 	// 性别
 	private String sex;
-	// 出生年
-	private int birthdayYear;
-	// 出生月
-	private int birthdayMouse;
-	// 出生日
-	private int birthdayDay;
+	// 出生日期
+	private int brithday;
 	// 国籍
 	private String nationality;
 	// 住址
@@ -22,6 +18,14 @@ public class PrefectInformation {
 	private Image photo;
 	// 驾龄
 	private int dirveAge;
+
+	public int getBrithday() {
+		return brithday;
+	}
+
+	public void setBrithday(int brithday) {
+		this.brithday = brithday;
+	}
 
 	public int getDirveAge() {
 		return dirveAge;
@@ -45,30 +49,6 @@ public class PrefectInformation {
 
 	public void setSex(String sex) {
 		this.sex = sex;
-	}
-
-	public int getBirthdayYear() {
-		return birthdayYear;
-	}
-
-	public void setBirthdayYear(int birthdayYear) {
-		this.birthdayYear = birthdayYear;
-	}
-
-	public int getBirthdayMouse() {
-		return birthdayMouse;
-	}
-
-	public void setBirthdayMouse(int birthdayMouse) {
-		this.birthdayMouse = birthdayMouse;
-	}
-
-	public int getBirthdayDay() {
-		return birthdayDay;
-	}
-
-	public void setBirthdayDay(int birthdayDay) {
-		this.birthdayDay = birthdayDay;
 	}
 
 	public String getNationality() {

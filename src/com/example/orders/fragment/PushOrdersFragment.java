@@ -5,7 +5,6 @@ import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,24 +23,26 @@ public class PushOrdersFragment extends Fragment {
 
 	private List<Orders> pushOrdersList = null;
 	private PushOrdersListView mListView;
-	
+
 	private SwipeAdapter mAdapter;
-	
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState){
-		View view = inflater.inflate(R.layout.activity_push_orders, container, false);
+
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.activity_push_orders, container,
+				false);
 		initView(view);
-		
+
 		return view;
 	}
-	
-	private void initView(View view){
+
+	private void initView(View view) {
 		pushOrdersList = OrdersOperated.getInstance().getPushOrdersList();
-		mListView = (PushOrdersListView) view.findViewById(R.id.push_orders_list);
-		System.out.println(((MainActivity)getActivity()).getViewPager());
-		mListView.setMyViewPager(((MainActivity)getActivity()).getViewPager());
-		mAdapter = new SwipeAdapter(getActivity().getBaseContext(), pushOrdersList,
-				mListView.getRightViewWidth());
+		mListView = (PushOrdersListView) view
+				.findViewById(R.id.push_orders_list);
+		System.out.println(((MainActivity) getActivity()).getViewPager());
+		mListView.setMyViewPager(((MainActivity) getActivity()).getViewPager());
+		mAdapter = new SwipeAdapter(getActivity().getBaseContext(),
+				pushOrdersList, mListView.getRightViewWidth());
 
 		mAdapter.setOnRightItemClickListener(new SwipeAdapter.onRightItemClickListener() {
 
@@ -52,7 +53,7 @@ public class PushOrdersFragment extends Fragment {
 						.show();
 			}
 		});
-		
+
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
@@ -66,7 +67,7 @@ public class PushOrdersFragment extends Fragment {
 			}
 		});
 	}
-	
+
 	public void addOrder(Intent data) {
 		Orders order = new Orders();
 		order.setTheme(data.getStringExtra("theme"));
@@ -74,7 +75,7 @@ public class PushOrdersFragment extends Fragment {
 		order.setPushMoney(data.getDoubleExtra("pushMoney", 0.0));
 		order.setAimArea(data.getStringExtra("aimArea"));
 		order.setAimTime(data.getStringExtra("aimTime"));
-		
+
 		// 写Orders操作
 		pushOrdersList = OrdersOperated.getInstance().writeOrder(order);
 		mAdapter.notifyDataSetChanged();

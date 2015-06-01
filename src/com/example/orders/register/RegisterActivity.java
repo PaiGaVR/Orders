@@ -2,6 +2,7 @@ package com.example.orders.register;
 
 import com.example.orders.R;
 import com.example.orders.login.LoginActivity;
+import com.example.orders.push.GetAddressInfoActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,25 +11,17 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 public class RegisterActivity extends Activity {
-	private static final String places[] = { "11", "22", "33", "44", "55",
-			"66", "77", "88" };
-	private boolean isNotified = false;
-	private int sexFlag = 0;
 	private boolean isChecked = false;
-	private int plcFlag = 0;
+	private EditText place;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -43,18 +36,11 @@ public class RegisterActivity extends Activity {
 		final EditText pwdrp = (EditText) findViewById(R.id.register_pwdrp);
 		final EditText sfID = (EditText) findViewById(R.id.register_shenfenID);
 		RadioGroup sex = (RadioGroup) findViewById(R.id.register_sex);
-		Spinner from = (Spinner) findViewById(R.id.register_place);
-		final EditText mail = (EditText) findViewById(R.id.register_mail);
-		final TextView register_read_clause = (TextView) findViewById(R.id.register_clause);
+		place = (EditText) findViewById(R.id.register_place_info);
+		final EditText phoNum = (EditText) findViewById(R.id.register_phonrNum);
 		CheckBox check = (CheckBox) findViewById(R.id.register_check);
 		Button register = (Button) findViewById(R.id.register_queren);
 		Button cancel = (Button) findViewById(R.id.register_quxiao);
-		// 给Spinner设置适配器
-		ArrayAdapter<?> adapter = new ArrayAdapter<Object>(this,
-				android.R.layout.simple_spinner_item, places);
-		// 设置下拉菜单样式
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		from.setAdapter(adapter);
 		// 事件监听
 		check.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -65,27 +51,21 @@ public class RegisterActivity extends Activity {
 			}
 		});
 
-		register_read_clause.setOnClickListener(ReadClauselistener);
+		check.setOnClickListener(ReadClauselistener);
 
 		sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
 			@Override
 			public void onCheckedChanged(RadioGroup arg0, int flag) {
-				// TODO Auto-generated method stub
-				sexFlag = flag;
 			}
 		});
-		from.setOnItemSelectedListener(new OnItemSelectedListener() {
+		// final GetAddressUtil location = new GetAddressUtil(this);
+		place.setOnClickListener(new OnClickListener() {
 			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
-					int flag, long arg3) {
-				plcFlag = flag;
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
+			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-
+				startActivityForResult(new Intent(RegisterActivity.this,
+						GetAddressInfoActivity.class), 10000);
 			}
 		});
 		register.setOnClickListener(new OnClickListener() {
@@ -97,7 +77,7 @@ public class RegisterActivity extends Activity {
 				String strPwd = pwd.getText().toString();
 				String strPwdrp = pwdrp.getText().toString();
 				String strSfID = sfID.getText().toString();
-				String strMail = mail.getText().toString();
+				String phoneNum = phoNum.getText().toString();
 				if (strUser.equals("")) {
 					// 弹出对话框
 					new AlertDialog.Builder(RegisterActivity.this)
@@ -130,18 +110,23 @@ public class RegisterActivity extends Activity {
 					return;
 
 				}
+				if (phoneNum.length() != 11) {
+					new AlertDialog.Builder(RegisterActivity.this)
+							.setIcon(android.R.drawable.ic_dialog_alert)
+							.setTitle("警告").setMessage("电话号码输入有误")
+							.setPositiveButton("确定", null).show();
+					return;
+
+				}
+
 				// 发送数据到另一个Activity
 				Bundle bundle = new Bundle();
 				bundle.putString("username", strUser);
-				bundle.putString("mail", strMail);
-				bundle.putString("from", places[plcFlag]);
-				// bundle.putString("from", "中国");
-				bundle.putBoolean("notify", isNotified);
-				bundle.putBoolean("check", isChecked);
-				bundle.putInt("sex", sexFlag);
+				bundle.putString("password", strPwd);
+				bundle.putBoolean("isRegister", true);
 				Intent intent = new Intent(RegisterActivity.this,
 						LoginActivity.class);
-				intent.putExtra("info", bundle);
+				intent.putExtras(bundle);
 				// 启动这个Activity
 				RegisterActivity.this.startActivity(intent);
 				// 结束本Activity
@@ -159,6 +144,15 @@ public class RegisterActivity extends Activity {
 	}
 
 	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (null != data && resultCode == Activity.RESULT_OK) {
+			place.setText(data.getStringExtra("province") + "-"
+					+ data.getStringExtra("city"));
+		}
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.register, menu);
@@ -169,9 +163,11 @@ public class RegisterActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
+			isChecked = true;
 			Intent intent = new Intent();
 			intent.setClass(RegisterActivity.this, ClauseActivity.class);
 			RegisterActivity.this.startActivity(intent);
+
 		}
 	};
 }

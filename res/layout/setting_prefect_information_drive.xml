@@ -36,49 +36,16 @@
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/register_username" />
-
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType=""
-                android:maxLength="10" />
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_password" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:maxLength="18" />
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_password_queren" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:maxLength="18" />
         </TableRow>
 
         <TableRow
@@ -100,89 +67,32 @@
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_phone_number" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:maxLength="11" />
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/setting_gerenxinxi_sexy" />
-
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/sexy_man" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/sexy_woman" />
             </RadioGroup>
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/setting_gerenxinxi_place" />
-
-            <Spinner
-                android:layout_width="80dp"
-                android:layout_height="50dp" />
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_email" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_read_clause" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_agree" />
         </TableRow>
     </TableLayout>
 

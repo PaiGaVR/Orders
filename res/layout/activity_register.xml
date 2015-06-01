@@ -44,10 +44,15 @@
 
             <EditText
                 android:id="@+id/register_username"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:enabled="true"
                 android:inputType=""
-                android:maxLength="10" />
+                android:maxLength="10"
+                android:maxLines="1"
+                android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
@@ -61,10 +66,15 @@
 
             <EditText
                 android:id="@+id/register_pwd"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:maxLength="18" />
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType=""
+                android:maxLength="18"
+                android:maxLines="1"
+                android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
@@ -78,10 +88,15 @@
 
             <EditText
                 android:id="@+id/register_pwdrp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:maxLength="18" />
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType=""
+                android:maxLength="18"
+                android:maxLines="1"
+                android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
@@ -95,10 +110,15 @@
 
             <EditText
                 android:id="@+id/register_shenfenID"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:enabled="true"
                 android:inputType="number"
-                android:maxLength="18" />
+                android:maxLength="18"
+                android:maxLines="1"
+                android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
@@ -111,11 +131,16 @@
                 android:text="@string/register_phone_number" />
 
             <EditText
-                android:id="@+id/register_phoneNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:maxLength="11" />
+            android:id="@+id/register_phonrNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:ems="10"
+            android:enabled="true"
+            android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
@@ -158,37 +183,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/setting_gerenxinxi_place" />
 
-            <Spinner
-                android:id="@+id/register_place"
-                android:layout_width="80dp"
-                android:layout_height="50dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_height="wrap_content"
-            android:gravity="center" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_email" />
-
             <EditText
-                android:id="@+id/register_mail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+            android:id="@+id/register_place_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:ems="10"
+            android:enabled="true"
+            android:inputType=""
+            android:maxLength="10"
+            android:maxLines="1"
+            android:focusable="false"
+            android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
             android:layout_height="wrap_content"
             android:gravity="center" >
-
-            <TextView
-                android:id="@+id/register_clause"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/register_read_clause" />
 
             <CheckBox
                 android:id="@+id/register_check"

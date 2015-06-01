@@ -59,64 +59,73 @@ public class PushFormActivity extends Activity {
 						GetAddressInfoActivity.class), 10000);
 			}
 		});
-		
+
 		// 时间选择
 		aimTime = (EditText) findViewById(R.id.showDate);
 		aimTime.setOnClickListener(new DateButtonOnClickListener());
 		setDateTime();
-		
-		addButton = (Button)findViewById(R.id.add);
+
+		addButton = (Button) findViewById(R.id.add);
 		addButton.setOnClickListener(new AddButtonListener());
 	}
-	
+
 	/**
 	 * 提交按钮的点击事件
+	 * 
 	 * @author GXD
-	 *
+	 * 
 	 */
-	private class AddButtonListener implements OnClickListener{
+	private class AddButtonListener implements OnClickListener {
 		@Override
 		public void onClick(View arg0) {
 			boolean hasError = false;
 			if (!hasError && CheckUtil.isNull(themeEdit.getText().toString())) {
 				themeEdit.setHint("主题不能为空");
-				themeEdit.setHintTextColor(getResources().getColor(R.color.error_hint));
+				themeEdit.setHintTextColor(getResources().getColor(
+						R.color.error_hint));
 				hasError = true;
 			}
-			
+
 			if (!hasError && CheckUtil.isNull(contentEdit.getText().toString())) {
 				contentEdit.setHint("内容不能为空");
-				contentEdit.setHintTextColor(getResources().getColor(R.color.error_hint));
+				contentEdit.setHintTextColor(getResources().getColor(
+						R.color.error_hint));
 				hasError = true;
 			}
-			
-			if (!hasError && CheckUtil.isNull(pushMoneyEdit.getText().toString())) {
+
+			if (!hasError
+					&& CheckUtil.isNull(pushMoneyEdit.getText().toString())) {
 				pushMoneyEdit.setHint("金额不能为空");
-				pushMoneyEdit.setHintTextColor(getResources().getColor(R.color.error_hint));
+				pushMoneyEdit.setHintTextColor(getResources().getColor(
+						R.color.error_hint));
 				hasError = true;
 			}
-			
+
 			if (!hasError && CheckUtil.isNull(aimArea.getText().toString())) {
 				aimArea.setHint("地点不能为空");
-				aimArea.setHintTextColor(getResources().getColor(R.color.error_hint));
+				aimArea.setHintTextColor(getResources().getColor(
+						R.color.error_hint));
 				hasError = true;
 			}
-			
+
 			if (!hasError && CheckUtil.isNull(aimTime.getText().toString())) {
 				aimTime.setHint("时间不能为空");
-				aimTime.setHintTextColor(getResources().getColor(R.color.error_hint));
+				aimTime.setHintTextColor(getResources().getColor(
+						R.color.error_hint));
 				hasError = true;
 			}
-			
+
 			if (!hasError) {
 				Intent returnData = new Intent();
-				
+
 				returnData.putExtra("theme", themeEdit.getText().toString());
-				returnData.putExtra("content", contentEdit.getText().toString());
-				returnData.putExtra("pushMoney", Double.parseDouble(pushMoneyEdit.getText().toString()));
+				returnData
+						.putExtra("content", contentEdit.getText().toString());
+				returnData.putExtra("pushMoney",
+						Double.parseDouble(pushMoneyEdit.getText().toString()));
 				returnData.putExtra("aimArea", aimArea.getText().toString());
 				returnData.putExtra("aimTime", aimTime.getText().toString());
-				
+
 				setResult(ResultCode.PUSH_ORDERS, returnData);
 				finish();
 			}
@@ -147,10 +156,11 @@ public class PushFormActivity extends Activity {
 	 */
 
 	private void updateDisplay() {
-		aimTime.setText(new StringBuilder().append(mYear + "-")
-		.append((mMonth + 1) < 10 ? "0" + (mMonth + 1) + "-"
-				: (mMonth + 1) + "-")
-		.append((mDay < 10) ? "0" + mDay : mDay));
+		aimTime.setText(new StringBuilder()
+				.append(mYear + "-")
+				.append((mMonth + 1) < 10 ? "0" + (mMonth + 1) + "-"
+						: (mMonth + 1) + "-")
+				.append((mDay < 10) ? "0" + mDay : mDay));
 	}
 
 	/**

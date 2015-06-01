@@ -3,7 +3,6 @@ package com.example.orders.push;
 import java.util.List;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.orders.R;
-import com.example.orders.adapter.SwipeAdapter.onRightItemClickListener;
-import com.example.orders.avatar.AvatarActivity;
 
 public class PusherGetGetterAdapter extends BaseAdapter {
 	/**

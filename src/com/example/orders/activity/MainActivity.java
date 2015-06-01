@@ -30,7 +30,7 @@ public class MainActivity extends SlidingFragmentActivity {
 	private List<Fragment> mFragments = new ArrayList<Fragment>();
 	private RadioGroup radioGroup;
 	private TextView headText;
-	
+
 	private PushOrdersFragment push;
 	private GetOrdersFragment get;
 	private ReadOrdersFragment read;
@@ -48,11 +48,11 @@ public class MainActivity extends SlidingFragmentActivity {
 		mViewPager = (ViewPager) findViewById(R.id.id_viewpager);
 		radioGroup = (RadioGroup) findViewById(R.id.tab_bar);
 		headText = (TextView) findViewById(R.id.head_text);
-		
+
 		push = new PushOrdersFragment();
 		get = new GetOrdersFragment();
 		read = new ReadOrdersFragment();
-		
+
 		mFragments.add(push);
 		mFragments.add(get);
 		mFragments.add(read);
@@ -85,7 +85,7 @@ public class MainActivity extends SlidingFragmentActivity {
 			public void onPageScrollStateChanged(int arg0) {
 				((RadioButton) radioGroup.getChildAt(mViewPager
 						.getCurrentItem())).setChecked(true);
-				
+
 				switch (mViewPager.getCurrentItem()) {
 				case 0:
 					headText.setText("下单");
@@ -100,7 +100,7 @@ public class MainActivity extends SlidingFragmentActivity {
 			}
 		});
 	}
-	
+
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (null != data && resultCode == ResultCode.PUSH_ORDERS) {
@@ -126,8 +126,8 @@ public class MainActivity extends SlidingFragmentActivity {
 
 		menu.setSecondaryMenu(R.layout.right_menu_frame);
 	}
-	
-	public ViewPager getViewPager(){
+
+	public ViewPager getViewPager() {
 		return mViewPager;
 	}
 
@@ -153,9 +153,8 @@ public class MainActivity extends SlidingFragmentActivity {
 		mViewPager.setCurrentItem(2);
 		headText.setText("查单");
 	}
-	
+
 	public void openAddOrderForm(View view) {
-		startActivityForResult(new Intent(this,
-				PushFormActivity.class), 10000);
+		startActivityForResult(new Intent(this, PushFormActivity.class), 10000);
 	}
 }
