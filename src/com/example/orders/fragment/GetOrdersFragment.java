@@ -20,7 +20,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -141,7 +140,6 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 			rankType = 2;
 			showDistanceSpinWindow();
 			break;
-
 		case R.id.rank_money_select:
 			rankType = 3;
 			showMoneySpinWindow();
@@ -151,7 +149,6 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 			rankType = 4;
 			showGlorySpinWindow();
 			break;
-
 		}
 	}
 

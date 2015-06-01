@@ -11,8 +11,8 @@
         android:id="@+id/get_order_rank"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:background="@drawable/layout_bg1"
-        android:gravity="center"
+        android:background="@color/white"
+        android:gravity="left"
         android:orientation="horizontal" >
 
         <RelativeLayout

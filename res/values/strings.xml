@@ -21,6 +21,10 @@
     <string name="title_place">地点</string>
     <string name="title_personalized_signature_setting">个性签名</string>
     <string name="title_help_question">提交问题</string>
+    <!-- 数据 -->
+    <string name="num_push">下单数 :</string>
+    <string name="num_get">接单数 :</string>
+    <string name="num_glory">荣誉值  :</string>
     <!-- 菜单名 -->
     <string name="get_orders_text">接单</string>
     <string name="read_orders_text">查单</string>
@@ -67,6 +71,7 @@
     <string name="register_phone_number">电话号码</string>
     <string name="register_place_title">请选择</string>
     <string name="register_place_hint">请输入详细地址</string>
+    <string name="register_forget_pwd">忘记密码?</string>
     <!-- 设置 -->
     <string name="setting_gerenxinxi">个人信息</string>
     <string name="setting_gerenxinxi_touxiang">头像</string>

@@ -48,7 +48,7 @@ public class SpinerPopWindow extends PopupWindow implements OnItemClickListener{
 		setBackgroundDrawable(dw);
 	
 		
-		mListView = (ListView) view.findViewById(R.id.listview);
+		mListView = (ListView) view.findViewById(R.id.rank_listview);
 		
 
 		mAdapter = new NormalSpinerAdapter(mContext);	

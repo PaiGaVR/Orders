@@ -18,10 +18,7 @@ public abstract class AbstractSpinerAdapter<T> extends BaseAdapter {
 		public void onItemClick(int pos);
 	};
 
-	private Context mContext;
 	private List<T> mObjects = new ArrayList<T>();
-	private int mSelectItem = 0;
-
 	private LayoutInflater mInflater;
 
 	public AbstractSpinerAdapter(Context context) {
@@ -36,12 +33,9 @@ public abstract class AbstractSpinerAdapter<T> extends BaseAdapter {
 		if (selIndex >= mObjects.size()) {
 			selIndex = mObjects.size() - 1;
 		}
-
-		mSelectItem = selIndex;
 	}
 
 	private void init(Context context) {
-		mContext = context;
 		mInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
