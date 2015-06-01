@@ -59,6 +59,8 @@
     <string name="register_clause">声明</string>
     <string name="register_clause_title">xxoo条款</string>
     <string name="register_phone_number">电话号码</string>
+    <string name="register_place_title">请选择</string>
+    <string name="register_place_hint">请输入详细地址</string>
     <!-- 设置 -->
     <string name="setting_gerenxinxi">个人信息</string>
     <string name="setting_gerenxinxi_touxiang">头像</string>

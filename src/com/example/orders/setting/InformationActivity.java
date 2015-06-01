@@ -3,8 +3,7 @@ package com.example.orders.setting;
 import java.io.File;
 
 import com.example.orders.R;
-import com.example.orders.push.GetAddressInfoActivity;
-import com.example.orders.push.GetAddressUtil;
+import com.example.orders.register.SelectCitiesDialogActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -55,7 +54,6 @@ public class InformationActivity extends Activity {
 		// 地点选择
 		placetext = (TextView) findViewById(R.id.setting_addressinfo);
 		RelativeLayout placeRelativeLayout = (RelativeLayout) findViewById(R.id.setting_place_information);
-		final GetAddressUtil location = new GetAddressUtil(this);
 		placeRelativeLayout.setOnClickListener(DQlistener);
 
 		// 性别选择
@@ -97,8 +95,9 @@ public class InformationActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			type = "DQ";
-			startActivityForResult(new Intent(InformationActivity.this,
-					GetAddressInfoActivity.class), 10000);
+			Intent intent = new Intent(InformationActivity.this,
+					SelectCitiesDialogActivity.class);
+			startActivityForResult(intent, 1001);
 		}
 	};
 
@@ -188,8 +187,8 @@ public class InformationActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		if (type.equals("DQ")) {
-			if (null != data && resultCode == Activity.RESULT_OK) {
-				placetext.setText(data.getStringExtra("city"));
+			if(requestCode==1001&&resultCode==1002){
+				placetext.setText(data.getStringExtra("address"));
 			}
 		}
 		if (type.equals("TX")) {

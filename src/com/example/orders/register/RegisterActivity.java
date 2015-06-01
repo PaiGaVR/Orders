@@ -2,7 +2,6 @@ package com.example.orders.register;
 
 import com.example.orders.R;
 import com.example.orders.login.LoginActivity;
-import com.example.orders.push.GetAddressInfoActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -64,8 +63,8 @@ public class RegisterActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				startActivityForResult(new Intent(RegisterActivity.this,
-						GetAddressInfoActivity.class), 10000);
+				Intent intent=new Intent(RegisterActivity.this,SelectCitiesDialogActivity.class);
+				startActivityForResult(intent, 1001);
 			}
 		});
 		register.setOnClickListener(new OnClickListener() {
@@ -147,8 +146,9 @@ public class RegisterActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		if (null != data && resultCode == Activity.RESULT_OK) {
-			place.setText(data.getStringExtra("province") + "-"
-					+ data.getStringExtra("city"));
+			if(requestCode==1001&&resultCode==1002){
+				place.setText(data.getStringExtra("address"));
+			}
 		}
 	}
 

@@ -125,8 +125,8 @@
             android:enabled="true"
             android:focusable="false"
             android:hint="@string/push_place"
-            android:maxLength="10"
-            android:maxLines="1"
+            android:maxLines="3"
+            android:minLines="1"
             android:scrollbars="vertical" />
     </LinearLayout>
 

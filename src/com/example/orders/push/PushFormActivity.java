@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import com.example.orders.R;
 import com.example.orders.dataoperated.ResultCode;
+import com.example.orders.register.SelectCitiesDialogActivity;
 import com.example.util.CheckUtil;
 
 import android.os.Bundle;
@@ -55,8 +56,9 @@ public class PushFormActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				aimArea.clearFocus();
-				startActivityForResult(new Intent(PushFormActivity.this,
-						GetAddressInfoActivity.class), 10000);
+				Intent intent = new Intent(PushFormActivity.this,
+						SelectCitiesDialogActivity.class);
+				startActivityForResult(intent, 1001);
 			}
 		});
 
@@ -136,10 +138,8 @@ public class PushFormActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (null != data && resultCode == Activity.RESULT_OK) {
-
-			aimArea.setText(data.getStringExtra("province") + "-"
-					+ data.getStringExtra("city"));
+		if (requestCode == 1001 && resultCode == 1002) {
+			aimArea.setText(data.getStringExtra("address"));
 		}
 	}
 
