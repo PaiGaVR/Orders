@@ -131,16 +131,16 @@
                 android:text="@string/register_phone_number" />
 
             <EditText
-            android:id="@+id/register_phonrNum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/edit_text"
-            android:ems="10"
-            android:enabled="true"
-            android:inputType="number"
-            android:maxLength="11"
-            android:maxLines="1"
-            android:scrollbars="vertical" />
+                android:id="@+id/register_phonrNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:enabled="true"
+                android:inputType="number"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow
@@ -184,17 +184,15 @@
                 android:text="@string/setting_gerenxinxi_place" />
 
             <EditText
-            android:id="@+id/register_place_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/edit_text"
-            android:ems="10"
-            android:enabled="true"
-            android:inputType=""
-            android:maxLength="10"
-            android:maxLines="1"
-            android:focusable="false"
-            android:scrollbars="vertical" />
+                android:id="@+id/register_place_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:ems="10"
+                android:enabled="true"
+                android:focusable="false"
+                android:inputType=""
+                android:scrollbars="vertical" />
         </TableRow>
 
         <TableRow

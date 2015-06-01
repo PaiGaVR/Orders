@@ -8,32 +8,146 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/get_order_rank"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:background="@drawable/layout_bg1"
         android:gravity="center"
         android:orientation="horizontal" >
-          <Spinner
-            android:id="@+id/get_rank_time"
-            android:layout_width="65dp"
-            android:layout_height="30dp" />
 
-        <Spinner
-            android:id="@+id/get_rank_distance"
-            android:layout_width="65dp"
-            android:layout_height="30dp" />
+        <RelativeLayout
+            android:id="@+id/rank_time_layout"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/singleline_item_bg" >
 
-        <Spinner
-            android:id="@+id/get_rank_money"
-            android:layout_width="65dp"
-            android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/rank_time_select"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="left|center"
+                android:hint="@string/get_rank_time"
+                android:maxLength="4"
+                android:paddingLeft="5dp"
+                android:textColor="#ff000000"
+                android:textSize="15sp" >
+            </TextView>
 
-        <Spinner
-            android:id="@+id/get_rank_glory"
-            android:layout_width="65dp"
-            android:layout_height="30dp" />
+            <ImageButton
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/rank_time_select"
+                android:background="@drawable/down_arrow"
+                android:contentDescription="@string/get_rank_time" />
+        </RelativeLayout>
 
-      
+        <RelativeLayout
+            android:id="@+id/rank_distance_layout"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/singleline_item_bg" >
+
+            <TextView
+                android:id="@+id/rank_distance_select"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="left|center"
+                android:hint="@string/get_rank_distance"
+                android:maxLength="4"
+                android:paddingLeft="5dp"
+                android:textColor="#ff000000"
+                android:textSize="15sp" >
+            </TextView>
+
+            <ImageButton
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/rank_distance_select"
+                android:background="@drawable/down_arrow"
+                android:contentDescription="@string/get_rank_distance" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rank_money_layout"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/singleline_item_bg" >
+
+            <TextView
+                android:id="@+id/rank_money_select"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="left|center"
+                android:hint="@string/get_rank_money"
+                android:maxLength="4"
+                android:paddingLeft="5dp"
+                android:textColor="#ff000000"
+                android:textSize="15sp" >
+            </TextView>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/rank_money_select"
+                android:background="@drawable/down_arrow"
+                android:contentDescription="@string/get_rank_money" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rank_glory_layout"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/singleline_item_bg" >
+
+            <TextView
+                android:id="@+id/rank_glory_select"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="left|center"
+                android:hint="@string/get_rank_glory"
+                android:maxLength="4"
+                android:paddingLeft="5dp"
+                android:textColor="#ff000000"
+                android:textSize="15sp" >
+            </TextView>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/rank_glory_select"
+                android:background="@drawable/down_arrow"
+                android:contentDescription="@string/get_rank_glory" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TextView>
     </LinearLayout>
 
     <com.example.orders.get.GetterGetOrdersListView

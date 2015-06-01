@@ -35,6 +35,12 @@
     <string name="push_time_choose">选择</string>
     <string name="push_place">目标地点</string>
     <string name="push_choose_getter">订单情况</string>
+
+    <!-- 接单 -->
+    <string name="get_rank_time">按时间</string>
+    <string name="get_rank_distance">按距离</string>
+    <string name="get_rank_money">按金额</string>
+    <string name="get_rank_glory">按荣誉</string>
     <!-- 按钮名称 -->
     <string name="local_album_cache">本地相册</string>
     <string name="camera_capture_task">相机拍照</string>
