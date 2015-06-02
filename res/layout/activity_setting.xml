@@ -53,45 +53,11 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/xitongtongzhi"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/preference_single_item"
-            android:clickable="true"
-            android:gravity="center_vertical" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/setting_backgroundImag"
-                android:textColor="#000"
-                android:textSize="17sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/heimingdan"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/preference_first_item"
-            android:clickable="true"
-            android:gravity="center_vertical" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/setting_blacklist"
-                android:textColor="#000"
-                android:textSize="17sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-             android:id="@+id/xitongtongzhi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/preference_last_item"
             android:clickable="true"
             android:gravity="center_vertical" >
 
@@ -108,7 +74,7 @@
             android:id="@+id/bangzhuyufankui"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/preference_first_item"
             android:clickable="true"
             android:gravity="center_vertical" >
@@ -139,24 +105,6 @@
                 android:textSize="17sp" />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/wanshanxinxi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/preference_single_item"
-            android:clickable="true"
-            android:gravity="center_vertical" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/setting_perfect_information"
-                android:textColor="#000"
-                android:textSize="17sp" />
-        </RelativeLayout>
-
         <Button
             android:id="@+id/dialog_exit"
             android:layout_width="fill_parent"
@@ -164,14 +112,14 @@
             android:layout_marginBottom="14dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/btn_style_red"
             android:clickable="true"
             android:gravity="center"
             android:padding="4dp"
             android:text="@string/setting_exit"
             android:textColor="#fff"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

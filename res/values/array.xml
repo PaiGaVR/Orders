@@ -2,18 +2,22 @@
 <resources>
 
     <string-array name="rank_time">
+        <item>不选择</item>
         <item>从以前到现在</item>
         <item>从现在到以前</item>
     </string-array>
     <string-array name="rank_distance">
+        <item>不选择</item>
         <item>从远到近</item>
         <item>从近到远</item>
     </string-array>
     <string-array name="rank_money">
+        <item>不选择</item>
         <item>从少到多</item>
         <item>从多到少</item>
     </string-array>
     <string-array name="rank_glory">
+        <item>不选择</item>
         <item>从低到高</item>
         <item>从高到低 </item>
     </string-array>

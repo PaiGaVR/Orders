@@ -41,6 +41,11 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	private TextView distanceTView;
 	private TextView moneyTView;
 	private TextView gloryTView;
+	private LinearLayout rank_time_layout;
+	private LinearLayout rank_distance_layout;
+	private LinearLayout rank_money_layout;
+	private LinearLayout rank_glory_layout;
+
 	private int rankType = 0;
 	private LinearLayout getRank;
 
@@ -57,15 +62,28 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	 * 初始化界面
 	 */
 	private void initView(View view) {
+
 		getRank = (LinearLayout) view.findViewById(R.id.get_order_rank);
+		//
+		rank_time_layout = (LinearLayout) view
+				.findViewById(R.id.rank_time_layout);
 		timeTView = (TextView) view.findViewById(R.id.rank_time_select);
-		timeTView.setOnClickListener(this);
+		rank_time_layout.setOnClickListener(this);
+		//
+		rank_distance_layout = (LinearLayout) view
+				.findViewById(R.id.rank_distance_layout);
 		distanceTView = (TextView) view.findViewById(R.id.rank_distance_select);
-		distanceTView.setOnClickListener(this);
+		rank_distance_layout.setOnClickListener(this);
+		//
+		rank_money_layout = (LinearLayout) view
+				.findViewById(R.id.rank_money_layout);
 		moneyTView = (TextView) view.findViewById(R.id.rank_money_select);
-		moneyTView.setOnClickListener(this);
+		rank_money_layout.setOnClickListener(this);
+		//
+		rank_glory_layout = (LinearLayout) view
+				.findViewById(R.id.rank_glory_layout);
 		gloryTView = (TextView) view.findViewById(R.id.rank_glory_select);
-		gloryTView.setOnClickListener(this);
+		rank_glory_layout.setOnClickListener(this);
 
 		String[] times = getResources().getStringArray(R.array.rank_time);
 		for (int i = 0; i < times.length; i++) {
@@ -132,20 +150,20 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	@Override
 	public void onClick(View view) {
 		switch (view.getId()) {
-		case R.id.rank_time_select:
+		case R.id.rank_time_layout:
 			rankType = 1;
 			showTimeSpinWindow();
 			break;
-		case R.id.rank_distance_select:
+		case R.id.rank_distance_layout:
 			rankType = 2;
 			showDistanceSpinWindow();
 			break;
-		case R.id.rank_money_select:
+		case R.id.rank_money_layout:
 			rankType = 3;
 			showMoneySpinWindow();
 			break;
 
-		case R.id.rank_glory_select:
+		case R.id.rank_glory_layout:
 			rankType = 4;
 			showGlorySpinWindow();
 			break;
@@ -181,17 +199,17 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	}
 
 	private void showTimeSpinWindow() {
-		rank_timePopWindow.setWidth(getRank.getWidth());
+		rank_timePopWindow.setWidth(timeTView.getWidth() * 4);
 		rank_timePopWindow.showAsDropDown(timeTView);
 	}
 
 	private void showDistanceSpinWindow() {
-		rank_distancePopWindow.setWidth(getRank.getWidth());
+		rank_distancePopWindow.setWidth(distanceTView.getWidth() * 3);
 		rank_distancePopWindow.showAsDropDown(distanceTView);
 	}
 
 	private void showMoneySpinWindow() {
-		rank_moneyPopWindow.setWidth(getRank.getWidth());
+		rank_moneyPopWindow.setWidth(moneyTView.getWidth() * 2);
 		rank_moneyPopWindow.showAsDropDown(moneyTView);
 	}
 

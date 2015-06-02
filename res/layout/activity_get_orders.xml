@@ -9,18 +9,20 @@
 
     <LinearLayout
         android:id="@+id/get_order_rank"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="30dp"
         android:background="@color/white"
-        android:gravity="left"
+        android:gravity="center"
         android:orientation="horizontal" >
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/rank_time_layout"
-            android:layout_width="80dp"
-            android:layout_height="fill_parent"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/singleline_item_bg" >
+            android:layout_weight="1.0"
+            android:background="@drawable/singleline_item_bg"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/rank_time_select"
@@ -38,20 +40,20 @@
             <ImageButton
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center"
                 android:layout_marginRight="5dp"
-                android:layout_toRightOf="@id/rank_time_select"
                 android:background="@drawable/down_arrow"
                 android:contentDescription="@string/get_rank_time" />
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/rank_distance_layout"
-            android:layout_width="80dp"
-            android:layout_height="fill_parent"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/singleline_item_bg" >
+            android:layout_weight="1.0"
+            android:background="@drawable/singleline_item_bg"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/rank_distance_select"
@@ -69,20 +71,20 @@
             <ImageButton
                 android:layout_width="10dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center"
                 android:layout_marginRight="5dp"
-                android:layout_toRightOf="@id/rank_distance_select"
                 android:background="@drawable/down_arrow"
                 android:contentDescription="@string/get_rank_distance" />
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/rank_money_layout"
-            android:layout_width="80dp"
-            android:layout_height="fill_parent"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/singleline_item_bg" >
+            android:layout_weight="1.0"
+            android:background="@drawable/singleline_item_bg"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/rank_money_select"
@@ -100,20 +102,20 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center"
                 android:layout_marginRight="5dp"
-                android:layout_toRightOf="@id/rank_money_select"
                 android:background="@drawable/down_arrow"
                 android:contentDescription="@string/get_rank_money" />
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/rank_glory_layout"
-            android:layout_width="80dp"
-            android:layout_height="fill_parent"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/singleline_item_bg" >
+            android:layout_weight="1.0"
+            android:background="@drawable/singleline_item_bg"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/rank_glory_select"
@@ -131,13 +133,11 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center"
                 android:layout_marginRight="5dp"
-                android:layout_toRightOf="@id/rank_glory_select"
                 android:background="@drawable/down_arrow"
                 android:contentDescription="@string/get_rank_glory" />
-        </RelativeLayout>
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
