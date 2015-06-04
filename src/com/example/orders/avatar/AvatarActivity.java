@@ -38,13 +38,13 @@ public class AvatarActivity extends Activity {
 		avatarPushNum = "200";
 		avatarGloryNum = "300";
 		avatarPhoneNum = "18734818905";
-		
+
 		avatar_examine_name = (TextView) findViewById(R.id.avatar_examine_name);
 		avatar_examine_get = (TextView) findViewById(R.id.avatar_examine_get);
 		avatar_examine_push = (TextView) findViewById(R.id.avatar_examine_push);
 		avatar_examine_glory = (TextView) findViewById(R.id.avatar_examine_glory);
 		avatar_phone_num = (TextView) findViewById(R.id.avatar_phone_num);
-		
+
 		avatar_examine_name.setText(avatarName);
 		avatar_examine_get.setText(avatarGetNum);
 		avatar_examine_push.setText(avatarPushNum);

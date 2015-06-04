@@ -2,7 +2,6 @@ package com.example.orders.fragment;
 
 import com.example.orders.R;
 import com.example.orders.setting.AboutActivity;
-import com.example.orders.setting.ExitFromSettingsActivity;
 import com.example.orders.setting.HelpActivity;
 import com.example.orders.setting.InformationActivity;
 import com.example.orders.setting.NotificationActivity;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.content.Intent;
 

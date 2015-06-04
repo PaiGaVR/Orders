@@ -2,7 +2,6 @@ package com.example.orders.dataoperated;
 
 import java.util.List;
 
-import com.example.orders.avatar.AvatarInfo;
 import com.example.orders.entity.Orders;
 
 public class OrdersOperated {
@@ -12,7 +11,6 @@ public class OrdersOperated {
 	private List<Orders> getOrdersList = null;
 	private List<Orders> pushingOrdersList = null;
 	private List<Orders> overOrdersList = null;
-	private List<AvatarInfo> avatarMessageBoardList = null;
 	
 	private Data data;
 	
@@ -82,16 +80,5 @@ public class OrdersOperated {
 			overOrdersList = data.getOverOrdersList();
 		
 		return overOrdersList;
-	}
-	
-	/**
-	 * 读OverOrders列表
-	 * @return OverOrders列表
-	 */
-	public List<AvatarInfo> getAvatarMessageBoard(){
-		if (avatarMessageBoardList == null)
-			avatarMessageBoardList = data.getAvatarMessageBoardList();
-		
-		return avatarMessageBoardList;
 	}
 }

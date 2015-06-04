@@ -3,7 +3,6 @@ package com.example.orders.dataoperated;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.orders.avatar.AvatarInfo;
 import com.example.orders.entity.Orders;
 
 public class Data {
@@ -11,14 +10,12 @@ public class Data {
 	private List<Orders> getOrdersList = null;
 	private List<Orders> pushingOrdersList = null;
 	private List<Orders> overOrdersList = null;
-	private List<AvatarInfo> avatarMessageBoardList = null;
 
 	public Data() {
 		initPushOrdersList();
 		initGetOrdersList();
 		initPushingOrdersList();
 		initOverOrdersList();
-		initAvatarMessageBoardList();
 	}
 
 	/**
@@ -40,10 +37,6 @@ public class Data {
 		overOrdersList = new ArrayList<Orders>();
 	}
 
-	private void initAvatarMessageBoardList() {
-		avatarMessageBoardList = new ArrayList<AvatarInfo>();
-	}
-
 	public List<Orders> getPushOrdersList() {
 		return pushOrdersList;
 	}
@@ -58,9 +51,5 @@ public class Data {
 
 	public List<Orders> getOverOrdersList() {
 		return overOrdersList;
-	}
-
-	public List<AvatarInfo> getAvatarMessageBoardList() {
-		return avatarMessageBoardList;
 	}
 }
