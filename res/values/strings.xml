@@ -75,7 +75,7 @@
     <!-- 设置 -->
     <string name="setting_gerenxinxi">个人信息</string>
     <string name="setting_gerenxinxi_touxiang">头像</string>
-    <string name="setting_gerenxinxi_nicheng">昵称</string>
+    <string name="setting_gerenxinxi_nicheng">名字</string>
     <string name="setting_gerenxinxi_sexy">性别</string>
     <string name="setting_gerenxinxi_place">地区</string>
     <string name="setting_gerenxinxi_signature">个性签名</string>
@@ -95,6 +95,7 @@
     <string name="setting_prefect_information_qita">完善其他信息</string>
     <string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
     <string name="setting_personalized_signature">太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥</string>
+    <string name ="avatar_message_board">留言板</string>
     <!-- 性别 -->
     <string name="sexy_man">男</string>
     <string name="sexy_woman">女</string>

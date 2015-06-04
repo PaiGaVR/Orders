@@ -78,7 +78,7 @@ public class InformationActivity extends Activity {
 					InformationActivity.this);
 			builder.setIcon(R.drawable.tab_settings_normal);
 			builder.setTitle("请选择性别");
-			final String[] sex = { "男", "女", "未知性别" };
+			final String[] sex = { "男", "女" };
 			builder.setSingleChoiceItems(sex, 2,
 					new DialogInterface.OnClickListener() {
 						@Override
@@ -187,7 +187,7 @@ public class InformationActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		if (type.equals("DQ")) {
-			if(requestCode==1001&&resultCode==1002){
+			if (requestCode == 1001 && resultCode == 1002) {
 				placetext.setText(data.getStringExtra("address"));
 			}
 		}

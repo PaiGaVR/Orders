@@ -8,7 +8,6 @@ import android.view.Window;
 
 public class OrderProcessActivity extends Activity {
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,5 +21,4 @@ public class OrderProcessActivity extends Activity {
 		getMenuInflater().inflate(R.menu.order_process, menu);
 		return true;
 	}
-
 }

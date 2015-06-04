@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.orders.R;
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.util.Linkify;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -18,11 +19,13 @@ public class AvatarActivity extends Activity {
 	private String avatarGetNum;
 	private String avatarPushNum;
 	private String avatarGloryNum;
+	private String avatarPhoneNum;
 
 	private TextView avatar_examine_name;
 	private TextView avatar_examine_get;
 	private TextView avatar_examine_push;
 	private TextView avatar_examine_glory;
+	private TextView avatar_phone_num;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +37,21 @@ public class AvatarActivity extends Activity {
 		avatarGetNum = "100";
 		avatarPushNum = "200";
 		avatarGloryNum = "300";
+		avatarPhoneNum = "18734818905";
+		
 		avatar_examine_name = (TextView) findViewById(R.id.avatar_examine_name);
 		avatar_examine_get = (TextView) findViewById(R.id.avatar_examine_get);
 		avatar_examine_push = (TextView) findViewById(R.id.avatar_examine_push);
 		avatar_examine_glory = (TextView) findViewById(R.id.avatar_examine_glory);
+		avatar_phone_num = (TextView) findViewById(R.id.avatar_phone_num);
+		
 		avatar_examine_name.setText(avatarName);
 		avatar_examine_get.setText(avatarGetNum);
 		avatar_examine_push.setText(avatarPushNum);
 		avatar_examine_glory.setText(avatarGloryNum);
+		avatar_phone_num.setText(avatarPhoneNum);
+
+		Linkify.addLinks(avatar_phone_num, Linkify.PHONE_NUMBERS);
 
 		initData();
 		initView();

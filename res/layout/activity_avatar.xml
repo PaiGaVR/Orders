@@ -13,101 +13,159 @@
         android:background="@drawable/mmfooter_bg"
         android:padding="10dp" >
 
-        <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="43dp"
-            android:layout_height="43dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/img_1" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/avatar_examine_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="18dp"
-            android:layout_toRightOf="@+id/imageButton1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/white" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:baselineAligned="false"
+                android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/TextView02"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_alignTop="@+id/ImageButton02"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/ImageButton02"
-            android:text="下单数:"
-            android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/ImageButton01"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@+id/ImageButton02"
-            android:layout_centerVertical="true"
-            android:background="@drawable/img_1" />
+                    <ImageButton
+                        android:id="@+id/imageButton1"
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:background="@drawable/img_1"
+                        android:contentDescription="@string/setting_gerenxinxi_touxiang" />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/TextView01"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@+id/TextView02"
-            android:layout_centerVertical="true"
-            android:text="订单数:"
-            android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/TextView03"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@+id/TextView01"
-            android:layout_alignTop="@+id/ImageButton03"
-            android:text="荣誉值:"
-            android:textColor="@color/white" />
+                    <TextView
+                        android:id="@+id/avatar_examine_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/white" />
+                </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/ImageButton02"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_above="@+id/ImageButton01"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/avatar_examine_name"
-            android:background="@drawable/img_1" />
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/ImageButton03"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@+id/ImageButton01"
-            android:layout_below="@+id/ImageButton01"
-            android:background="@drawable/img_1" />
+                    <ImageButton
+                        android:id="@+id/ImageButton02"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/img_1"
+                        android:contentDescription="@string/name" />
 
-        <TextView
-            android:id="@+id/avatar_examine_get"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_above="@+id/TextView01"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/TextView02"
-            android:textColor="@color/white" />
+                    <ImageButton
+                        android:id="@+id/ImageButton01"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/img_1"
+                        android:contentDescription="@string/name" />
 
-        <TextView
-            android:id="@+id/avatar_examine_push"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_alignBottom="@+id/avatar_examine_name"
-            android:layout_alignLeft="@+id/avatar_examine_get"
-            android:textColor="@color/white" />
+                    <ImageButton
+                        android:id="@+id/ImageButton03"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/img_1"
+                        android:contentDescription="@string/name" />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/avatar_examine_glory"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_alignLeft="@+id/avatar_examine_push"
-            android:layout_below="@+id/avatar_examine_push"
-            android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/TextView02"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="@string/num_push"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="@string/num_get"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/TextView03"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="@string/num_glory"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/avatar_examine_get"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/avatar_examine_push"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/avatar_examine_glory"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="0.3"
+                    android:text="@string/register_phone_number"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/avatar_phone_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_weight="0.7"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -125,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="留言板"
+            android:text="@string/avatar_message_board"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white"
             android:textSize="14sp" />

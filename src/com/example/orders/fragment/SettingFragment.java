@@ -19,7 +19,7 @@ import android.content.Intent;
 public class SettingFragment extends Fragment {
 	public static SettingFragment instance = null;
 	private RelativeLayout gerenxinxi;
-	private Button dialog_exit;
+//	private Button dialog_exit;
 	private RelativeLayout guanyu;
 	private RelativeLayout xitongtongzhi;
 	private RelativeLayout bangzhuyufankui;
@@ -30,10 +30,10 @@ public class SettingFragment extends Fragment {
 				false);
 
 		gerenxinxi = (RelativeLayout) view.findViewById(R.id.gerenxinxi);
-		gerenxinxi.setOnClickListener(new MyButtonListener());
+		gerenxinxi.setOnClickListener(new GeRenXinXiListener());
 
-		dialog_exit = (Button) view.findViewById(R.id.dialog_exit);
-		dialog_exit.setOnClickListener(new MyExitButtonListener());
+//		dialog_exit = (Button) view.findViewById(R.id.dialog_exit);
+//		dialog_exit.setOnClickListener(new MyExitButtonListener());
 
 		// 帮助反馈
 		bangzhuyufankui = (RelativeLayout) view
@@ -51,7 +51,7 @@ public class SettingFragment extends Fragment {
 		return view;
 	}
 
-	class MyButtonListener implements OnClickListener {
+	class GeRenXinXiListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent();
@@ -69,14 +69,14 @@ public class SettingFragment extends Fragment {
 		}
 	}
 
-	class MyExitButtonListener implements OnClickListener {
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			Intent intent = new Intent();
-			intent.setClass(getActivity(), ExitFromSettingsActivity.class);
-			getActivity().startActivity(intent);
-		}
-	}
+	// class MyExitButtonListener implements OnClickListener {
+	// public void onClick(View v) {
+	// // TODO Auto-generated method stub
+	// Intent intent = new Intent();
+	// intent.setClass(getActivity(), ExitFromSettingsActivity.class);
+	// getActivity().startActivity(intent);
+	// }
+	// }
 
 	class MyXiTongTongZhiListener implements OnClickListener {
 		public void onClick(View v) {

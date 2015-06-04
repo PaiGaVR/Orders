@@ -47,7 +47,6 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	private LinearLayout rank_glory_layout;
 
 	private int rankType = 0;
-	private LinearLayout getRank;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -63,8 +62,6 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	 */
 	private void initView(View view) {
 
-		getRank = (LinearLayout) view.findViewById(R.id.get_order_rank);
-		//
 		rank_time_layout = (LinearLayout) view
 				.findViewById(R.id.rank_time_layout);
 		timeTView = (TextView) view.findViewById(R.id.rank_time_select);
@@ -171,35 +168,71 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	}
 
 	private void setTime(int pos) {
-		if (pos >= 0 && pos <= rank_timeList.size()) {
+		if (pos == 0) {
+			timeTView.setText("");
+			timeTView.setHint("按时间");
+		} else if (pos > 0 && pos <= rank_timeList.size()) {
 			String value = rank_timeList.get(pos);
 			timeTView.setText(value);
 		}
+		distanceTView.setText("");
+		distanceTView.setHint("按距离");
+		moneyTView.setText("");
+		moneyTView.setHint("按金额");
+		gloryTView.setText("");
+		gloryTView.setHint("按荣誉");
 	}
 
 	private void setDistance(int pos) {
-		if (pos >= 0 && pos <= rank_distanceList.size()) {
+		if (pos == 0) {
+			distanceTView.setText("");
+			distanceTView.setHint("按距离");
+		} else if (pos >= 0 && pos <= rank_distanceList.size()) {
 			String value = rank_distanceList.get(pos);
 			distanceTView.setText(value);
 		}
+		timeTView.setText("");
+		timeTView.setHint("按时间");
+		moneyTView.setText("");
+		moneyTView.setHint("按金额");
+		gloryTView.setText("");
+		gloryTView.setHint("按荣誉");
 	}
 
 	private void setMoney(int pos) {
-		if (pos >= 0 && pos <= rank_moneyList.size()) {
+		if (pos == 0) {
+			moneyTView.setText("");
+			moneyTView.setHint("按金额");
+		} else if (pos >= 0 && pos <= rank_moneyList.size()) {
 			String value = rank_moneyList.get(pos);
 			moneyTView.setText(value);
 		}
+		timeTView.setText("");
+		timeTView.setHint("按时间");
+		distanceTView.setText("");
+		distanceTView.setHint("按距离");
+		gloryTView.setText("");
+		gloryTView.setHint("按荣誉");
 	}
 
 	private void setGlory(int pos) {
-		if (pos >= 0 && pos <= rank_gloryList.size()) {
+		if (pos == 0) {
+			gloryTView.setText("");
+			gloryTView.setHint("按荣誉");
+		} else if (pos >= 0 && pos <= rank_gloryList.size()) {
 			String value = rank_gloryList.get(pos);
 			gloryTView.setText(value);
 		}
+		timeTView.setText("");
+		timeTView.setHint("按时间");
+		distanceTView.setText("");
+		distanceTView.setHint("按距离");
+		moneyTView.setText("");
+		moneyTView.setHint("按金额");
 	}
 
 	private void showTimeSpinWindow() {
-		rank_timePopWindow.setWidth(timeTView.getWidth() * 4);
+		rank_timePopWindow.setWidth(timeTView.getWidth() * 3);
 		rank_timePopWindow.showAsDropDown(timeTView);
 	}
 
@@ -209,12 +242,12 @@ public class GetOrdersFragment extends Fragment implements OnClickListener,
 	}
 
 	private void showMoneySpinWindow() {
-		rank_moneyPopWindow.setWidth(moneyTView.getWidth() * 2);
+		rank_moneyPopWindow.setWidth(moneyTView.getWidth() * 3);
 		rank_moneyPopWindow.showAsDropDown(moneyTView);
 	}
 
 	private void showGlorySpinWindow() {
-		rank_gloryPopWindow.setWidth(getRank.getWidth());
+		rank_gloryPopWindow.setWidth(gloryTView.getWidth() * 3);
 		rank_gloryPopWindow.showAsDropDown(gloryTView);
 	}
 
