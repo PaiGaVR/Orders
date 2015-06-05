@@ -64,6 +64,7 @@
     <string name="chat_title">聊天室</string>
     <string name="chat_ok">确认</string>
     <string name="chat_add">追加</string>
+    <string name="chat_order_process">订单</string>
 
     <!-- 登陆 -->
     <string name="login_view_pager">进入</string>

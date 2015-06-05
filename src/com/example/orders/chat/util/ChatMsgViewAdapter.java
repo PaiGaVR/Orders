@@ -19,6 +19,10 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 		int IMVT_COM_MSG = 0;
 
 		int IMVT_TO_MSG = 1;
+
+		int IMVT_COM_MSG_IMP = 2;
+
+		int IMVT_TO_MSG_IMP = 3;
 	}
 
 	private List<ChatMsgEntity> data;
@@ -30,7 +34,7 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 	}
 
 	public int getCount() {
-		return data.size();
+		return (data == null) ? 0 : data.size();
 	}
 
 	public Object getItem(int position) {
@@ -46,43 +50,75 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 		ChatMsgEntity entity = data.get(position);
 
 		if (entity.getMsgType()) {
-			return IMsgViewType.IMVT_COM_MSG;
+			if (entity.getMsgTypeImport()) {
+				return IMsgViewType.IMVT_COM_MSG_IMP;
+			} else {
+				return IMsgViewType.IMVT_COM_MSG;
+			}
 		} else {
-			return IMsgViewType.IMVT_TO_MSG;
+			if (entity.getMsgTypeImport()) {
+				return IMsgViewType.IMVT_TO_MSG_IMP;
+			} else {
+				return IMsgViewType.IMVT_TO_MSG;
+			}
 		}
-
 	}
 
 	public int getViewTypeCount() {
 		// TODO Auto-generated method stub
-		return 2;
+		return 4;
 	}
 
-	// ��ȡView
 	public View getView(int position, View convertView, ViewGroup parent) {
 
 		ChatMsgEntity entity = data.get(position);
 		boolean isComMsg = entity.getMsgType();
+		boolean isImport = entity.getMsgTypeImport();
 
 		ViewHolder viewHolder = null;
 		if (convertView == null) {
 			if (isComMsg) {
-
-				convertView = mInflater.inflate(
-						R.layout.chatting_item_msg_text_left, null);
+				if (isImport) {
+					convertView = mInflater.inflate(
+							R.layout.chatting_item_msg_text_left_importance,
+							null);
+				} else {
+					convertView = mInflater.inflate(
+							R.layout.chatting_item_msg_text_left, null);
+				}
 			} else {
-				convertView = mInflater.inflate(
-						R.layout.chatting_item_msg_text_right, null);
+
+				if (isImport) {
+					convertView = mInflater.inflate(
+							R.layout.chatting_item_msg_text_right_importance,
+							null);
+				} else {
+					convertView = mInflater.inflate(
+							R.layout.chatting_item_msg_text_right, null);
+				}
 			}
 
-			viewHolder = new ViewHolder();
-			viewHolder.tvSendTime = (TextView) convertView
-					.findViewById(R.id.tv_sendtime);
-			viewHolder.tvUserName = (TextView) convertView
-					.findViewById(R.id.tv_username);
-			viewHolder.tvContent = (TextView) convertView
-					.findViewById(R.id.tv_chatcontent);
-			viewHolder.isComMsg = isComMsg;
+			if (!isImport) {
+				viewHolder = new ViewHolder();
+				viewHolder.tvSendTime = (TextView) convertView
+						.findViewById(R.id.tv_sendtime);
+				viewHolder.tvUserName = (TextView) convertView
+						.findViewById(R.id.tv_username);
+				viewHolder.tvContent = (TextView) convertView
+						.findViewById(R.id.tv_chatcontent);
+				viewHolder.isComMsg = isComMsg;
+				viewHolder.isImport = isImport;
+			}else{
+				viewHolder = new ViewHolder();
+				viewHolder.tvSendTime = (TextView) convertView
+						.findViewById(R.id.tv_sendtime);
+				viewHolder.tvUserName = (TextView) convertView
+						.findViewById(R.id.tv_username);
+				viewHolder.tvContent = (TextView) convertView
+						.findViewById(R.id.tv_chatcontent_imp);
+				viewHolder.isComMsg = isComMsg;
+				viewHolder.isImport = isImport;
+			}
 
 			convertView.setTag(viewHolder);
 		} else {
@@ -91,7 +127,6 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 		viewHolder.tvSendTime.setText(entity.getDate());
 		viewHolder.tvUserName.setText(entity.getName());
 		viewHolder.tvContent.setText(entity.getText());
-
 		return convertView;
 	}
 
@@ -99,7 +134,9 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 		public TextView tvSendTime;
 		public TextView tvUserName;
 		public TextView tvContent;
+		public TextView tvContent_imp;
 		public boolean isComMsg = true;
+		public boolean isImport = false;
 	}
 
 }

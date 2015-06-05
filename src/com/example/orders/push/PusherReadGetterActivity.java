@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.example.orders.R;
 import com.example.orders.avatar.AvatarActivity;
-import com.example.orders.chat.PusherChatActivity;
+import com.example.orders.chat.ChatActivity;
 import com.example.orders.dataoperated.OrdersOperated;
 import com.example.orders.entity.Orders;
 import android.os.Bundle;
@@ -68,7 +68,7 @@ public class PusherReadGetterActivity extends Activity {
 			public void onItemClick() {
 				Intent intent = new Intent();
 				intent.setClass(PusherReadGetterActivity.this,
-						PusherChatActivity.class);
+						ChatActivity.class);
 				PusherReadGetterActivity.this.startActivity(intent);
 			}
 		});

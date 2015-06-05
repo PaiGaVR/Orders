@@ -103,7 +103,7 @@ public class PromptDialog extends Dialog {
 					R.style.Dialog);
 			View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
 			dialog.addContentView(layout, new LayoutParams(
-					LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 			// 设置对话框的标题
 			((TextView) layout.findViewById(R.id.title)).setText(title);
 			// 设置确认按钮
@@ -151,8 +151,9 @@ public class PromptDialog extends Dialog {
 				((LinearLayout) layout.findViewById(R.id.content))
 						.removeAllViews();
 				((LinearLayout) layout.findViewById(R.id.content)).addView(
-						contentView, new LayoutParams(LayoutParams.FILL_PARENT,
-								LayoutParams.FILL_PARENT));
+						contentView, new LayoutParams(
+								LayoutParams.MATCH_PARENT,
+								LayoutParams.MATCH_PARENT));
 			}
 			dialog.setContentView(layout);
 			return dialog;

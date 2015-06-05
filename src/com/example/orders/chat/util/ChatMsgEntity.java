@@ -1,55 +1,66 @@
-
 package com.example.orders.chat.util;
 
 public class ChatMsgEntity {
 
-    private String name;
+	private String name;
 
-    private String date;
+	private String date;
 
-    private String text;
+	private String text;
 
-    private boolean isComMeg = true;
+	private boolean isComMeg = true;
 
-    public String getName() {
-        return name;
-    }
+	private boolean isImport = true;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getDate() {
-        return date;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+	public String getDate() {
+		return date;
+	}
 
-    public String getText() {
-        return text;
-    }
+	public void setDate(String date) {
+		this.date = date;
+	}
 
-    public void setText(String text) {
-        this.text = text;
-    }
+	public String getText() {
+		return text;
+	}
 
-    public boolean getMsgType() {
-        return isComMeg;
-    }
+	public void setText(String text) {
+		this.text = text;
+	}
 
-    public void setMsgType(boolean isComMsg) {
-    	isComMeg = isComMsg;
-    }
+	public boolean getMsgType() {
+		return isComMeg;
+	}
 
-    public ChatMsgEntity() {
-    }
+	public void setMsgType(boolean isComMsg) {
+		isComMeg = isComMsg;
+	}
 
-    public ChatMsgEntity(String name, String date, String text, boolean isComMsg) {
-        this.name = name;
-        this.date = date;
-        this.text = text;
-        this.isComMeg = isComMsg;
-    }
+	public boolean getMsgTypeImport() {
+		return isImport;
+	}
+
+	public void setMsgTypeImport(boolean isImport) {
+		this.isImport = isImport;
+	}
+
+	public ChatMsgEntity() {
+	}
+
+	public ChatMsgEntity(String name, String date, String text,
+			boolean isComMsg, boolean isImport) {
+		this.name = name;
+		this.date = date;
+		this.text = text;
+		this.isComMeg = isComMsg;
+		this.isImport = isImport;
+	}
 }
