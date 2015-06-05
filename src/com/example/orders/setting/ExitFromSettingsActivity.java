@@ -46,5 +46,4 @@ public class ExitFromSettingsActivity extends Activity {
 	public void exitbutton0(View v) {
 		this.finish();
 	}
-
 }

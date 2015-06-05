@@ -13,7 +13,6 @@ import com.example.orders.dialog.PromptDialog;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
@@ -25,7 +24,6 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 
 public class ChatActivity extends Activity implements OnClickListener {
 	private Button mBtnSend;
@@ -44,7 +42,6 @@ public class ChatActivity extends Activity implements OnClickListener {
 	private String addMoney;
 	private String addReason;
 	private String contString;
-	private TextView tvContent_imp;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -78,19 +75,17 @@ public class ChatActivity extends Activity implements OnClickListener {
 
 		function_oeder_process = (Button) findViewById(R.id.function_oeder_process);
 		function_oeder_process.setOnClickListener(new LookOrderListener());
-
-		// tvContent_imp = (TextView) findViewById(R.id.tv_chatcontent_imp);
-		// tvContent_imp.setOnClickListener(new AddInformationListener());
-
 	}
 
 	public void showAlertDialog(View view) {
 
 		PromptDialog.Builder builder = new PromptDialog.Builder(this);
-		builder.setMessage("agesarhrtjukli,gfyustyrsujfkfuzsretgare");
-		builder.setTitle("提示");
+		builder.setMessage("修改金额:" + addMoney + '\n' + "修改原因:" + addReason);
+		builder.setTitle("是否同意");
 		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
+				// doSomeThing订单金额修改
+
 				dialog.dismiss();
 			}
 		});
@@ -101,7 +96,6 @@ public class ChatActivity extends Activity implements OnClickListener {
 						dialog.dismiss();
 					}
 				});
-
 		builder.create().show();
 
 	}
@@ -142,13 +136,6 @@ public class ChatActivity extends Activity implements OnClickListener {
 		if (null != data && resultCode == Activity.RESULT_OK) {
 			addMoney = data.getStringExtra("add_M");
 			addReason = data.getStringExtra("add_R");
-			/*
-			 * new AlertDialog.Builder(ChatActivity.this)
-			 * .setIcon(android.R.drawable.ic_dialog_alert) .setTitle("提示告")
-			 * .setMessage("修改金额:" + addMoney + '\n' + "修改原因:" + addReason)
-			 * .setPositiveButton("取消", null) .setNegativeButton("确认",
-			 * null).show();
-			 */
 			if (addMoney != null && addReason != null) {
 				contString = "   " + "重要信息:" + '\n' + "   " + "修改金额:"
 						+ addMoney + '\n' + "   " + "修改原因:" + addReason;
