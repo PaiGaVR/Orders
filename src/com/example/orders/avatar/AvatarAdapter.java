@@ -27,10 +27,9 @@ public class AvatarAdapter extends BaseAdapter {
 	/**
 	 * @param mainActivity
 	 */
-	public AvatarAdapter(Context ctx, List<AvatarMessage> data, int rightWidth) {
+	public AvatarAdapter(Context ctx, List<AvatarMessage> data) {
 		mContext = ctx;
 		this.data = data;
-		mRightWidth = rightWidth;
 	}
 
 	@Override

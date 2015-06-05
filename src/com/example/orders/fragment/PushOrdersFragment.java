@@ -59,7 +59,6 @@ public class PushOrdersFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-
 				Intent intent = new Intent(getActivity(),
 						PusherReadGetterActivity.class);
 				intent.putExtra("index", position);
@@ -75,7 +74,6 @@ public class PushOrdersFragment extends Fragment {
 		order.setPushMoney(data.getDoubleExtra("pushMoney", 0.0));
 		order.setAimArea(data.getStringExtra("aimArea"));
 		order.setAimTime(data.getStringExtra("aimTime"));
-
 		// 写Orders操作
 		pushOrdersList = OrdersOperated.getInstance().writeOrder(order);
 		mAdapter.notifyDataSetChanged();

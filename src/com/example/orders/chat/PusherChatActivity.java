@@ -1,13 +1,13 @@
-package com.example.order.chat;
+package com.example.orders.chat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import com.example.order.chat.util.ChatMsgEntity;
-import com.example.order.chat.util.ChatMsgViewAdapter;
 import com.example.orders.R;
 import com.example.orders.avatar.AvatarActivity;
+import com.example.orders.chat.util.ChatMsgEntity;
+import com.example.orders.chat.util.ChatMsgViewAdapter;
 
 import android.os.Bundle;
 import android.app.Activity;

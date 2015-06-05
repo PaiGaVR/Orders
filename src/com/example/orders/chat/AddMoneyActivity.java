@@ -1,4 +1,4 @@
-package com.example.order.chat;
+package com.example.orders.chat;
 
 import com.example.orders.R;
 import android.os.Bundle;

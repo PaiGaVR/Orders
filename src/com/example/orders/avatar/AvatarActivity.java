@@ -12,8 +12,9 @@ import android.widget.TextView;
 
 public class AvatarActivity extends Activity {
 
-	private List<AvatarMessage> message = new ArrayList<AvatarMessage>();
+	private List<AvatarMessage> messageBoard = null;
 	private AvatarMessageListView mListView;
+	private AvatarAdapter aAdapter;
 
 	private String avatarName;
 	private String avatarGetNum;
@@ -51,14 +52,13 @@ public class AvatarActivity extends Activity {
 		avatar_examine_glory.setText(avatarGloryNum);
 		avatar_phone_num.setText(avatarPhoneNum);
 
+		// 设置拨打电话链接
 		Linkify.addLinks(avatar_phone_num, Linkify.PHONE_NUMBERS);
-
 		initData();
 		initView();
 	}
 
 	private void initData() {
-
 		for (int i = 0; i < 100; i++) {
 			AvatarMessage orders = null;
 			if (i % 3 == 0) {
@@ -71,19 +71,16 @@ public class AvatarActivity extends Activity {
 				orders = new AvatarMessage("小窦", "小明，你好");
 				orders.setIcon_id(R.drawable.img_3);
 			}
-			message.add(orders);
+			messageBoard.add(orders);
 		}
 	}
 
-	/**
-	 * 初始化界面
-	 */
 	private void initView() {
+		// messageBoard = OrdersOperated.getInstance().getMessageBoardList();
+		messageBoard = new ArrayList<AvatarMessage>();
 		mListView = (AvatarMessageListView) findViewById(R.id.avatar_message_list);
-		AvatarAdapter aAdapter = new AvatarAdapter(this, message,
-				mListView.getRightViewWidth());
+		aAdapter = new AvatarAdapter(this, messageBoard);
 		mListView.setAdapter(aAdapter);
-
 	}
 
 	public String getAvatarName() {

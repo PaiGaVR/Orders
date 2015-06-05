@@ -29,14 +29,13 @@ public class GetterGetOrdersAdapter extends BaseAdapter {
 	/**
 	 * @param mainActivity
 	 */
-	public GetterGetOrdersAdapter(Context ctx, List<Orders> data,
-			int rightWidth) {
+	public GetterGetOrdersAdapter(Context ctx, List<Orders> data, int rightWidth) {
 		mContext = ctx;
 		this.data = data;
 		mRightWidth = rightWidth;
 	}
-	
-	public void UpdateData(List<Orders> data){
+
+	public void UpdateData(List<Orders> data) {
 		this.data = data;
 	}
 
@@ -91,17 +90,13 @@ public class GetterGetOrdersAdapter extends BaseAdapter {
 
 		Orders msg = data.get(position);
 
-		holder.getter_get_order_name_info
-				.setText(msg.getpName());
-		holder.getter_get_order_time_info
-				.setText(msg.getAimTime());
-		holder.getter_get_order_place_info.setText(msg
-				.getAimArea());
+		holder.getter_get_order_name_info.setText(msg.getpName());
+		holder.getter_get_order_time_info.setText(msg.getAimTime());
+		holder.getter_get_order_place_info.setText(msg.getAimArea());
 		holder.getter_get_order_money_info.setText(Double.toString(msg
 				.getPushMoney()));
-		holder.getter_get_order_type_info
-				.setText(msg.getType());
-		//holder.getter_get_order_icon.setImageResource(msg.getIcon_id());
+		holder.getter_get_order_type_info.setText(msg.getType());
+		// holder.getter_get_order_icon.setImageResource(msg.getIcon_id());
 
 		holder.getter_get_order__item_left
 				.setOnClickListener(new OnClickListener() {

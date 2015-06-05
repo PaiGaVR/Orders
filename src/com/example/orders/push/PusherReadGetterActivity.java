@@ -3,9 +3,9 @@ package com.example.orders.push;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.order.chat.PusherChatActivity;
 import com.example.orders.R;
 import com.example.orders.avatar.AvatarActivity;
+import com.example.orders.chat.PusherChatActivity;
 import com.example.orders.dataoperated.OrdersOperated;
 import com.example.orders.entity.Orders;
 import android.os.Bundle;

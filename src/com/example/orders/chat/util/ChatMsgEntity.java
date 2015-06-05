@@ -1,5 +1,5 @@
 
-package com.example.order.chat.util;
+package com.example.orders.chat.util;
 
 public class ChatMsgEntity {
 

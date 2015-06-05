@@ -91,15 +91,15 @@
             android:label="@string/title_activity_setting" >
         </activity>
         <activity
-            android:name="com.example.order.chat.GetterChatActivity"
+            android:name="com.example.orders.chat.GetterChatActivity"
             android:label="@string/chat_title" >
         </activity>
         <activity
-            android:name="com.example.order.chat.PusherChatActivity"
+            android:name="com.example.orders.chat.PusherChatActivity"
             android:label="@string/chat_title" >
         </activity>
         <activity
-            android:name="com.example.order.chat.AddMoneyActivity"
+            android:name="com.example.orders.chat.AddMoneyActivity"
             android:label="@string/chat_add" >
         </activity>
         <activity
@@ -137,6 +137,10 @@
         <activity
             android:name="com.example.orders.fragment.MyPersonFragment"
             android:label="@string/title_activity_my_person" >
+        </activity>
+        <activity
+            android:name="com.example.orders.login.IntroActivity"
+            android:label="@string/title_activity_login" >
         </activity>
     </application>
 

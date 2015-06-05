@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,13 +23,13 @@ public class AvatarMessageListView extends ListView {
 
 	private float mFirstY;
 
-	private int mRightViewWidth;
-
 	private final int mDuration = 100;
 
 	private final int mDurationStep = 10;
 
 	private boolean mIsShown;
+
+	private ViewPager mViewPager;
 
 	public AvatarMessageListView(Context context) {
 		this(context, null);
@@ -41,15 +42,14 @@ public class AvatarMessageListView extends ListView {
 	public AvatarMessageListView(Context context, AttributeSet attrs,
 			int defStyle) {
 		super(context, attrs, defStyle);
-
 		TypedArray mTypedArray = context.obtainStyledAttributes(attrs,
 				R.styleable.swipelistviewstyle);
 
-		// 获取自定义属性和默认值
-		mRightViewWidth = (int) mTypedArray.getDimension(
-				R.styleable.swipelistviewstyle_right_width, 200);
-
 		mTypedArray.recycle();
+	}
+
+	public void setMyViewPager(ViewPager viewPager) {
+		this.mViewPager = viewPager;
 	}
 
 	/**
@@ -58,6 +58,13 @@ public class AvatarMessageListView extends ListView {
 	 */
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
+
+		if (mCurrentItemView == null) {
+			mViewPager.setScrollContainer(true);
+			super.onInterceptTouchEvent(ev);
+		}
+
+		mViewPager.setScrollContainer(false);
 		float lastX = ev.getX();
 		float lastY = ev.getY();
 		switch (ev.getAction()) {
@@ -74,6 +81,7 @@ public class AvatarMessageListView extends ListView {
 				mCurrentItemView = currentItemView;
 			}
 			break;
+
 		case MotionEvent.ACTION_MOVE:
 			float dx = lastX - mFirstX;
 			float dy = lastY - mFirstY;
@@ -82,10 +90,10 @@ public class AvatarMessageListView extends ListView {
 				return true;
 			}
 			break;
+
 		case MotionEvent.ACTION_UP:
 		case MotionEvent.ACTION_CANCEL:
-			if (mIsShown
-					&& (mPreItemView != mCurrentItemView || isHitCurItemLeft(lastX))) {
+			if (mIsShown && (mPreItemView != mCurrentItemView)) {
 				/**
 				 * 情况一：
 				 * <p>
@@ -97,11 +105,8 @@ public class AvatarMessageListView extends ListView {
 			}
 			break;
 		}
-		return super.onInterceptTouchEvent(ev);
-	}
 
-	private boolean isHitCurItemLeft(float x) {
-		return x < getWidth() - mRightViewWidth;
+		return super.onInterceptTouchEvent(ev);
 	}
 
 	/**
@@ -111,7 +116,7 @@ public class AvatarMessageListView extends ListView {
 	 */
 	private boolean judgeScrollDirection(float dx, float dy) {
 		boolean canJudge = true;
-
+		System.out.println("dx:" + dx + ";dy:" + dy);
 		if (Math.abs(dx) > 30 && Math.abs(dx) > 2 * Math.abs(dy)) {
 			mIsHorizontal = true;
 		} else if (Math.abs(dy) > 30 && Math.abs(dy) > 2 * Math.abs(dx)) {
@@ -119,6 +124,7 @@ public class AvatarMessageListView extends ListView {
 		} else {
 			canJudge = false;
 		}
+
 		return canJudge;
 	}
 
@@ -129,6 +135,10 @@ public class AvatarMessageListView extends ListView {
 	 */
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
+
+		if (mCurrentItemView == null)
+			return super.onTouchEvent(ev);
+
 		float lastX = ev.getX();
 		float lastY = ev.getY();
 
@@ -161,12 +171,8 @@ public class AvatarMessageListView extends ListView {
 					hiddenRight(mPreItemView);
 				}
 
-				if (mIsShown && mPreItemView == mCurrentItemView) {
-					dx = dx - mRightViewWidth;
-				}
-
 				// can't move beyond boundary
-				if (dx < 0 && dx > -mRightViewWidth) {
+				if (dx < 0) {
 					mCurrentItemView.scrollTo((int) (-dx), 0);
 				}
 
@@ -201,23 +207,16 @@ public class AvatarMessageListView extends ListView {
 			}
 
 			if (mIsHorizontal != null && mIsHorizontal) {
-				if (mFirstX - lastX > mRightViewWidth / 2) {
-					showRight(mCurrentItemView);
-				} else {
-					/**
-					 * 情况五：
-					 * <p>
-					 * 向右滑动一个item,且滑动的距离超过了右边View的宽度的一半，隐藏之。
-					 */
-					hiddenRight(mCurrentItemView);
-				}
-
+				/**
+				 * 情况五：
+				 * <p>
+				 * 向右滑动一个item,且滑动的距离超过了右边View的宽度的一半，隐藏之。
+				 */
+				hiddenRight(mCurrentItemView);
 				return true;
 			}
-
 			break;
 		}
-
 		return super.onTouchEvent(ev);
 	}
 
@@ -225,16 +224,6 @@ public class AvatarMessageListView extends ListView {
 		mCurrentItemView.setPressed(false);
 		setPressed(false);
 		refreshDrawableState();
-	}
-
-	private void showRight(View view) {
-		Message msg = new MoveHandler().obtainMessage();
-		msg.obj = view;
-		msg.arg1 = view.getScrollX();
-		msg.arg2 = mRightViewWidth;
-		msg.sendToTarget();
-
-		mIsShown = true;
 	}
 
 	private void hiddenRight(View view) {
@@ -311,13 +300,5 @@ public class AvatarMessageListView extends ListView {
 				animatioOver();
 			}
 		}
-	}
-
-	public int getRightViewWidth() {
-		return mRightViewWidth;
-	}
-
-	public void setRightViewWidth(int mRightViewWidth) {
-		this.mRightViewWidth = mRightViewWidth;
 	}
 }

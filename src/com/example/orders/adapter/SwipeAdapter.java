@@ -67,12 +67,12 @@ public class SwipeAdapter extends BaseAdapter {
 			holder.aim_area = (TextView) convertView
 					.findViewById(R.id.aim_area);
 			holder.content = (TextView) convertView.findViewById(R.id.content);
-			
+
 			holder.num_icon = (ImageView) convertView
 					.findViewById(R.id.num_icon);
 			holder.type_icon = (ImageView) convertView
 					.findViewById(R.id.type_icon);
-			
+
 			holder.item_right_txt = (TextView) convertView
 					.findViewById(R.id.item_right_txt);
 			convertView.setTag(holder);

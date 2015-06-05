@@ -6,6 +6,7 @@
     <string name="author">By：派嘉数创</string>
     <string name="app_name">威帮</string>
     <string name="maker">制作人  : 1234567890</string>
+
     <!-- 标头 -->
     <string name="title_activity_avatar">头像</string>
     <string name="action_settings">Settings</string>
@@ -21,16 +22,19 @@
     <string name="title_place">地点</string>
     <string name="title_personalized_signature_setting">个性签名</string>
     <string name="title_help_question">提交问题</string>
+
     <!-- 数据 -->
     <string name="num_push">下单数 :</string>
     <string name="num_get">接单数 :</string>
     <string name="num_glory">荣誉值  :</string>
+
     <!-- 菜单名 -->
     <string name="get_orders_text">接单</string>
     <string name="read_orders_text">查单</string>
     <string name="setting_text">设置</string>
     <string name="push_orders_text">下单</string>
     <string name="activity_order_process">订单流程</string>
+
     <!-- 下单 -->
     <string name="push_money">金\t\t\t额</string>
     <string name="push_theme">主\t\t\t题</string>
@@ -45,6 +49,7 @@
     <string name="get_rank_distance">按距离</string>
     <string name="get_rank_money">按金额</string>
     <string name="get_rank_glory">按荣誉</string>
+
     <!-- 按钮名称 -->
     <string name="local_album_cache">本地相册</string>
     <string name="camera_capture_task">相机拍照</string>
@@ -52,12 +57,17 @@
     <string name="save">保存</string>
     <string name="exit">退出</string>
     <string name="exit_message">退出后不会删除任何历史数据</string>
+
     <!-- 聊天 -->
     <string name="chat_set">^</string>
     <string name="chat_send">发送</string>
     <string name="chat_title">聊天室</string>
     <string name="chat_ok">确认</string>
     <string name="chat_add">追加</string>
+
+    <!-- 登陆 -->
+    <string name="login_view_pager">进入</string>
+
     <!-- 注册 -->
     <string name="register_shenfenzheng_id">身份证号</string>
     <string name="register_password">输入密码</string>
@@ -72,6 +82,7 @@
     <string name="register_place_title">请选择</string>
     <string name="register_place_hint">请输入详细地址</string>
     <string name="register_forget_pwd">忘记密码?</string>
+
     <!-- 设置 -->
     <string name="setting_gerenxinxi">个人信息</string>
     <string name="setting_gerenxinxi_touxiang">头像</string>
@@ -95,7 +106,8 @@
     <string name="setting_prefect_information_qita">完善其他信息</string>
     <string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
     <string name="setting_personalized_signature">太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥</string>
-    <string name ="avatar_message_board">留言板</string>
+    <string name="avatar_message_board">留言板</string>
+
     <!-- 性别 -->
     <string name="sexy_man">男</string>
     <string name="sexy_woman">女</string>
@@ -107,5 +119,10 @@
     <string name="read_orders_ing">进行中</string>
     <string name="read_orders_over">已完结</string>
     <string name="title_activity_my_person">MyPersonActivity</string>
+
+    <!-- 对话框 -->
+    <string name="title_alert">提示信息</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
 
 </resources>

@@ -1,8 +1,6 @@
 package com.example.orders.login;
 
 import com.example.orders.R;
-import com.example.orders.activity.MainActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -35,7 +33,7 @@ public class LoginActivity extends Activity {
 				&& "123".equals(mPassword.getText().toString())) // 判断 帐号和密码
 		{
 			Intent intent = new Intent();
-			intent.setClass(mCon, MainActivity.class);
+			intent.setClass(mCon, ViewPagerActivity.class);
 			startActivity(intent);
 		} else if ("".equals(mUser.getText().toString())
 				|| "".equals(mPassword.getText().toString())) // 判断 帐号和密码
