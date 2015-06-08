@@ -30,8 +30,8 @@ public class SettingFragment extends Fragment {
 		gerenxinxi = (RelativeLayout) view.findViewById(R.id.gerenxinxi);
 		gerenxinxi.setOnClickListener(new GeRenXinXiListener());
 
-//		dialog_exit = (Button) view.findViewById(R.id.dialog_exit);
-//		dialog_exit.setOnClickListener(new MyExitButtonListener());
+		// dialog_exit = (Button) view.findViewById(R.id.dialog_exit);
+		// dialog_exit.setOnClickListener(new MyExitButtonListener());
 
 		// 帮助反馈
 		bangzhuyufankui = (RelativeLayout) view

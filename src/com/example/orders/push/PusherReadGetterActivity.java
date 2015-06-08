@@ -6,19 +6,15 @@ import java.util.List;
 import com.example.orders.R;
 import com.example.orders.avatar.AvatarActivity;
 import com.example.orders.chat.ChatActivity;
-import com.example.orders.dataoperated.OrdersOperated;
-import com.example.orders.entity.Orders;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Window;
-import android.widget.EditText;
 
 public class PusherReadGetterActivity extends Activity {
 
 	private List<PusherGetGetter> data = new ArrayList<PusherGetGetter>();
 	private PusherGetGetterListView mListView;
-	private EditText ordersText = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +22,12 @@ public class PusherReadGetterActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_pusher_read_getter);
 		initData();
-		initOrderView();
 		initView();
 	}
 
 	private void initData() {
 
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 100; i++) {
 			PusherGetGetter orders = null;
 			if (i % 3 == 0) {
 				orders = new PusherGetGetter("张三", "123", "123", "123");
@@ -47,12 +42,6 @@ public class PusherReadGetterActivity extends Activity {
 
 			data.add(orders);
 		}
-	}
-	
-	private void initOrderView(){
-		ordersText = (EditText)findViewById(R.id.orders_text);
-		Orders order = OrdersOperated.getInstance().getPushOrdersList().get(getIntent().getIntExtra("index", 0));
-		ordersText.setHint(order.getTheme());
 	}
 
 	/**
@@ -69,6 +58,9 @@ public class PusherReadGetterActivity extends Activity {
 				Intent intent = new Intent();
 				intent.setClass(PusherReadGetterActivity.this,
 						ChatActivity.class);
+				Bundle mBundle = new Bundle();    
+                mBundle.putString("isRead", "true");//压入数据    
+                intent.putExtras(mBundle);  
 				PusherReadGetterActivity.this.startActivity(intent);
 			}
 		});

@@ -42,8 +42,7 @@
             android:background="@drawable/btn_style_alert_dialog_special"
             android:clickable="true"
             android:minHeight="80dp"
-            android:minWidth="120dp"
-            android:onClick="showAlertDialog" />
+            android:minWidth="120dp" />
 
         <TextView
             android:id="@+id/tv_username"

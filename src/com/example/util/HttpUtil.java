@@ -11,7 +11,7 @@ import org.apache.http.util.EntityUtils;
 
 public class HttpUtil {
 	// 基础URL
-	public static final String BASE_URL = "http://192.168.1.102:8080/WebRoot/";
+	public static final String BASE_URL = "http://192.168.1.101:8080/WebRoot/";
 
 	// 获得Get请求对象request
 	public static HttpGet getHttpGet(String url) {

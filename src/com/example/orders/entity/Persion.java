@@ -1,55 +1,70 @@
 package com.example.orders.entity;
 
+import java.util.List;
+
 public class Persion {
 	/**
 	 * 人物ID
 	 */
 	private String id;
-	
+
 	/**
 	 * 头像
 	 */
 	private String headImg;
-	
+
 	/**
 	 * 账号名
 	 */
 	private String name;
-	
+
 	/**
 	 * 手机/登陆账号
 	 */
 	private String phone;
-	
+
 	/**
 	 * 密码
 	 */
 	private String passwd;
-	
+
 	/**
 	 * 身份证号
 	 */
 	private String pId;
-	
+
 	/**
 	 * 姓名
 	 */
 	private String pName;
-	
+
 	/**
 	 * 下单数
 	 */
 	private int pushNum;
-	
+
 	/**
 	 * 接单数
 	 */
 	private int getNum;
-	
+
 	/**
 	 * 荣誉值
 	 */
 	private long honourNum;
+
+	/**
+	 * 留言列表
+	 */
+	private List<String> leavedMessage;
+
+	public List<String> getLeavedMessage() {
+		return leavedMessage;
+	}
+
+	public void setLeavedMessage(List<String> leavedMessage) {
+		this.leavedMessage = leavedMessage;
+	}
 
 	public String getPasswd() {
 		return passwd;
@@ -130,5 +145,5 @@ public class Persion {
 	public void setHonourNum(long honourNum) {
 		this.honourNum = honourNum;
 	}
-	
+
 }

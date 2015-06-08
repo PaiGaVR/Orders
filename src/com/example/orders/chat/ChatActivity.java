@@ -9,11 +9,9 @@ import com.example.orders.activity.OrderProcessActivity;
 import com.example.orders.avatar.AvatarActivity;
 import com.example.orders.chat.util.ChatMsgEntity;
 import com.example.orders.chat.util.ChatMsgViewAdapter;
-import com.example.orders.dialog.PromptDialog;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.view.Window;
@@ -75,29 +73,6 @@ public class ChatActivity extends Activity implements OnClickListener {
 
 		function_oeder_process = (Button) findViewById(R.id.function_oeder_process);
 		function_oeder_process.setOnClickListener(new LookOrderListener());
-	}
-
-	public void showAlertDialog(View view) {
-
-		PromptDialog.Builder builder = new PromptDialog.Builder(this);
-		builder.setMessage("修改金额:" + addMoney + '\n' + "修改原因:" + addReason);
-		builder.setTitle("是否同意");
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				// doSomeThing订单金额修改
-
-				dialog.dismiss();
-			}
-		});
-
-		builder.setNegativeButton("取消",
-				new android.content.DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.dismiss();
-					}
-				});
-		builder.create().show();
-
 	}
 
 	public class LookOrderListener implements OnClickListener {

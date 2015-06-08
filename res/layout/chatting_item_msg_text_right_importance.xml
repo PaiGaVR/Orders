@@ -48,7 +48,6 @@
             android:lineSpacingExtra="2dp"
             android:minHeight="80dp"
             android:minWidth="120dp"
-            android:onClick="showAlertDialog"
             android:textColor="#ff000000"
             android:textSize="15sp" />
 
