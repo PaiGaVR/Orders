@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/mmfooter_bg"
+        android:background="@drawable/title_bar"
         android:gravity="center"
         android:text="@string/register_place_title"
         android:textColor="#ffffff"
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/mmfooter_bg"
+        android:background="@drawable/title_bar"
         android:onClick="showChoose"
         android:text="@string/chat_ok"
         android:textColor="#ffffff" />

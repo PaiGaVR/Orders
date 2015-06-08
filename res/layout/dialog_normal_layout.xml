@@ -33,7 +33,7 @@
                 style="@style/text_16_666666"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left|center"
+                android:gravity="center_vertical"
                 android:lineSpacingMultiplier="1.5"
                 android:minHeight="120.0dip"
                 android:paddingBottom="15.0dip"

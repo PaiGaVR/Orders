@@ -1,4 +1,4 @@
-package com.example.orders.chat.util;
+package com.example.orders.chat;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -86,12 +86,12 @@
 
     <TableRow
         android:id="@+id/tableRow_function_button"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_above="@+id/rl_bottom_down"
         android:layout_alignParentRight="true"
-        android:background="@color/grey"
-        android:gravity="center" >
+        android:background="@drawable/layout_bg1"
+        android:gravity="right" >
 
         <Button
             android:id="@+id/function_oeder_process"

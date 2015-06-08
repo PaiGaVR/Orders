@@ -7,11 +7,11 @@ import java.util.List;
 import com.example.orders.R;
 import com.example.orders.activity.OrderProcessActivity;
 import com.example.orders.avatar.AvatarActivity;
-import com.example.orders.chat.util.ChatMsgEntity;
-import com.example.orders.chat.util.ChatMsgViewAdapter;
+import com.example.orders.dialog.PromptDialog;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.view.Window;
@@ -75,9 +75,30 @@ public class ChatActivity extends Activity implements OnClickListener {
 		function_oeder_process.setOnClickListener(new LookOrderListener());
 	}
 
+	public void showAlertDialog(View view) {
+		PromptDialog.Builder builder = new PromptDialog.Builder(this);
+		builder.setMessage("修改金额:" + addMoney + '\n' + "修改原因:" + addReason);
+		builder.setTitle("是否确认");
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				// 在这里处理修改订单信息
+			}
+		});
+		builder.setNegativeButton("取消",
+				new android.content.DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				});
+		builder.create().show();
+	}
+
 	public class LookOrderListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			tableRow_function_button.setVisibility(View.GONE);
+			isShow = false;
 			Intent intent = new Intent();
 			intent.setClass(ChatActivity.this, OrderProcessActivity.class);
 			ChatActivity.this.startActivity(intent);
@@ -100,6 +121,8 @@ public class ChatActivity extends Activity implements OnClickListener {
 	public class AddListener implements OnClickListener {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			tableRow_function_button.setVisibility(View.GONE);
+			isShow = false;
 			startActivityForResult(new Intent(ChatActivity.this,
 					AddMoneyActivity.class), 10000);
 		}

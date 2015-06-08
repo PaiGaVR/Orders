@@ -1,4 +1,4 @@
-package com.example.orders.chat.util;
+package com.example.orders.chat;
 
 public class ChatMsgEntity {
 
