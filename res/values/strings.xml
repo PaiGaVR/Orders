@@ -21,6 +21,7 @@
     <string name="title_push">下单</string>
     <string name="title_place">地点</string>
     <string name="title_personalized_signature_setting">个性签名</string>
+    <string name="title_select_place">选择地点</string>
     <string name="title_help_question">提交问题</string>
 
     <!-- 数据 -->
@@ -99,14 +100,12 @@
     <string name="setting_about_message">vesion : 0.00001v </string>
     <string name="setting_perfect_information">完善信息</string>
     <string name="setting_exit">退出</string>
-    <string name="setting_name">化股份非法</string>
     <string name="setting_help">提交问题</string>
     <string name="setting_submit">提交</string>
     <string name="setting_prefect_information_drive">完善驾驶信息</string>
     <string name="setting_prefect_information_house">完善居住信息</string>
     <string name="setting_prefect_information_qita">完善其他信息</string>
     <string name="setting_notification_massage">现在的版本时0.001v,目前没有新版本，等着吧</string>
-    <string name="setting_personalized_signature">太原为轻微而缺乏阿森纳法国家室内阿贾克斯你的风格我能发家可能发那我发你见啥</string>
     <string name="avatar_message_board">留言板</string>
 
     <!-- 性别 -->

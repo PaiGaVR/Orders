@@ -1,7 +1,5 @@
 package com.example.orders.setting;
 
-import android.media.Image;
-
 public class PrefectInformation {
 
 	// 姓名
@@ -9,21 +7,15 @@ public class PrefectInformation {
 	// 性别
 	private String sex;
 	// 出生日期
-	private int brithday;
-	// 国籍
-	private String nationality;
-	// 住址
-	private String address;
+	private String brithday;
 	// 照片
-	private Image photo;
-	// 驾龄
 	private int dirveAge;
 
-	public int getBrithday() {
+	public String getBrithday() {
 		return brithday;
 	}
 
-	public void setBrithday(int brithday) {
+	public void setBrithday(String brithday) {
 		this.brithday = brithday;
 	}
 
@@ -50,29 +42,4 @@ public class PrefectInformation {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-
-	public String getNationality() {
-		return nationality;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public Image getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(Image photo) {
-		this.photo = photo;
-	}
-
 }

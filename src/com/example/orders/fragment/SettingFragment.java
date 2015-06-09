@@ -17,7 +17,7 @@ import android.content.Intent;
 public class SettingFragment extends Fragment {
 	public static SettingFragment instance = null;
 	private RelativeLayout gerenxinxi;
-//	private Button dialog_exit;
+	// private Button dialog_exit;
 	private RelativeLayout guanyu;
 	private RelativeLayout xitongtongzhi;
 	private RelativeLayout bangzhuyufankui;

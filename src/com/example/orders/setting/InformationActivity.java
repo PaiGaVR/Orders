@@ -17,6 +17,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,6 +40,8 @@ public class InformationActivity extends Activity {
 	private static final int RESULT_REQUEST_CODE = 2;
 	private TextView placetext = null;
 	private TextView sextext = null;
+	private EditText gexingqianming = null;
+	private EditText name = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,10 @@ public class InformationActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.setting_information);
 
+		InitView();
+	}
+
+	private void InitView() {
 		// 头像选择
 		switchAvatar = (RelativeLayout) findViewById(R.id.main_tab_setting_information_rl);
 		faceImage = (ImageView) findViewById(R.id.main_tab_setting_information_head);
@@ -62,12 +69,22 @@ public class InformationActivity extends Activity {
 		sexRelativeLayout.setOnClickListener(XBlistener);
 
 		// 个性签名
+		gexingqianming = (EditText) findViewById(R.id.setting_gexingqianming_content);
 		RelativeLayout qianmingRelativeLayout = (RelativeLayout) findViewById(R.id.setting_gexingqianming_information);
 		qianmingRelativeLayout.setOnClickListener(QMlistener);
+		gexingqianming.setOnClickListener(QMlistener);
 
 		// 昵称
+		name = (EditText) findViewById(R.id.setting_name);
 		RelativeLayout nichengRelativeLayout = (RelativeLayout) findViewById(R.id.setting_name_information);
 		nichengRelativeLayout.setOnClickListener(NClistener);
+		name.setOnClickListener(NClistener);
+		//
+		sextext.setText("男");
+		gexingqianming.setText("当一艘船沉入海底" + '\n' + "当一个人成了谜" + '\n' + "我不知道"
+				+ '\n' + "他们为何离去");
+		name.setText("霍去病");
+		placetext.setText("山西" + "  " + "太原" + "  " + "小店区");
 	}
 
 	private View.OnClickListener XBlistener = new View.OnClickListener() {
@@ -79,11 +96,12 @@ public class InformationActivity extends Activity {
 			builder.setIcon(R.drawable.tab_settings_normal);
 			builder.setTitle("请选择性别");
 			final String[] sex = { "男", "女" };
-			builder.setSingleChoiceItems(sex, 2,
+			builder.setSingleChoiceItems(sex, 0,
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							sextext.setText(sex[which]);
+							dialog.dismiss();
 						}
 					});
 			builder.show();
@@ -118,7 +136,6 @@ public class InformationActivity extends Activity {
 			intent.setClass(InformationActivity.this,
 					PersonalizedSignatureActivity.class);
 			InformationActivity.this.startActivity(intent);
-			InformationActivity.this.finish();
 		}
 	};
 
@@ -129,7 +146,6 @@ public class InformationActivity extends Activity {
 			Intent intent = new Intent();
 			intent.setClass(InformationActivity.this, NameActivity.class);
 			InformationActivity.this.startActivity(intent);
-			InformationActivity.this.finish();
 		}
 	};
 

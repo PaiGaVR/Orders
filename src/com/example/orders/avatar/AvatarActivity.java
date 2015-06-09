@@ -1,9 +1,10 @@
 package com.example.orders.avatar;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.example.orders.R;
+import com.example.orders.dataoperated.OrdersOperated;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.util.Linkify;
@@ -54,30 +55,11 @@ public class AvatarActivity extends Activity {
 
 		// 设置拨打电话链接
 		Linkify.addLinks(avatar_phone_num, Linkify.PHONE_NUMBERS);
-		initData();
 		initView();
 	}
 
-	private void initData() {
-		for (int i = 0; i < 100; i++) {
-			AvatarMessage orders = null;
-			if (i % 3 == 0) {
-				orders = new AvatarMessage("小明", "小亮，你好");
-				orders.setIcon_id(R.drawable.img_1);
-			} else if (i % 3 == 1) {
-				orders = new AvatarMessage("小亮", "小窦，你好");
-				orders.setIcon_id(R.drawable.img_2);
-			} else {
-				orders = new AvatarMessage("小窦", "小明，你好");
-				orders.setIcon_id(R.drawable.img_3);
-			}
-			messageBoard.add(orders);
-		}
-	}
-
 	private void initView() {
-		// messageBoard = OrdersOperated.getInstance().getMessageBoardList();
-		messageBoard = new ArrayList<AvatarMessage>();
+		messageBoard = OrdersOperated.getInstance().getMessageBoardList();
 		mListView = (AvatarMessageListView) findViewById(R.id.avatar_message_list);
 		aAdapter = new AvatarAdapter(this, messageBoard);
 		mListView.setAdapter(aAdapter);

@@ -1,60 +1,87 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:background="#ffffff"
-    android:orientation="vertical"
-    android:padding="10dp" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff" >
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/title_bar"
-        android:gravity="center"
-        android:text="@string/register_place_title"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
-
-    <LinearLayout
-        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#ffffff"
-        android:orientation="vertical"
+        android:background="@drawable/mmfooter_bg"
         android:padding="10dp" >
 
-        <Spinner
-            android:id="@+id/spProvince"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/title_select_place"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+    </RelativeLayout>
 
-        <Spinner
-            android:id="@+id/spCity"
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
+    <LinearLayout
+        android:id="@+id/seclst_place_blow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@drawable/select_place_board"
+        android:orientation="vertical"
+        android:padding="20.0dip" >
 
-        <Spinner
-            android:id="@+id/spArea"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="50dp"
+            android:background="@drawable/title_bar"
+            android:gravity="center"
+            android:text="@string/register_place_title"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <Spinner
+                android:id="@+id/spProvince"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <Spinner
+                android:id="@+id/spCity"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <Spinner
+                android:id="@+id/spArea"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_detailAddre"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:hint="@string/register_place_hint" />
+
+        <Button
+            android:id="@+id/btn_select"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/title_bar"
+            android:onClick="showChoose"
+            android:text="@string/chat_ok"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/et_detailAddre"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:hint="@string/register_place_hint" />
-
-    <Button
-        android:id="@+id/btn_select"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/title_bar"
-        android:onClick="showChoose"
-        android:text="@string/chat_ok"
-        android:textColor="#ffffff" />
-
-</LinearLayout>
+</RelativeLayout>

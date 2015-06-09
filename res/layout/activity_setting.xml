@@ -104,9 +104,8 @@
                 android:textColor="#000"
                 android:textSize="17sp" />
         </RelativeLayout>
-
         <!--
-              <Button
+      <Button
             android:id="@+id/dialog_exit"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -122,6 +121,7 @@
             android:textColor="#fff"
             android:textSize="20sp" />
         -->
+
     </LinearLayout>
 
 </LinearLayout>

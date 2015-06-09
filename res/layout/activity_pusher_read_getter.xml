@@ -52,16 +52,16 @@
             android:gravity="center_vertical" >
 
             <EditText
-                android:id="@+id/orders_text"
+                android:id="@+id/orders_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:background="@android:drawable/edit_text"
                 android:enabled="false"
                 android:focusable="false"
+                android:maxEms="15"
                 android:minLines="5"
-                android:scrollbars="vertical"
-                android:hint="这是单子" />
+                android:scrollbars="vertical" />
         </RelativeLayout>
 
         <RelativeLayout

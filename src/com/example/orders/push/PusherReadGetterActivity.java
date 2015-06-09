@@ -1,56 +1,44 @@
 package com.example.orders.push;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.example.orders.R;
 import com.example.orders.avatar.AvatarActivity;
 import com.example.orders.chat.ChatActivity;
+import com.example.orders.dataoperated.OrdersOperated;
+import com.example.orders.entity.Orders;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Window;
+import android.widget.EditText;
 
 public class PusherReadGetterActivity extends Activity {
 
-	private List<PusherGetGetter> data = new ArrayList<PusherGetGetter>();
+	private List<PusherGetGetter> getterList = null;
 	private PusherGetGetterListView mListView;
+	private EditText orders_content = null;
+	private String orderContent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_pusher_read_getter);
-		initData();
+		orders_content = (EditText) findViewById(R.id.orders_content);
+		orders_content.setText(orderContent);
 		initView();
-	}
-
-	private void initData() {
-
-		for (int i = 0; i < 100; i++) {
-			PusherGetGetter orders = null;
-			if (i % 3 == 0) {
-				orders = new PusherGetGetter("张三", "123", "123", "123");
-				orders.setIcon_id(R.drawable.img_1);
-			} else if (i % 3 == 1) {
-				orders = new PusherGetGetter("李四", "456", "456", "456");
-				orders.setIcon_id(R.drawable.img_2);
-			} else {
-				orders = new PusherGetGetter("王五", "789", "789", "789");
-				orders.setIcon_id(R.drawable.img_3);
-			}
-
-			data.add(orders);
-		}
 	}
 
 	/**
 	 * 初始化界面
 	 */
 	private void initView() {
+		getterList = OrdersOperated.getInstance().getGetterList();
 		mListView = (PusherGetGetterListView) findViewById(R.id.pusher_choose_getter_list);
 		PusherGetGetterAdapter mAdapter = new PusherGetGetterAdapter(this,
-				data, mListView.getRightViewWidth());
+				getterList, mListView.getRightViewWidth());
 		mAdapter.setOnItemClickListener(new PusherGetGetterAdapter.onItemClickListener() {
 
 			@Override
@@ -58,9 +46,9 @@ public class PusherReadGetterActivity extends Activity {
 				Intent intent = new Intent();
 				intent.setClass(PusherReadGetterActivity.this,
 						ChatActivity.class);
-				Bundle mBundle = new Bundle();    
-                mBundle.putString("isRead", "true");//压入数据    
-                intent.putExtras(mBundle);  
+				Bundle mBundle = new Bundle();
+				mBundle.putString("isRead", "true");// 压入数据
+				intent.putExtras(mBundle);
 				PusherReadGetterActivity.this.startActivity(intent);
 			}
 		});

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.orders.avatar.AvatarMessage;
 import com.example.orders.entity.Orders;
+import com.example.orders.push.PusherGetGetter;
 
 public class Data {
 	private List<Orders> pushOrdersList = null;
@@ -12,6 +13,7 @@ public class Data {
 	private List<Orders> pushingOrdersList = null;
 	private List<Orders> overOrdersList = null;
 	private List<AvatarMessage> messageBoardList = null;
+	private List<PusherGetGetter> getterList = null;
 
 	public Data() {
 		initPushOrdersList();
@@ -19,6 +21,7 @@ public class Data {
 		initPushingOrdersList();
 		initOverOrdersList();
 		initMessageBoardList();
+		initGetterList();
 	}
 
 	/**
@@ -44,6 +47,10 @@ public class Data {
 		messageBoardList = new ArrayList<AvatarMessage>();
 	}
 
+	private void initGetterList() {
+		getterList = new ArrayList<PusherGetGetter>();
+	}
+
 	public List<Orders> getPushOrdersList() {
 		return pushOrdersList;
 	}
@@ -62,5 +69,9 @@ public class Data {
 
 	public List<AvatarMessage> getMessageBoardList() {
 		return messageBoardList;
+	}
+
+	public List<PusherGetGetter> getGetterList() {
+		return getterList;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.orders.avatar.AvatarMessage;
 import com.example.orders.entity.Orders;
+import com.example.orders.push.PusherGetGetter;
 
 public class OrdersOperated {
 	public static OrdersOperated ordersOperated = null;
@@ -13,6 +14,7 @@ public class OrdersOperated {
 	private List<Orders> pushingOrdersList = null;
 	private List<Orders> overOrdersList = null;
 	private List<AvatarMessage> messageBoardList = null;
+	private List<PusherGetGetter> getterList = null;
 
 	private Data data;
 
@@ -99,5 +101,17 @@ public class OrdersOperated {
 			messageBoardList = data.getMessageBoardList();
 
 		return messageBoardList;
+	}
+	
+	/**
+	 * 读getterList列表
+	 * 
+	 * @return getterList列表
+	 */
+	public List<PusherGetGetter> getGetterList() {
+		if (getterList == null)
+			getterList = data.getGetterList();
+
+		return getterList;
 	}
 }

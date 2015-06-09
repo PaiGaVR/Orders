@@ -156,7 +156,6 @@ public class SelectCitiesDialogActivity extends Activity {
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
-
 			}
 		});
 		mSpArea.setOnItemSelectedListener(new OnItemSelectedListener() {

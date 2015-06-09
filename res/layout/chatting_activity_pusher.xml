@@ -28,48 +28,76 @@
             android:textColor="@color/white" />
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/rl_bottom_down"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/layout_bg1" >
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg1" >
+
+            <TableRow
+                android:id="@+id/tableRow_send"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/btn_send"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="@string/chat_send" />
+
+                <Button
+                    android:id="@+id/funtionButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/chat_set" />
+            </TableRow>
+
+            <EditText
+                android:id="@+id/et_sendmessage"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/tableRow_send"
+                android:background="@drawable/edittext1"
+                android:singleLine="true"
+                android:textSize="18sp" />
+        </RelativeLayout>
 
         <TableRow
-            android:id="@+id/tableRow_send"
-            android:layout_width="100dp"
+            android:id="@+id/tableRow_function_button"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_above="@+id/rl_bottom_down"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:gravity="center" >
+            android:background="@drawable/layout_bg1"
+            android:gravity="right" >
 
             <Button
-                android:id="@+id/btn_send"
+                android:id="@+id/function_oeder_process"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:text="@string/chat_send" />
+                android:text="@string/chat_order_process" />
 
             <Button
-                android:id="@+id/funtionButton"
-                android:layout_width="40dp"
+                android:id="@+id/function_order_add"
+                android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:gravity="center"
-                android:text="@string/chat_set" />
+                android:text="@string/chat_add" />
         </TableRow>
-
-        <EditText
-            android:id="@+id/et_sendmessage"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@id/tableRow_send"
-            android:background="@drawable/edittext1"
-            android:singleLine="true"
-            android:textSize="18sp" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/chat_listview"
@@ -83,27 +111,5 @@
         android:divider="@null"
         android:dividerHeight="1dp"
         android:scrollbars="none" />
-
-    <TableRow
-        android:id="@+id/tableRow_function_button"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_above="@+id/rl_bottom_down"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/layout_bg1"
-        android:gravity="right" >
-
-        <Button
-            android:id="@+id/function_oeder_process"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:text="@string/chat_order_process" />
-
-        <Button
-            android:id="@+id/function_order_add"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:text="@string/chat_add" />
-    </TableRow>
 
 </RelativeLayout>
